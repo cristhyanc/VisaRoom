@@ -171,6 +171,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\body.css" />
+    <Content Include="Content\bootstrap-mvc-validation.css" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -225,18 +233,41 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\themes\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\themes\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\themes\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\themes\bootstrap\css\main.css" />
+    <Content Include="Content\themes\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\themes\bootstrap\js\main.js" />
+    <Content Include="Content\themes\bootstrap\js\vendor\bootstrap.js" />
+    <Content Include="Content\themes\bootstrap\js\vendor\bootstrap.min.js" />
+    <Content Include="Content\themes\bootstrap\js\vendor\jquery-1.11.1.js" />
+    <Content Include="Content\themes\bootstrap\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
-    <Content Include="Scripts\jquery-1.7.1.js" />
-    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Content\themes\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Content\themes\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\themes\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\themes\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\themes\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\html5shiv.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.js" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive-custom-for-bootstrap.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
@@ -284,6 +315,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\themes\bootstrap\css\_notes\" />
+    <Folder Include="Content\themes\bootstrap\fonts\_notes\" />
+    <Folder Include="Content\themes\bootstrap\js\vendor\_notes\" />
+    <Folder Include="Content\themes\bootstrap\js\_notes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
