@@ -555,6 +555,7 @@
     <Content Include="Content\js\morris-data.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\page_background.jpg" />
     <Content Include="Images\Logo.PNG" />
     <Content Include="Images\NavBarBackGroud.png" />
     <Content Include="Scripts\html5shiv.js" />
