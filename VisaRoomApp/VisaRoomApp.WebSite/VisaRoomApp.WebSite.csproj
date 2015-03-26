@@ -555,6 +555,8 @@
     <Content Include="Content\js\morris-data.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Logo.PNG" />
+    <Content Include="Images\NavBarBackGroud.png" />
     <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Content\bower_components\bootstrap-social\.bower.json" />
