@@ -1,0 +1,42 @@
+﻿@using System.Web.Optimization
+@using BootstrapSupport
+@using NavigationRoutes
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - VisaRoom</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Scripts.Render("~/bundles/jquery")
+        @Styles.Render("~/content/bootstrapcss")
+        @Scripts.Render("~/bootstrapjs")
+        @Scripts.Render("~/bundles/modernizr")
+        
+
+    </head>
+    <body>
+        
+            <div id="body" class="container">
+               
+                    @RenderSection("featured", required: false)
+                    <section >
+                        @RenderBody()
+                    </section>                            
+               
+                                
+            </div>
+
+       
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year -VisaRoom</p>
+                </div>
+            </div>
+        </footer>
+
+       
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
