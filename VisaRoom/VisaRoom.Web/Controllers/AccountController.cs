@@ -10,7 +10,9 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using VisaRoom.Web.Filters;
 using VisaRoom.Web.Models;
+
 using VisaRoom.Web.App_GlobalResources;
+using NGeo.GeoNames;
 
 namespace VisaRoom.Web.Controllers
 {
@@ -64,6 +66,8 @@ namespace VisaRoom.Web.Controllers
         [AllowAnonymous]
         public ActionResult RegisterApplicant()
         {
+            List<Country> listCountries = Helper.Helper.getCountries();
+            this.ViewBag.listCountries = new SelectList(listCountries, "CountryCode", "CountryName");
             return View();
         }
 

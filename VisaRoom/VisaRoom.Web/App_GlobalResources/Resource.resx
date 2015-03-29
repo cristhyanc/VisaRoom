@@ -168,4 +168,31 @@
   <data name="rqd_User" xml:space="preserve">
     <value>The User Name field is required.</value>
   </data>
+  <data name="lbl_Age" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <data name="lbl_City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="lbl_Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="lbl_Education" xml:space="preserve">
+    <value>Education</value>
+  </data>
+  <data name="lbl_FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="lbl_LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="lbl_State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="rqd_FirstName" xml:space="preserve">
+    <value>The First name field is required.</value>
+  </data>
+  <data name="rqd_LastName" xml:space="preserve">
+    <value>The Last name field is required.</value>
+  </data>
 </root>
