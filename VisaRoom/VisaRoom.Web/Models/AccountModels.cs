@@ -1,10 +1,12 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Globalization;
 using System.Web.Security;
+using VisaRoom.Web.App_GlobalResources;
 
 namespace VisaRoom.Web.Models
 {
@@ -57,16 +59,20 @@ namespace VisaRoom.Web.Models
 
     public class LoginModel
     {
-        [Required]
-        [Display(Name = "User name")]
+       
+        [Display(Name = "lbl_userName", ResourceType = typeof(Resource))]
+        [Required(ErrorMessageResourceType = typeof(Resource),
+                  ErrorMessageResourceName = "rqd_User")]
         public string UserName { get; set; }
 
-        [Required]
+       
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "lbl_Password", ResourceType = typeof(Resource))]
+        [Required(ErrorMessageResourceType = typeof(Resource),
+                  ErrorMessageResourceName = "rqd_Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "qtn_Rememberme", ResourceType = typeof(Resource))]
         public bool RememberMe { get; set; }
     }
 

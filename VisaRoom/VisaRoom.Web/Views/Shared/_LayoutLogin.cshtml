@@ -12,31 +12,47 @@
         @Styles.Render("~/content/bootstrapcss")
         @Scripts.Render("~/bootstrapjs")
         @Scripts.Render("~/bundles/modernizr")
-        
+        @RenderSection("styles", required: false)
 
     </head>
-    <body>
+    <body id="bodyPhoto" >
         
-            <div id="body" class="container">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top"  role="navigation" style="background-color:#39B7CD; margin-bottom: 0;">
+            <div class="navbar-header" >
+                <a class="navbar-brand"  style="width:225px; background-image:url(/Images/Logo.PNG)" href="#"></a>
                
-                    @RenderSection("featured", required: false)
-                    <section >
-                        @RenderBody()
-                    </section>                            
-               
-                                
+                
             </div>
+            
+            <!-- /.navbar-header -->
 
-       
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year -VisaRoom</p>
+            <ul class="nav navbar-top-links navbar-right">
+              <li class="dropdown">
+                    <a href="#">
+                        <i class="fa fa-user fa-fw"></i> Login
+                    </a>
+                  
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+           
+        </nav>       
+        <div style="background-color:rgba(255,255,255,0.5); min-height: 568px;" >
+            @RenderSection("featured", required: false)
+            <section >
+                @RenderBody()
+            </section> 
+            
+            <footer>
+                <div class="content-wrapper">
+                    <div class="float-left">
+                        <p>&copy; @DateTime.Now.Year -VisaRoom</p>
+                    </div>
                 </div>
-            </div>
-        </footer>
-
-       
-        @RenderSection("scripts", required: false)
+            </footer>
+        </div>
+      
+@RenderSection("scripts", required: false)
     </body>
 </html>

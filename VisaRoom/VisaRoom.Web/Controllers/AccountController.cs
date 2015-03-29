@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using VisaRoom.Web.Filters;
 using VisaRoom.Web.Models;
+using VisaRoom.Web.App_GlobalResources;
 
 namespace VisaRoom.Web.Controllers
 {
@@ -41,7 +42,7 @@ namespace VisaRoom.Web.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            ModelState.AddModelError("", "The user name or password provided is incorrect.");
+            ModelState.AddModelError("", Resource.msn_WrongUser_Pass);
             return View(model);
         }
 
@@ -61,7 +62,7 @@ namespace VisaRoom.Web.Controllers
         // GET: /Account/Register
 
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult RegisterApplicant()
         {
             return View();
         }
@@ -72,7 +73,7 @@ namespace VisaRoom.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult RegisterApplicant(RegisterModel model)
         {
             if (ModelState.IsValid)
             {

@@ -8,9 +8,6 @@
 $(".validation-summary-errors").removeClass("validation-summary-errors");
 $(".input-validation-error").removeClass("input-validation-error").parent().addClass("has-error");
 </script>
-@*<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>*@
 
 <section id="loginForm">
 
@@ -20,18 +17,17 @@ $(".input-validation-error").removeClass("input-validation-error").parent().addC
                
     if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
     {
-                    <div class="alert alert-danger alert-dismissible" role="alert">                       
-                        <h4>Datos Faltates</h4>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
                         @Html.ValidationSummary()
                     </div>
     }
 
     <fieldset>
-        <div class="row">
+        <div class="row" >
             <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
+                <div class="login-panel panel panel-default" >
                     <div class="panel-heading">
-                        <h3 class="panel-title">Log in Form</h3>
+                        <h3 class="panel-title">@Resources.Resource.lbl_Log_in_Form</h3>
                     </div>
                     <div class="panel-body">
                         <form role="form">                    
@@ -51,9 +47,9 @@ $(".input-validation-error").removeClass("input-validation-error").parent().addC
                                     @Html.LabelFor(m => m.RememberMe)
                                 </label>
                               </div>
-                            <input type="submit" class="btn btn-lg btn-success btn-block" value="Log in" />
+                            <input type="submit" class="btn btn-lg btn-success btn-block" value="@Resources.Resource.lbl_LogIn" />
                             <p>
-                                @Html.ActionLink("Register", "Register") if you don't have an account.
+                                @Html.ActionLink(@Resources.Resource.lbl_Register, "Register") @Resources.Resource.lbl_IfNotAccoun
                             </p>
                         </form>
                     </div>

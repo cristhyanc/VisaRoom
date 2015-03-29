@@ -43,26 +43,70 @@
     <Reference Include="Microsoft.Web.Mvc">
       <HintPath>..\packages\Mvc4Futures.4.0.20710.0\lib\net40\Microsoft.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Routing" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Transactions" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="NGeo">
+      <HintPath>..\packages\NGeo.1.9.0.0\lib\net40\NGeo.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -78,11 +122,14 @@
       <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -90,9 +137,11 @@
     </Reference>
     <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -179,6 +228,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Resource.es.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.es.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BootstrapBundleConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -192,6 +251,7 @@
     <Compile Include="BootstrapSupport\ViewHelperExtensions.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BootstrapBaseController.cs" />
+    <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -589,6 +649,9 @@
     <Content Include="Content\bower_components\mocha\media\logo.svg" />
     <Content Include="Content\bower_components\mocha\mocha.css" />
     <Content Include="Content\bower_components\mocha\mocha.js" />
+    <Content Include="Content\bower_components\wizard\jquery.bootstrap.wizard.js" />
+    <Content Include="Content\bower_components\wizard\prettify.css" />
+    <Content Include="Content\bower_components\wizard\prettify.js" />
     <Content Include="Content\dist\css\bootstrap-theme.css" />
     <Content Include="Content\dist\css\bootstrap-theme.min.css" />
     <Content Include="Content\dist\css\bootstrap.css" />
@@ -597,79 +660,8 @@
     <Content Include="Content\dist\css\timeline.css" />
     <Content Include="Content\dist\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\dist\js\sb-admin-2.js" />
-    <Content Include="Content\font-awesome.css" />
-    <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\font-awesome\css\font-awesome.css" />
-    <Content Include="Content\font-awesome\css\font-awesome.min.css" />
-    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
-    <Content Include="Content\sb-admin-2.css" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\themes\base\jquery-ui.css" />
-    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
-    <Content Include="Content\themes\base\jquery.ui.all.css" />
-    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
-    <Content Include="Content\themes\base\jquery.ui.base.css" />
-    <Content Include="Content\themes\base\jquery.ui.button.css" />
-    <Content Include="Content\themes\base\jquery.ui.core.css" />
-    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
-    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
-    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
-    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
-    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
-    <Content Include="Content\themes\base\jquery.ui.slider.css" />
-    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
-    <Content Include="Content\themes\base\jquery.ui.theme.css" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Content\themes\bootstrap\css\bootstrap-theme.css" />
-    <Content Include="Content\themes\bootstrap\css\bootstrap-theme.min.css" />
-    <Content Include="Content\themes\bootstrap\css\bootstrap.css" />
-    <Content Include="Content\themes\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Content\themes\bootstrap\css\main.css" />
-    <Content Include="Content\themes\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\themes\bootstrap\js\main.js" />
-    <Content Include="Content\themes\bootstrap\js\vendor\bootstrap.js" />
-    <Content Include="Content\themes\bootstrap\js\vendor\bootstrap.min.js" />
-    <Content Include="Content\themes\bootstrap\js\vendor\jquery-1.11.1.js" />
-    <Content Include="Content\themes\bootstrap\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Logo.PNG" />
@@ -678,47 +670,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\html5shiv.js" />
-    <Content Include="Content\themes\bootstrap\css\bootstrap-theme.css.map" />
-    <Content Include="Content\themes\bootstrap\css\bootstrap.css.map" />
-    <Content Include="Content\themes\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\themes\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\themes\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\font-awesome\.bower.json" />
-    <Content Include="Content\font-awesome\.gitignore" />
-    <Content Include="Content\font-awesome\.npmignore" />
-    <Content Include="Content\font-awesome\bower.json" />
-    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="Content\font-awesome\less\bordered-pulled.less" />
-    <Content Include="Content\font-awesome\less\core.less" />
-    <Content Include="Content\font-awesome\less\extras.less" />
-    <Content Include="Content\font-awesome\less\fixed-width.less" />
-    <Content Include="Content\font-awesome\less\font-awesome.less" />
-    <Content Include="Content\font-awesome\less\icons.less" />
-    <Content Include="Content\font-awesome\less\larger.less" />
-    <Content Include="Content\font-awesome\less\list.less" />
-    <Content Include="Content\font-awesome\less\mixins.less" />
-    <Content Include="Content\font-awesome\less\path.less" />
-    <Content Include="Content\font-awesome\less\rotated-flipped.less" />
-    <Content Include="Content\font-awesome\less\spinning.less" />
-    <Content Include="Content\font-awesome\less\stacked.less" />
-    <Content Include="Content\font-awesome\less\variables.less" />
-    <Content Include="Content\font-awesome\scss\font-awesome.scss" />
-    <Content Include="Content\font-awesome\scss\_bordered-pulled.scss" />
-    <Content Include="Content\font-awesome\scss\_core.scss" />
-    <Content Include="Content\font-awesome\scss\_extras.scss" />
-    <Content Include="Content\font-awesome\scss\_fixed-width.scss" />
-    <Content Include="Content\font-awesome\scss\_icons.scss" />
-    <Content Include="Content\font-awesome\scss\_larger.scss" />
-    <Content Include="Content\font-awesome\scss\_list.scss" />
-    <Content Include="Content\font-awesome\scss\_mixins.scss" />
-    <Content Include="Content\font-awesome\scss\_path.scss" />
-    <Content Include="Content\font-awesome\scss\_rotated-flipped.scss" />
-    <Content Include="Content\font-awesome\scss\_spinning.scss" />
-    <Content Include="Content\font-awesome\scss\_stacked.scss" />
-    <Content Include="Content\font-awesome\scss\_variables.scss" />
     <Content Include="Content\dist\css\bootstrap-theme.css.map" />
     <Content Include="Content\dist\css\bootstrap.css.map" />
     <Content Include="Content\dist\fonts\glyphicons-halflings-regular.eot" />
@@ -1001,6 +952,7 @@
     <Content Include="Content\bower_components\mocha\History.md" />
     <Content Include="Content\bower_components\mocha\LICENSE" />
     <Content Include="Content\bower_components\mocha\Readme.md" />
+    <None Include="Properties\PublishProfiles\Visaroom.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -1020,7 +972,9 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1049,7 +1003,7 @@
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\RegisterApplicant.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
@@ -1070,16 +1024,25 @@
     <Content Include="Views\Shared\_alerts.cshtml" />
     <Content Include="Views\Shared\_LayoutDashBoard.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\DashBoard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\themes\bootstrap\css\_notes\" />
-    <Folder Include="Content\themes\bootstrap\fonts\_notes\" />
-    <Folder Include="Content\themes\bootstrap\js\vendor\_notes\" />
-    <Folder Include="Content\themes\bootstrap\js\_notes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\Resource.es.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Resource.es.designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
