@@ -32,6 +32,9 @@ namespace VisaRoom.Web
                        "~/Content/bower_components/font-awesome/css/font-awesome.css"
                        ));
 
+            bundles.Add(new ScriptBundle("~/mainScript").Include(
+                         "~/Scripts/main.js"));
+
             bundles.Add(new ScriptBundle("~/bootstrapjs").Include(
                          "~/Content/bower_components/bootstrap/dist/js/bootstrap.js",
                         "~/Content/bower_components/metisMenu/dist/metisMenu.js",

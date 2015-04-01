@@ -26,18 +26,20 @@ namespace VisaRoom.Web.Models
         public string Age { get; set; }
 
         [Display(Name = "lbl_Country", ResourceType = typeof(Resource))]
-        public Country Country { get; set; }
+        public ValueTO Country { get; set; }
 
         [Display(Name = "lbl_State", ResourceType = typeof(Resource))]
-        public CommonValueTO State { get; set; }
+        public ValueTO State { get; set; }
 
         [Display(Name = "lbl_City", ResourceType = typeof(Resource))]
-        public CommonValueTO City { get; set; }
+        public ValueTO City { get; set; }
 
         [Display(Name = "lbl_Education", ResourceType = typeof(Resource))]
         [Required(ErrorMessageResourceType = typeof(Resource),
                   ErrorMessageResourceName = "rqd_LastName")]
         [StringLength(200)]
         public string Education { get; set; }
+
+       
     }
 }

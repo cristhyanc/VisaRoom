@@ -16,8 +16,18 @@ namespace VisaRoom.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "About", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute("GetStatesByCountryId",
+                           "Services/GetStatesByCountryId/",
+                           new { controller = "Services", action = "GetStatesByCountryId" },
+                           new[] { "VisaRoom.Web.Controllers" });
+
+            routes.MapRoute("GetCityByState",
+                           "Services/GetCityByState/",
+                           new { controller = "Services", action = "GetCityByState" },
+                           new[] { "VisaRoom.Web.Controllers" });
         }
     }
 }

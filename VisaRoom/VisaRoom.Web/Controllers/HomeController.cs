@@ -1,12 +1,15 @@
-﻿using System;
+﻿using BootstrapMvcSample.Controllers;
+using NGeo.GeoNames;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VisaRoom.Web.Models;
 
 namespace VisaRoom.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BootstrapBaseController
     {
         public ActionResult Index()
         {
@@ -15,18 +18,38 @@ namespace VisaRoom.Web.Controllers
             return View();
         }
 
+
+         [AllowAnonymous]
         public ActionResult About()
+        {
+            List<Country> listCountries = Helper.Helper.getCountries();
+            var result = (from ct in listCountries
+                          select new SelectListItem { Text = ct.CountryName, Value = ct.GeoNameId.ToString() }).ToList();
+            this.ViewBag.listCountries = new SelectList(result, "Value", "Text");
+            return View();
+           
+        }
+
+       
+        public ActionResult Contact()
         {
             ViewBag.Message = "Your app description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        [HttpPost]        
+        [ValidateAntiForgeryToken]
+        public ActionResult About(RegisterModel model)
         {
-            ViewBag.Message = "Your contact page.";
+            if (ModelState.IsValid)
+            {
+                // Attempt to register the user
+            }
 
-            return View();
+            // If we got this far, something failed, redisplay form
+            return View(model);
         }
+
     }
 }

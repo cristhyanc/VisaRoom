@@ -67,10 +67,15 @@ namespace VisaRoom.Web.Controllers
         public ActionResult RegisterApplicant()
         {
             List<Country> listCountries = Helper.Helper.getCountries();
-            this.ViewBag.listCountries = new SelectList(listCountries, "CountryCode", "CountryName");
+            var result = (from ct in listCountries
+                          select new SelectListItem { Text = ct.CountryName, Value = ct.GeoNameId.ToString() }).ToList();
+            this.ViewBag.listCountries = new SelectList(result, "Value", "Text");
             return View();
         }
 
+        
+
+       
         //
         // POST: /Account/Register
 
@@ -97,6 +102,8 @@ namespace VisaRoom.Web.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+
+        
 
         //
         // POST: /Account/Disassociate

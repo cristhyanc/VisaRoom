@@ -7,10 +7,11 @@ using VisaRoom.Web.App_GlobalResources;
 
 namespace VisaRoom.Web.Models
 {
-    public class CommonValueTO
+    public class ValueTO
     {
-        public string ValueId { get; set; }
+       
+        public string Value { get; set; }
 
-       public string Value { get; set; }
+       public string Text { get; set; }
     }
 }

@@ -1,34 +1,209 @@
-﻿@{
-    ViewBag.Title = "About";
+﻿@model VisaRoom.Web.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
-</hgroup>
 
-<article>
-    <p>
-        Use this area to provide additional information.
-    </p>
 
-    <p>
-        Use this area to provide additional information.
-    </p>
+<script>
+    $(function () {
+        $("#Country_Value").change(function () {
+            var selectedItem = $(this).val();
+            var ddlStates = $("#State_Value");
+            ddlStates.empty();
 
-    <p>
-        Use this area to provide additional information.
-    </p>
-</article>
+            //var statesProgress = $("#states-loading-progress");
+            //statesProgress.show();
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: "@(Url.RouteUrl("GetStatesByCountryId"))",
+                data: { "countryId": selectedItem },
+                success: function (data) {
 
-<aside>
-    <h3>Aside Title</h3>
-    <p>
-        Use this area to provide additional information.
-    </p>
-    <ul>
-        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-    </ul>
-</aside>
+                    ddlStates.html('');
+                    $.each(data, function (id, option) {
+                        ddlStates.append($('<option></option>').val(option.Value).html(option.Text));
+                    });
+                    //statesProgress.hide();
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve states.' + ex);
+                    //statesProgress.hide();
+                }
+            });
+        });
+    });
+
+    $(function () {
+        $("#State_Value").change(function () {
+            var selectedItem = $(this).val();
+            var ddlCities = $("#City_Value");
+            ddlCities.empty();
+
+            //var statesProgress = $("#states-loading-progress");
+            //statesProgress.show();
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: "@(Url.RouteUrl("GetCityByState"))",
+                data: { "stateId": selectedItem },
+                success: function (data) {
+
+                    ddlCities.html('');
+                    $.each(data, function (id, option) {
+                        ddlCities.append($('<option></option>').val(option.Value).html(option.Text));
+                    });
+                    //statesProgress.hide();
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve states.' + ex);
+                    //statesProgress.hide();
+                }
+            });
+        });
+    });
+
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bootstrapWizarJS")
+    @Scripts.Render("~/mainScript")
+}
+
+@section Styles {
+    @Styles.Render("~/bootstrapWizarCSS")
+}
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <hgroup class="title">
+            <h1>Member Profile registration</h1>
+        </hgroup>
+    </div>
+</div>
+
+
+
+@using (Html.BeginForm("About", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+            @Html.AntiForgeryToken()
+           
+        if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
+        {
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                @Html.ValidationSummary()
+            </div>
+        }
+       
+   
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div id="rootwizard" style="background-color: white" class="roundBords">
+                    <div class="navbar" style="background-color: #39B7CD; margin-bottom: 0;">
+                        <div class="navbar-inner">
+                            <div class="container">
+                                <ul>
+                                    <li><a href="#tab1" data-toggle="tab">Basic Details</a></li>
+                                    <li><a href="#tab2" data-toggle="tab">Extra information</a></li>
+                                    <li><a href="#tab3" data-toggle="tab">Visas</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane" id="tab1">
+
+                            <div class="col-md-4">
+
+                                <div class="panel-body">
+                                   
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.UserName)
+                                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.UserName, null, new { @class = "label label-danger" })
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Password)
+                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Password, null, new { @class = "label label-danger" })
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.ConfirmPassword)
+                                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { @class = "label label-danger" })
+                                        </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="panel-body">
+                                   
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.FirstName)
+                                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "label label-danger" })
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.LastName)
+                                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.LastName, null, new { @class = "label label-danger" })
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Age)
+                                            @Html.TextBoxFor(m => m.Age, new { @class = "form-control", @type = "number" })
+                                        </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+
+                                <div class="panel-body">
+                                   
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Country)
+                                            @Html.DropDownListFor(model => model.Country.Value,  (SelectList)ViewBag.listCountries, new { @class = "form-control"})
+                                            @* @Html.DropDownList("Country", (SelectList)ViewBag.listCountries)*@
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.State)
+                                            @*@Html.DropDownList("State", new SelectList(string.Empty, "Value", "Text"), "Please select a State", new { @class = "form-control" })*@
+                                            @Html.DropDownListFor(model => model.State.Value,  new SelectList(string.Empty, "Value", "Text"), "Please select a State", new { @class = "form-control", @name="State" })
+
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.City)
+                                            @*@Html.DropDownList("city", new SelectList(string.Empty, "Value", "Text"), "Please select a city", new { @class = "form-control" })*@
+                                            @Html.DropDownListFor(model => model.City.Value,  new SelectList(string.Empty, "Value", "Text"), new { @class = "form-control", @name="city" })
+
+                                        </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane" id="tab2">
+                            2
+                        </div>
+                        <div class="tab-pane" id="tab3">
+                            3
+                        </div>
+
+                        <ul class="pager wizard">
+                            <li class="previous first"><a href="javascript:;">First</a></li>
+                            <li class="previous"><a href="javascript:;">Previous</a></li>
+                            <li class="next last"><a href="javascript:;">Last</a></li>
+                            <li class="next"><a href="javascript:;">Next</a></li>
+                            @*  <input type="submit" class="btn btn-lg btn-success btn-block" value="@Resources.Resource.lbl_LogIn" />*@
+                        </ul>
+                    </div>
+                </div>
+                <input type="submit" value="Create" />
+            </div>
+        </div>
+       
+}
+
