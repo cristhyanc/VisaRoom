@@ -9,10 +9,11 @@ using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using VisaRoom.Web.Filters;
-using VisaRoom.Web.Models;
 
 using VisaRoom.Web.App_GlobalResources;
 using NGeo.GeoNames;
+using VisaRoom.Common.Models;
+using VisaRoom.Web.Models;
 
 namespace VisaRoom.Web.Controllers
 {
@@ -66,10 +67,10 @@ namespace VisaRoom.Web.Controllers
         [AllowAnonymous]
         public ActionResult RegisterApplicant()
         {
-            List<Country> listCountries = Helper.Helper.getCountries();
-            var result = (from ct in listCountries
-                          select new SelectListItem { Text = ct.CountryName, Value = ct.GeoNameId.ToString() }).ToList();
-            this.ViewBag.listCountries = new SelectList(result, "Value", "Text");
+            List<ValueTo> listCountries = Helper.Helper.getGlobalInformation().GetCountries();
+            List<ValueTo> listMaritalStatus = Helper.Helper.getGlobalInformation().GetMaritalStates();
+            this.ViewBag.listMaritalStatus = new SelectList(listMaritalStatus, "Value", "Text");
+            this.ViewBag.listCountries = new SelectList(listCountries, "Value", "Text");
             return View();
         }
 

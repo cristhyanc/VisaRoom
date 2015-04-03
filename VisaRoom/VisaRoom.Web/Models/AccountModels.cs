@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Globalization;
 using System.Web.Security;
+using VisaRoom.Common.Models;
 using VisaRoom.Web.App_GlobalResources;
 
 namespace VisaRoom.Web.Models

@@ -195,4 +195,10 @@
   <data name="rqd_LastName" xml:space="preserve">
     <value>The Last name field is required.</value>
   </data>
+  <data name="lbl_DateofGraduation" xml:space="preserve">
+    <value>Date of Graduation</value>
+  </data>
+  <data name="lbl_MaritalStatus" xml:space="preserve">
+    <value>Marital Status</value>
+  </data>
 </root>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using VisaRoom.Web.Models;
+using VisaRoom.Common.Models;
 
 namespace VisaRoom.Web.Controllers
 {
@@ -20,16 +20,14 @@ namespace VisaRoom.Web.Controllers
         [AcceptVerbs(HttpVerbs.Get)]
         public JsonResult GetStatesByCountryId(string countryId)
         {
-            List<ValueTO> listStates = Helper.Helper.getState(Int32.Parse(countryId));
-            List<SelectListItem> states = new List<SelectListItem>();
+            List<ValueTo> listStates = Web.Helper.Helper.getGlobalInformation().GetStatesByCountry(countryId);
             return Json(listStates, JsonRequestBehavior.AllowGet);
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
         public JsonResult GetCityByState(string stateId)
         {
-            List<ValueTO> listStates = Helper.Helper.getState(Int32.Parse(stateId));
-            List<SelectListItem> states = new List<SelectListItem>();
+            List<ValueTo> listStates = Web.Helper.Helper.getGlobalInformation().GetCitiesByState(stateId);         
             return Json(listStates, JsonRequestBehavior.AllowGet);
         }
 

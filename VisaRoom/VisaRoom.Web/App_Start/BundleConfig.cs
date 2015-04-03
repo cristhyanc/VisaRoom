@@ -29,6 +29,7 @@ namespace VisaRoom.Web
                        "~/Content/bower_components/bootstrap/dist/css/bootstrap.css",
                        "~/Content/bower_components/metisMenu/dist/metisMenu.css",
                        "~/Content/dist/css/sb-admin-2.css",
+                       "~/Content/bower_components/bootstrap-datepicker.css",
                        "~/Content/bower_components/font-awesome/css/font-awesome.css"
                        ));
 
@@ -38,6 +39,7 @@ namespace VisaRoom.Web
             bundles.Add(new ScriptBundle("~/bootstrapjs").Include(
                          "~/Content/bower_components/bootstrap/dist/js/bootstrap.js",
                         "~/Content/bower_components/metisMenu/dist/metisMenu.js",
+                        "~/Scripts/bootstrap-datepicker.js",
                         "~/Content/dist/js/sb-admin-2.js"));
 
 

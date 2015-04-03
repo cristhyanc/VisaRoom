@@ -22,10 +22,7 @@ namespace VisaRoom.Web.Controllers
          [AllowAnonymous]
         public ActionResult About()
         {
-            List<Country> listCountries = Helper.Helper.getCountries();
-            var result = (from ct in listCountries
-                          select new SelectListItem { Text = ct.CountryName, Value = ct.GeoNameId.ToString() }).ToList();
-            this.ViewBag.listCountries = new SelectList(result, "Value", "Text");
+           
             return View();
            
         }

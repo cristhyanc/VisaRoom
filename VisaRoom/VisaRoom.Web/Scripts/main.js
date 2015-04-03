@@ -2,6 +2,8 @@
 
 $(document).ready(function () {
 
+    $('.datepicker').datepicker(); //Initialise any date pickers
+    //$('.date').datepicker({ dateFormat: "dd/mm/yy" });
 //**************** WIZAR BOOTSTRAP***************************//
     $('#rootwizard').bootstrapWizard({
         onTabShow: function (tab, navigation, index) {
@@ -34,4 +36,15 @@ $(".input-validation-error").removeClass("input-validation-error").parent().addC
 
 
 
-//**************** FILLING STATE DROPDOWN***************************//
+function showModalpopUp() {
+
+
+    $('#pleaseWaitDialog').modal();
+
+}
+
+function HideModalpopUp() {
+
+    $('#pleaseWaitDialog').modal('hide');
+
+}

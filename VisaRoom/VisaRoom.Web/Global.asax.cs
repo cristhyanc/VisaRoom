@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,6 +7,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using VisaRoom.Web.Helper;
+using VisaRoom.Web.Models;
 
 namespace VisaRoom.Web
 {
@@ -14,6 +17,10 @@ namespace VisaRoom.Web
 
     public class MvcApplication : System.Web.HttpApplication
     {
+
+       public IGlobalInformation globaInformation;
+
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -25,6 +32,11 @@ namespace VisaRoom.Web
             AuthConfig.RegisterAuth();
             BootstrapSupport.BootstrapBundleConfig.RegisterBundles(System.Web.Optimization.BundleTable.Bundles);
             //BootstrapMvcSample.ExampleLayoutsRouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            globaInformation = new GlobalInformation();
+            System.Web.HttpContext.Current.Application["GlobalInformation"] = globaInformation;
         }
+
+
     }
 }
