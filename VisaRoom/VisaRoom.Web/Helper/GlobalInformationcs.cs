@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
+using VisaRoom.Common.Helper;
 using VisaRoom.Common.Models;
 
 namespace VisaRoom.Web.Helper
@@ -119,9 +120,11 @@ namespace VisaRoom.Web.Helper
         {
             if (_listMaritalStates == null || _listMaritalStates.Count == 0)
             {
-                _listMaritalStates=_bsCommon.GetMaritalStates();
+                _listMaritalStates = _bsCommon.GetCustomizedList(enumCustomizedList.MaritalStatus.ToString());
             }
             return _listMaritalStates;
         }
+
+       
     }
 }

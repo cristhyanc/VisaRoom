@@ -43,5 +43,20 @@ namespace VisaRoom.Common.Models
 
         [Display(Name = "lbl_MaritalStatus", ResourceType = typeof(Resource))]
         public ValueTo MaritalStatus { get; set; }
+
+        [Display(Name = "lbl_CountryPassport", ResourceType = typeof(Resource))]
+        public ValueTo CountryPassport { get; set; }
+
+        [Display(Name = "lbl_JobExperience", ResourceType = typeof(Resource))]
+        [StringLength(250)]
+        public string JobExperience { get; set; }
+        
+        [Display(Name = "lbl_EnglishTest", ResourceType = typeof(Resource))]
+        [StringLength(50)]
+        public string EnglishTest { get; set; }
+
+        [Display(Name = "lbl_EnglishTestScore", ResourceType = typeof(Resource))]
+        [StringLength(50)]
+        public string EnglishTestScore { get; set; }
     }
 }

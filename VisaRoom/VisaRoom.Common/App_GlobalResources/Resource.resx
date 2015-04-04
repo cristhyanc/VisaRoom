@@ -201,4 +201,16 @@
   <data name="lbl_MaritalStatus" xml:space="preserve">
     <value>Marital Status</value>
   </data>
+  <data name="lbl_CountryPassport" xml:space="preserve">
+    <value>Country Passport</value>
+  </data>
+  <data name="lbl_EnglishTest" xml:space="preserve">
+    <value>English Test</value>
+  </data>
+  <data name="lbl_EnglishTestScore" xml:space="preserve">
+    <value>Score</value>
+  </data>
+  <data name="lbl_JobExperience" xml:space="preserve">
+    <value>Job Experience</value>
+  </data>
 </root>

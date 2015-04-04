@@ -254,7 +254,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helper\Enumerates.cs" />
     <Compile Include="Helper\GlobalInformationcs.cs" />
     <Compile Include="Helper\Helper.cs" />
     <Compile Include="Helper\IGlobalInformation.cs" />
