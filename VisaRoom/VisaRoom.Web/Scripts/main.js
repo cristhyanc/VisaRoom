@@ -3,7 +3,7 @@
 $(document).ready(function () {
 
     $('.datepicker').datepicker(); //Initialise any date pickers
-    //$('.date').datepicker({ dateFormat: "dd/mm/yy" });
+    $(".chosen-select").chosen();
 //**************** WIZAR BOOTSTRAP***************************//
     $('#rootwizard').bootstrapWizard({
         onTabShow: function (tab, navigation, index) {

@@ -213,4 +213,7 @@
   <data name="lbl_JobExperience" xml:space="preserve">
     <value>Job Experience</value>
   </data>
+  <data name="lbl_PreferredLanguages" xml:space="preserve">
+    <value>Preferred Languages</value>
+  </data>
 </root>

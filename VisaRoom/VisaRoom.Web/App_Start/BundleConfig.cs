@@ -36,6 +36,12 @@ namespace VisaRoom.Web
             bundles.Add(new ScriptBundle("~/mainScript").Include(
                          "~/Scripts/main.js"));
 
+            bundles.Add(new ScriptBundle("~/multipleSelectJS").Include(
+                         "~/Scripts/chosen.jquery.js"));
+
+            bundles.Add(new StyleBundle("~/multipleSelectCSS").Include(
+                      "~/Content/chosen.css"));
+
             bundles.Add(new ScriptBundle("~/bootstrapjs").Include(
                          "~/Content/bower_components/bootstrap/dist/js/bootstrap.js",
                         "~/Content/bower_components/metisMenu/dist/metisMenu.js",

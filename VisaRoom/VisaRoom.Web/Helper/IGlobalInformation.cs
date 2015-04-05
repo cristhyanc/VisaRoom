@@ -19,5 +19,7 @@ namespace VisaRoom.Web.Helper
 
         List<ValueTo> GetMaritalStates();
 
+        List<ValueTo> GetLanguages();
+
     }
 }

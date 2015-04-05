@@ -58,5 +58,10 @@ namespace VisaRoom.Common.Models
         [Display(Name = "lbl_EnglishTestScore", ResourceType = typeof(Resource))]
         [StringLength(50)]
         public string EnglishTestScore { get; set; }
+
+        [Display(Name = "lbl_PreferredLanguages", ResourceType = typeof(Resource))]
+        public List<ValueTo> Languages { get; set; }
+
+        public List<String> LanguagesIds { get; set; }
     }
 }

@@ -19,12 +19,22 @@ namespace VisaRoom.Web.Helper
         private Hashtable _listStates;
         private Hashtable _listCities;
         private List<ValueTo> _listMaritalStates;
+        private List<ValueTo> _listLanguages;
         private BusinessLogic.Common.Common _bsCommon;
         #endregion
 
         public GlobalInformation()
         {
             _bsCommon = new Factory().GetCommonClass();
+        }
+
+        public List<ValueTo> GetLanguages()
+        {
+            if (_listLanguages == null || _listLanguages.Count == 0)
+            {
+                _listLanguages = _bsCommon.GetCustomizedList(enumCustomizedList.Languages.ToString());
+            }
+            return _listLanguages;
         }
 
         public List<ValueTo> GetCountries()

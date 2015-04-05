@@ -69,8 +69,10 @@ namespace VisaRoom.Web.Controllers
         {
             List<ValueTo> listCountries = Helper.Helper.getGlobalInformation().GetCountries();
             List<ValueTo> listMaritalStatus = Helper.Helper.getGlobalInformation().GetMaritalStates();
+            List<ValueTo> listLanguage = Helper.Helper.getGlobalInformation().GetLanguages();
             this.ViewBag.listMaritalStatus = new SelectList(listMaritalStatus, "Value", "Text");
             this.ViewBag.listCountries = new SelectList(listCountries, "Value", "Text");
+            this.ViewBag.listLanguage = new MultiSelectList(listLanguage, "Value", "Text");
             return View();
         }
 
