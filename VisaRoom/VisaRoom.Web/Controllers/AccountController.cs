@@ -14,6 +14,7 @@ using VisaRoom.Web.App_GlobalResources;
 using NGeo.GeoNames;
 using VisaRoom.Common.Models;
 using VisaRoom.Web.Models;
+using VisaRoom.Web.ViewModel;
 
 namespace VisaRoom.Web.Controllers
 {
@@ -67,15 +68,16 @@ namespace VisaRoom.Web.Controllers
         [AllowAnonymous]
         public ActionResult RegisterApplicant()
         {
-            List<ValueTo> listCountries = Helper.Helper.getGlobalInformation().GetCountries();
-            List<ValueTo> listMaritalStatus = Helper.Helper.getGlobalInformation().GetMaritalStates();
-            List<ValueTo> listLanguage = Helper.Helper.getGlobalInformation().GetLanguages();
-            List<VisasTo> listVisaApplicant = Helper.Helper.getGlobalInformation().GetApplicantVisasList();
-            this.ViewBag.listMaritalStatus = new SelectList(listMaritalStatus, "Value", "Text");
-            this.ViewBag.listCountries = new SelectList(listCountries, "Value", "Text");
-            this.ViewBag.listLanguage = new MultiSelectList(listLanguage, "Value", "Text");
-            this.ViewBag.listVisaApplicant = new MultiSelectList(listVisaApplicant, "VisaId", "Name");
-            return View();
+            //List<ValueTo> listCountries = Helper.Helper.getGlobalInformation().GetCountries();
+            //List<ValueTo> listMaritalStatus = Helper.Helper.getGlobalInformation().GetMaritalStates();
+            //List<ValueTo> listLanguage = Helper.Helper.getGlobalInformation().GetLanguages();
+            //List<VisasTo> listVisaApplicant = Helper.Helper.getGlobalInformation().GetApplicantVisasList();
+            //this.ViewBag.listMaritalStatus = new SelectList(listMaritalStatus, "Value", "Text");
+            //this.ViewBag.listCountries = new SelectList(listCountries, "Value", "Text");
+            //this.ViewBag.listLanguage = new MultiSelectList(listLanguage, "Value", "Text");
+            //this.ViewBag.listVisaApplicant = new MultiSelectList(listVisaApplicant, "VisaId", "Name");
+            RegisterApplicantViewModel registerModel = new RegisterApplicantViewModel();
+            return View(registerModel);
         }
 
         
@@ -87,15 +89,15 @@ namespace VisaRoom.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult RegisterApplicant(RegisterModel model)
+        public ActionResult RegisterApplicant(RegisterApplicantViewModel model)
         {
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                    WebSecurity.Login(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.Register.UserName, model.Register.Password);
+                    WebSecurity.Login(model.Register.UserName, model.Register.Password);
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)

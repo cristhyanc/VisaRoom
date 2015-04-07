@@ -20,11 +20,11 @@ $(document).ready(function () {
 //**************** WIZAR BOOTSTRAP***************************//
 
 
-    $("#Country_Value").change(function () {
+    $("#Register_Country_Value").change(function () {
         var selectedItem = $(this).val();
-        var ddlStates = $("#State_Value");
+        var ddlStates = $("#Register_State_Value");
         ddlStates.empty();
-        var ddlCities = $("#City_Value");
+        var ddlCities = $("#Register_City_Value");
         ddlCities.empty();
         showModalpopUp();
         $.ajax({
@@ -48,15 +48,15 @@ $(document).ready(function () {
     });
 });
    
-$("#State_Value").change(function () {
+    $("#Register_State_Value").change(function () {
     var selectedItem = $(this).val();
-    var ddlCities = $("#City_Value");
+    var ddlCities = $("#Register_City_Value");
     ddlCities.empty();
     showModalpopUp();
     $.ajax({
         cache: false,
         type: "GET",
-        url: "/Services/GetStatesByCountryId",
+        url: "/Services/GetCityByState",
         data: { "stateId": selectedItem },
     success: function (data) {
 

@@ -129,7 +129,7 @@ namespace VisaRoom.Web.Helper
                 _listStates = new Hashtable();
             }
 
-            if (countryId == null)
+            if (countryId != null)
             {
                 result = getChildren(int.Parse(countryId));
                 _listStates.Add(countryId, result);
