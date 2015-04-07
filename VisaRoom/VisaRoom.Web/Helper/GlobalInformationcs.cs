@@ -20,12 +20,41 @@ namespace VisaRoom.Web.Helper
         private Hashtable _listCities;
         private List<ValueTo> _listMaritalStates;
         private List<ValueTo> _listLanguages;
+        private List<VisasTo> _listTypeOfVisasList;
         private BusinessLogic.Common.Common _bsCommon;
         #endregion
 
         public GlobalInformation()
         {
             _bsCommon = new Factory().GetCommonClass();
+        }
+
+
+        public List<VisasTo> GetTypeOfVisasList()
+        {
+            if (_listTypeOfVisasList == null || _listTypeOfVisasList.Count == 0)
+            {
+                _listTypeOfVisasList = _bsCommon.GetTypeOfVisasList();
+            }
+            return _listTypeOfVisasList;
+        }
+
+        public List<VisasTo> GetApplicantVisasList()
+        {
+            if (_listTypeOfVisasList == null || _listTypeOfVisasList.Count == 0)
+            {
+                _listTypeOfVisasList = _bsCommon.GetTypeOfVisasList();
+            }
+            return _listTypeOfVisasList.Where(x => x.ShowToUser==enumTypeOfUsers.Applicant).ToList();
+        }
+
+        public List<VisasTo> GetAgentVisasList()
+        {
+            if (_listTypeOfVisasList == null || _listTypeOfVisasList.Count == 0)
+            {
+                _listTypeOfVisasList = _bsCommon.GetTypeOfVisasList();
+            }
+            return _listTypeOfVisasList.Where(x => x.ShowToUser.Equals((int)enumTypeOfUsers.Agent)).ToList();
         }
 
         public List<ValueTo> GetLanguages()
@@ -64,7 +93,7 @@ namespace VisaRoom.Web.Helper
         public List<ValueTo> GetCitiesByState(string cityId)
         {
             List<ValueTo> result = new List<ValueTo>();
-            if (_listCities != null)
+            if (_listCities != null && cityId != null)
             {
                 if (_listCities.Contains(cityId))
                 {
@@ -87,7 +116,7 @@ namespace VisaRoom.Web.Helper
         public List<ValueTo> GetStatesByCountry(string countryId)
         {
             List<ValueTo> result = new List<ValueTo>();
-            if (_listStates != null)
+            if (_listStates != null && countryId!=null)
             {
                 if (_listStates.Contains(countryId))
                 {
@@ -100,8 +129,11 @@ namespace VisaRoom.Web.Helper
                 _listStates = new Hashtable();
             }
 
-            result = getChildren(int.Parse(countryId));
-            _listStates.Add(countryId, result);
+            if (countryId == null)
+            {
+                result = getChildren(int.Parse(countryId));
+                _listStates.Add(countryId, result);
+            }
             return result;
         }
 

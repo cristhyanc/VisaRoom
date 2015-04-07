@@ -21,5 +21,10 @@ namespace VisaRoom.Web.Helper
 
         List<ValueTo> GetLanguages();
 
+        List<VisasTo> GetTypeOfVisasList();
+
+        List<VisasTo> GetApplicantVisasList();
+
+        List<VisasTo> GetAgentVisasList();
     }
 }

@@ -216,4 +216,7 @@
   <data name="lbl_PreferredLanguages" xml:space="preserve">
     <value>Preferred Languages</value>
   </data>
+  <data name="lbl_VisasInterested" xml:space="preserve">
+    <value>Visas you are interested</value>
+  </data>
 </root>

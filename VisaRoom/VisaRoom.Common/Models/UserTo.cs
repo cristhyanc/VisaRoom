@@ -63,5 +63,10 @@ namespace VisaRoom.Common.Models
         public List<ValueTo> Languages { get; set; }
 
         public List<String> LanguagesIds { get; set; }
+
+        [Display(Name = "lbl_VisasInterested", ResourceType = typeof(Resource))]
+        public List<ValueTo> VisasInterested { get; set; }
+
+        public List<String> VisasInterestedIds { get; set; }
     }
 }
