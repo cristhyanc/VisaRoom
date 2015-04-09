@@ -15,6 +15,8 @@ using NGeo.GeoNames;
 using VisaRoom.Common.Models;
 using VisaRoom.Web.Models;
 using VisaRoom.Web.ViewModel;
+using BusinessLogic.User;
+using System.Configuration;
 
 namespace VisaRoom.Web.Controllers
 {
@@ -68,14 +70,6 @@ namespace VisaRoom.Web.Controllers
         [AllowAnonymous]
         public ActionResult RegisterApplicant()
         {
-            //List<ValueTo> listCountries = Helper.Helper.getGlobalInformation().GetCountries();
-            //List<ValueTo> listMaritalStatus = Helper.Helper.getGlobalInformation().GetMaritalStates();
-            //List<ValueTo> listLanguage = Helper.Helper.getGlobalInformation().GetLanguages();
-            //List<VisasTo> listVisaApplicant = Helper.Helper.getGlobalInformation().GetApplicantVisasList();
-            //this.ViewBag.listMaritalStatus = new SelectList(listMaritalStatus, "Value", "Text");
-            //this.ViewBag.listCountries = new SelectList(listCountries, "Value", "Text");
-            //this.ViewBag.listLanguage = new MultiSelectList(listLanguage, "Value", "Text");
-            //this.ViewBag.listVisaApplicant = new MultiSelectList(listVisaApplicant, "VisaId", "Name");
             RegisterApplicantViewModel registerModel = new RegisterApplicantViewModel();
             return View(registerModel);
         }
@@ -97,12 +91,25 @@ namespace VisaRoom.Web.Controllers
                 try
                 {
                     WebSecurity.CreateUserAndAccount(model.Register.UserName, model.Register.Password);
+                    model.Register.UserId = WebSecurity.GetUserId(model.Register.UserName);
+                    if (model.archivo != null)
+                    {
+                        string serverpath = Server.MapPath("") + ConfigurationManager.AppSettings["urlImages"].ToString();
+                        model.Register.PhotoProfile = DateTime.Now.ToString("yyyyMMdd") + "_" + model.Register.UserId + model.archivo.ContentType;
+                        model.archivo.SaveAs(serverpath + model.Register.PhotoProfile);
+                    }
+
+
+                    BLUser bUser = new BLUser();
+                    bUser.SaveUser(model.Register);
+
+
                     WebSecurity.Login(model.Register.UserName, model.Register.Password);
                     return RedirectToAction("Index", "Home");
                 }
-                catch (MembershipCreateUserException e)
+                catch (Exception e)
                 {
-                    ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
+                    ModelState.AddModelError("", e.Message);
                 }
             }
 

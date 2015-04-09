@@ -26,7 +26,7 @@ namespace VisaRoom.Web.Helper
 
         public GlobalInformation()
         {
-            _bsCommon = new Factory().GetCommonClass();
+            _bsCommon = new BusinessLogic.Common.Common();
         }
 
 

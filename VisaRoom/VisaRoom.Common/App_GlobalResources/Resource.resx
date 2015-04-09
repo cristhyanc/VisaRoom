@@ -219,4 +219,13 @@
   <data name="lbl_VisasInterested" xml:space="preserve">
     <value>Visas you are interested</value>
   </data>
+  <data name="Error_SaveUser" xml:space="preserve">
+    <value>We could not save your details.</value>
+  </data>
+  <data name="lbl_CurrentVisa" xml:space="preserve">
+    <value>Current Visa</value>
+  </data>
+  <data name="lbl_PhotoProfile" xml:space="preserve">
+    <value>Profile Photo</value>
+  </data>
 </root>

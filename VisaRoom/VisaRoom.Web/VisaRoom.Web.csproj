@@ -673,6 +673,7 @@
     <Content Include="Images\NavBarBackGroud.png" />
     <Content Include="Images\page_background.jpg" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-filestyle.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\chosen.jquery.js" />

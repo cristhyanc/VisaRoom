@@ -5,10 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using VisaRoom.Common.App_GlobalResources;
+using VisaRoom.Common.Helper;
 namespace VisaRoom.Common.Models
 {
     public class UserTo
     {
+
+        public int UserId { get; set; }
+
         [Display(Name = "lbl_FirstName", ResourceType = typeof(Resource))]
         [Required(ErrorMessageResourceType = typeof(Resource),
                   ErrorMessageResourceName = "rqd_FirstName")]
@@ -22,7 +26,7 @@ namespace VisaRoom.Common.Models
         public string LastName { get; set; }
 
         [Display(Name = "lbl_Age", ResourceType = typeof(Resource))]
-        public string Age { get; set; }
+        public int Age { get; set; }
 
         [Display(Name = "lbl_Country", ResourceType = typeof(Resource))]
         public ValueTo Country { get; set; }
@@ -59,14 +63,86 @@ namespace VisaRoom.Common.Models
         [StringLength(50)]
         public string EnglishTestScore { get; set; }
 
-        [Display(Name = "lbl_PreferredLanguages", ResourceType = typeof(Resource))]
-        public List<ValueTo> Languages { get; set; }
+        #region Languages
 
-        public List<String> LanguagesIds { get; set; }
+        private List<ValueTo> _languages { get; set; }
+        [Display(Name = "lbl_PreferredLanguages", ResourceType = typeof(Resource))]
+        public List<ValueTo> Languages
+        {
+            get
+            {
+                if (_languages == null || _languages.Count == 0)
+                {
+                    if (LanguagesIds != null && LanguagesIds.Count > 0)
+                    {
+                        _languages = new List<ValueTo>();
+                        foreach (var item in LanguagesIds)
+                        {
+                            _languages.Add(new ValueTo { CodeId = item });
+                        }
+                        LanguagesIds = null;
+                        return _languages;
+                    }
+                    _languages = new List<ValueTo>();
+                    return _languages;
+                }
+                return _languages;
+            }
+            set
+            {
+                LanguagesIds = null;
+                _languages = value;
+            }
+        }
+
+        public List<int> LanguagesIds { get; set; }
+
+        #endregion
+
+        #region VisasInterested
+
+        private List<VisasTo> _visasInterested;
 
         [Display(Name = "lbl_VisasInterested", ResourceType = typeof(Resource))]
-        public List<ValueTo> VisasInterested { get; set; }
+        public List<VisasTo> VisasInterested
+        {
+            get
+            {
+                if (_visasInterested == null || _visasInterested.Count == 0)
+                {
+                    if (VisasInterestedIds != null && VisasInterestedIds.Count > 0)
+                    {
+                        _visasInterested = new List<VisasTo>();                       
+                        foreach (var item in VisasInterestedIds)
+                        {
+                            _visasInterested.Add(new VisasTo { VisaId = item });
+                        }
+                        VisasInterestedIds = null;
+                        return _visasInterested;
+                    }
+                    _visasInterested=new List<VisasTo>();
+                    return _visasInterested;
+                }
+                return _visasInterested;
+            }
+            set
+            {
+                VisasInterestedIds = null;
+                _visasInterested = value;
+            }
+        }
 
-        public List<String> VisasInterestedIds { get; set; }
+        public List<int> VisasInterestedIds { get; set; }
+
+        #endregion
+
+        [Display(Name = "lbl_PhotoProfile", ResourceType = typeof(Resource))]
+        [StringLength(50)]
+        public string PhotoProfile { get; set; }
+
+        [Display(Name = "lbl_CurrentVisa", ResourceType = typeof(Resource))]
+        public VisasTo CurrentVisa { get; set; }
+
+        public enumTypeOfUsers TypeOfUser { get; set; }
     }
 }

@@ -22,9 +22,31 @@ namespace VisaRoom.Web
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
+            
+
+            bundles.Add(new ScriptBundle("~/mainScript").Include(
+                         "~/Scripts/main.js"));
+
+            bundles.Add(new ScriptBundle("~/multipleSelectJS").Include(
+                         "~/Scripts/chosen.jquery.js"));
+
+            bundles.Add(new ScriptBundle("~/bootstrapjs").Include(
+                         "~/Content/bower_components/bootstrap/dist/js/bootstrap.js",
+                        "~/Content/bower_components/metisMenu/dist/metisMenu.js",
+                        "~/Scripts/bootstrap-datepicker.js",
+                        "~/Content/dist/js/sb-admin-2.js"));
+
+            bundles.Add(new ScriptBundle("~/bootstrapWizarJS").Include(
+                          "~/Content/bower_components/wizard/jquery.bootstrap.wizard.js",
+                          "~/Content/bower_components/wizard/prettify.js"));
+
+            bundles.Add(new ScriptBundle("~/bootstrapFile").Include(
+                          "~/Scripts/bootstrap-filestyle.js"));
+
+
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
-          //   "~/Content/themes/bootstrap/css/bootstrap.css",
+            //   "~/Content/themes/bootstrap/css/bootstrap.css",
             bundles.Add(new StyleBundle("~/Content/bootstrapcss").Include(
                        "~/Content/bower_components/bootstrap/dist/css/bootstrap.css",
                        "~/Content/bower_components/metisMenu/dist/metisMenu.css",
@@ -33,28 +55,11 @@ namespace VisaRoom.Web
                        "~/Content/bower_components/font-awesome/css/font-awesome.css"
                        ));
 
-            bundles.Add(new ScriptBundle("~/mainScript").Include(
-                         "~/Scripts/main.js"));
-
-            bundles.Add(new ScriptBundle("~/multipleSelectJS").Include(
-                         "~/Scripts/chosen.jquery.js"));
-
             bundles.Add(new StyleBundle("~/multipleSelectCSS").Include(
                       "~/Content/chosen.css"));
 
-            bundles.Add(new ScriptBundle("~/bootstrapjs").Include(
-                         "~/Content/bower_components/bootstrap/dist/js/bootstrap.js",
-                        "~/Content/bower_components/metisMenu/dist/metisMenu.js",
-                        "~/Scripts/bootstrap-datepicker.js",
-                        "~/Content/dist/js/sb-admin-2.js"));
-
-
             bundles.Add(new StyleBundle("~/bootstrapWizarCSS").Include(
                       "~/Content/bower_components/wizard/prettify.css"));
-
-            bundles.Add(new ScriptBundle("~/bootstrapWizarJS").Include(
-                          "~/Content/bower_components/wizard/jquery.bootstrap.wizard.js",
-                          "~/Content/bower_components/wizard/prettify.js"));
         }
     }
 }

@@ -15,7 +15,7 @@ namespace VisaRoom.Web.ViewModel
         public MultiSelectList ListLanguage { get; set; }
         public MultiSelectList ListVisaApplicant { get; set; }
         public RegisterModel Register { get; set; }
-
+        public HttpPostedFileBase archivo { get; set; }
         public RegisterApplicantViewModel()
         {
             List<ValueTo> listCountries = Helper.Helper.getGlobalInformation().GetCountries();
@@ -26,7 +26,7 @@ namespace VisaRoom.Web.ViewModel
             ListCountries = new SelectList(listCountries, "Value", "Text");
             ListMaritalStatus = new SelectList(listMaritalStatus, "Value", "Text");
             ListLanguage = new MultiSelectList(listLanguage, "Value", "Text");
-            ListVisaApplicant = new MultiSelectList(listVisaApplicant, "VisaId", "Name");
+            ListVisaApplicant = new SelectList(listVisaApplicant, "VisaId", "Name");
             Register = new RegisterModel();
         }
 
