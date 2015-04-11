@@ -1,0 +1,391 @@
+﻿
+<!doctype html>
+<html>
+<head>
+	<title>VisaRoom</title>
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<!--web-font-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
+	<!--//web-font-->
+	<!-- Custom Theme files -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Free style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/publicPagesCss")
+    @Scripts.Render("~/publicPagesJs")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
+
+	<script type="text/javascript">
+	    jQuery(document).ready(function ($) {
+	        $(".scroll").click(function (event) {
+	            event.preventDefault();
+	            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+	        });
+	    });
+	</script>
+	<!--//end-smoth-scrolling-->
+</head>
+<body>
+	<!--header-->
+	<div class="header" id="header">
+		<div class="container">
+			<div class="header-logo">
+				<a href="index.html" ><img src="images/logo241x162.png" style="max-height:80px; max-width:100%" alt=""/></a>
+			</div>
+			<div class="top-nav">
+				<span class="menu"><img src="images/menu-icon.png" alt=""/></span>
+				<ul class="nav1">
+					<li><a href="" class="active">HOME</a></li>
+					<li><a href="#method" class="scroll">HOW IT WORKS</a></li>
+					<li><a href="#cases" class="scroll">WHY VISAROOM</a></li>
+					<li><a href="#services" class="scroll">SERVICES</a></li>
+					<li><a href="">BLOG</a></li>
+					<li><a href="">CONTACT</a></li>
+                    <li>@Html.ActionLink("LOGIN", "Login", "Account")</li>
+				</ul>
+				<!-- script-for-menu -->
+				 <script>
+				     $("span.menu").click(function () {
+				         $("ul.nav1").slideToggle(300, function () {
+				             // Animation complete.
+				         });
+				     });
+				</script>
+				<!-- /script-for-menu -->
+			</div>
+			<div class="social-icons">
+				<ul>
+					<li><a href="#"></a></li>
+					<li><a href="#" class="twit"></a></li>							
+				</ul>
+                
+			</div>
+           
+			<div class="clearfix"> </div>
+		</div>	
+	</div>
+	<!--//header-->
+     @RenderSection("featured", required: false) 
+            <section >
+                @RenderBody()
+            </section> 
+	<!--banner-->
+	<div class="banner">
+		<div class="container">
+			<div class="banner-title"> 
+				<h4>Right Migration Agent</h4>
+				<p>Save time and costly mistakes. We'll fine and matchmake you to the Right Migration Agent.</p>
+                <p>Get multiple reliable and personalized visa advice from Australia's best registered migration agents.</p>
+			</div>
+		</div>
+	</div>
+	<!--//banner-->
+	<!--banner-bottom-->
+	<div class="banner-bottom">
+		<div class="container">
+			<div class="banner-bottom-grids dr dr-one">
+				<img src="images/img1.png" alt=""/>
+			</div>
+			<div class="banner-bottom-grids dr">
+				<img src="images/img2.png" alt=""/>
+			</div>
+			<div class="banner-bottom-grids">
+				<img src="images/img3.png" alt=""/>
+			</div>
+			<div class="banner-bottom-grids">
+				<img src="images/img4.png" alt=""/>
+			</div>
+			<div class="banner-bottom-grids ea">
+				<img src="images/img5.png" alt=""/>
+			</div>
+		</div>
+	</div>	
+	<!--//banner-bottom-->
+	<!--method-grids-->
+	<div class="method" id="method">
+		<div class="container">
+			<div class="col-md-4 method-grids">
+				<img src="images/img6.png" alt=""/>
+				<h4>Research</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="col-md-4 method-grids">
+				<img src="images/img7.png" alt=""/>
+				<h4>Usability</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="col-md-4 method-grids">
+				<img src="images/img8.png" alt=""/>
+				<h4>Design</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>	
+	<!--//method-grids-->
+	<!--method-text-->
+	<div class="method-text">
+		<div class="container">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+				in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+			<h3>John Doe,<span>Doe Company</span></h3>
+		</div>
+	</div>	
+	<!--//method-text-->
+	<!--cases-->
+	<div class="cases" id="cases">
+		<div class="container">
+			<h3>Cases</h3>
+			<div class="col-md-3">
+				<div class="cases-grids">
+					<div class="cases-grids-info cases-top">
+						<img src="images/img9.jpg" alt=""/>
+						<div class="caption">
+							<h5>Zulu Comedy Galla 2012</h5>
+							<ul>
+								<li><a href="#"> - Visual identity</a></li>
+								<li><a href="#"> - Website</a></li>
+								<li><a href="#"> - Posters</a></li>
+								<li><a href="#"> - Flyers</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="cases-grids-info">
+						<img src="images/img13.jpg" alt=""/>
+						<div class="caption">
+							<h5>Zulu Comedy Galla 2012</h5>
+							<ul>
+								<li><a href="#"> - Visual identity</a></li>
+								<li><a href="#"> - Website</a></li>
+								<li><a href="#"> - Posters</a></li>
+								<li><a href="#"> - Flyers</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="col-md-3">
+				<div class="cases-grids">
+					<div class="cases-grids-info cases-top">
+						<img src="images/img10.jpg" alt=""/>
+						<div class="caption">
+							<h5>Zulu Comedy Galla 2012</h5>
+							<ul>
+								<li><a href="#"> - Visual identity</a></li>
+								<li><a href="#"> - Website</a></li>
+								<li><a href="#"> - Posters</a></li>
+								<li><a href="#"> - Flyers</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="cases-grids-info">
+						<img src="images/img14.jpg" alt=""/>
+						<div class="caption">
+							<h5>Zulu Comedy Galla 2012</h5>
+							<ul>
+								<li><a href="#"> - Visual identity</a></li>
+								<li><a href="#"> - Website</a></li>
+								<li><a href="#"> - Posters</a></li>
+								<li><a href="#"> - Flyers</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>		
+			</div>
+			<div class="col-md-3">
+				<div class="cases-grids">
+					<div class="cases-grids-info cases-top">
+						<img src="images/img11.jpg" alt=""/>
+						<div class="caption">
+							<h5>Zulu Comedy Galla 2012</h5>
+							<ul>
+								<li><a href="#"> - Visual identity</a></li>
+								<li><a href="#"> - Website</a></li>
+								<li><a href="#"> - Posters</a></li>
+								<li><a href="#"> - Flyers</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="cases-grids-info">
+						<img src="images/img15.jpg" alt=""/>
+						<div class="caption">
+							<h5>Zulu Comedy Galla 2012</h5>
+							<ul>
+								<li><a href="#"> - Visual identity</a></li>
+								<li><a href="#"> - Website</a></li>
+								<li><a href="#"> - Posters</a></li>
+								<li><a href="#"> - Flyers</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="col-md-3">
+				<div class="cases-grids">
+					<div class="cases-grids-info cases-top">
+						<img src="images/img12.jpg" alt=""/>
+						<div class="caption">
+							<h5>Zulu Comedy Galla 2012</h5>
+							<ul>
+								<li><a href="#"> - Visual identity</a></li>
+								<li><a href="#"> - Website</a></li>
+								<li><a href="#"> - Posters</a></li>
+								<li><a href="#"> - Flyers</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="cases-grids-info">
+						<img src="images/img16.jpg" alt=""/>
+						<div class="caption">
+							<h5>Zulu Comedy Galla 2012</h5>
+							<ul>
+								<li><a href="#"> - Visual identity</a></li>
+								<li><a href="#"> - Website</a></li>
+								<li><a href="#"> - Posters</a></li>
+								<li><a href="#"> - Flyers</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>	
+	<!--//cases-->
+	<!--services-->
+	<div class="services" id="services">
+		<div class="container">
+			<h3>Services</h3>
+			<div class="services-grids">
+				<h5>Identity</h5>
+				<ul>
+					<li><a href="#">City Branding</a></li>
+					<li><a href="#">Event branding</a></li>
+					<li><a href="#">Campaign</a></li>
+					<li><a href="#">Culture branding</a></li>
+					<li><a href="#">Visual identity</a></li>		
+				</ul>
+			</div>
+			<div class="services-grids">
+				<h5>Apps & mobile</h5>
+				<ul>
+					<li><a href="#">iPhone design</a></li>
+					<li><a href="#">iPad design</a></li>
+					<li><a href="#">Android design</a></li>
+					<li><a href="#">Application design</a></li>
+					<li><a href="#">Facebook apps</a></li>
+					<li><a href="#">Interface design</a></li>
+				</ul>
+			</div>	
+			<div class="services-grids three">
+				<h5>Online</h5>
+				<ul>
+					<li><a href="#">CMS development</a></li>
+					<li><a href="#">Sociale medier</a></li>
+					<li><a href="#">Frontend development</a></li>
+					<li><a href="#">Campaign sites</a></li>
+					<li><a href="#">Mobile sites</a></li>
+					<li><a href="#">Video platform</a></li>
+					<li><a href="#">Web Design</a></li>
+					<li><a href="#">Interface design</a></li>
+				</ul>
+			</div>	
+			<div class="services-grids four">
+				<h5>Animation & film</h5>
+				<ul>
+					<li><a href="#">3D Modelling</a></li>
+					<li><a href="#">Compositing og VFX</a></li>
+					<li><a href="#">Concept</a></li>
+					<li><a href="#">Motion Graphics</a></li>
+					<li><a href="#">Post production</a></li>
+					<li><a href="#">Stopmotion</a></li>
+					<li><a href="#">Storyboarding</a></li>
+					<li><a href="#">Viral</a></li>
+				</ul>
+			</div>			
+			<div class="services-grids five">
+				<h5>Print</h5>
+				<ul>
+					<li><a href="#">Catalog</a></li>
+					<li><a href="#">Letter design</a></li>
+					<li><a href="#">Outdoor & events</a></li>
+					<li><a href="#">Posters</a></li>
+					<li><a href="#">Games</a></li>
+					<li><a href="#">Business cards</a></li>
+				</ul>
+			</div>	
+			<div class="clearfix"></div>
+		</div>
+	</div>	
+	<!--//services-->
+	<!--footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-grids">
+				<div class="col-md-4 footer-grids-info">
+					<h5>Contact us</h5>
+					<ul>
+						<li>Lorem Ipsu</li>
+						<li>8000 Aarhus</li>
+						<li>Denmark</li>
+						<li>+ 45 - So Call me Maybe</li>
+						<li><a href="#">Send us an e-mail</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4 footer-grids-info">
+					<h5>Navigation</h5>
+					<ul>
+						<li><a href="#header" class="scroll">HOME </a></li>
+						<li><a href="#method" class="scroll">METHOD</a></li>
+						<li><a href="#cases" class="scroll">CASES</a></li>
+						<li><a href="#services" class="scroll">SERVICES</a></li>
+						<li><a href="blog.html">BLOG</a></li>
+						<li><a href="contact.html">CONTACT</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4 footer-grids-info">
+					<h5>Submit to our news letter</h5>
+					<p>Submit and get all the info about our 
+						work, new positions and new blog inputs.</p>
+					<form>
+						<input type="text" value="Your Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Name';}" required="">
+						<input type="email" value="Your E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your E-mail';}" required="">
+						<input type="submit" value="Submit" >
+					</form>		
+				</div>
+				<div class="clearfix"></div>
+			</div>	
+			<div class="copy-right">
+				<p>&copy; @DateTime.Now.Year - VisaRoom</p>
+			</div>
+		</div>
+	</div>	
+	<!--//footer-->
+	<!--smooth-scrolling-of-move-up-->
+	<script type="text/javascript">
+	    $(document).ready(function () {
+	        /*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+			};
+			*/
+	        $().UItoTop({ easingType: 'easeOutQuart' });
+	    });
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<!--//smooth-scrolling-of-move-up-->
+</body>
+</html>	

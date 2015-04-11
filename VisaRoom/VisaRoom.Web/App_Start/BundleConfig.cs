@@ -43,7 +43,15 @@ namespace VisaRoom.Web
             bundles.Add(new ScriptBundle("~/bootstrapFile").Include(
                           "~/Scripts/bootstrap-filestyle.js"));
 
+            bundles.Add(new ScriptBundle("~/publicPagesJs").Include(
+                         "~/Scripts/easing.js",
+                        "~/Scripts/move-top.js"));
 
+
+
+            bundles.Add(new StyleBundle("~/publicPagesCss").Include(
+                       "~/Content/bower_components/bootstrap/dist/css/bootstrap.css",
+                       "~/Content/publicPages/style.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
             //   "~/Content/themes/bootstrap/css/bootstrap.css",

@@ -231,4 +231,7 @@
   <data name="Error_RegisterApplicant" xml:space="preserve">
     <value>We could not save your details, try again please.</value>
   </data>
+  <data name="msn_ApplicantRegistration" xml:space="preserve">
+    <value>Applicant Registration</value>
+  </data>
 </root>
