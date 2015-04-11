@@ -2,7 +2,7 @@
 @using BootstrapSupport
 @using NavigationRoutes
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color:white">
     <head>
         <meta charset="utf-8" />
         <title>@ViewBag.Title - VisaRoom</title>
@@ -15,18 +15,16 @@
         @RenderSection("styles", required: false)
 
     </head>
-    <body id="bodyPhoto" >
+    <body id="bodyBackGround" >
         @Html.Partial("_ProcessingModal")
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top"  role="navigation" style="background-color:#39B7CD; margin-bottom: 0;">
+        <nav class="navbar navbar-default navbar-static-top"  role="navigation" style="background-color:#ffffff; margin-bottom: 0;">
             <div class="navbar-header" >
-                <a class="navbar-brand"  style="width:225px; background-image:url(/Images/Logo.PNG)" href="#"></a>
-               
+                <a class="navbar-brand"  style="width:100px; background-repeat:no-repeat; height:63px; background-image:url(/Images/Logo.PNG)" href="#"></a>
                 
+               
             </div>
-            
-          
-
+           
             <ul class="nav navbar-top-links navbar-right">
               <li class="dropdown">
                     <a href="#">

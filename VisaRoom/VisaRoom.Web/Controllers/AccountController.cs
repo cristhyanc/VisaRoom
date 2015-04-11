@@ -17,12 +17,14 @@ using VisaRoom.Web.Models;
 using VisaRoom.Web.ViewModel;
 using BusinessLogic.User;
 using System.Configuration;
+using VisaRoom.Common.Helper;
+using BootstrapMvcSample.Controllers;
 
 namespace VisaRoom.Web.Controllers
 {
     [Authorize]
     [InitializeSimpleMembership]
-    public class AccountController : Controller
+    public class AccountController : BootstrapBaseController
     {
         //
         // GET: /Account/Login
@@ -91,25 +93,27 @@ namespace VisaRoom.Web.Controllers
                 try
                 {
                     WebSecurity.CreateUserAndAccount(model.Register.UserName, model.Register.Password);
+                   
                     model.Register.UserId = WebSecurity.GetUserId(model.Register.UserName);
                     if (model.archivo != null)
                     {
                         string serverpath = Server.MapPath("") + ConfigurationManager.AppSettings["urlImages"].ToString();
-                        model.Register.PhotoProfile = DateTime.Now.ToString("yyyyMMdd") + "_" + model.Register.UserId + model.archivo.ContentType;
+                        model.Register.PhotoProfile = DateTime.Now.ToString("yyyyMMdd") + "_" + model.Register.UserId +"."+ model.archivo.ContentType.Split('/')[1].ToString();
                         model.archivo.SaveAs(serverpath + model.Register.PhotoProfile);
                     }
 
 
-                    BLUser bUser = new BLUser();
+                    BLUser bUser = new BLUser(LogError.SLogPath);
                     bUser.SaveUser(model.Register);
 
 
                     WebSecurity.Login(model.Register.UserName, model.Register.Password);
                     return RedirectToAction("Index", "Home");
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
-                    ModelState.AddModelError("", e.Message);
+                    LogError.ErrorLog("Web.AccountController.RegisterApplicant", ex);                 
+                    ModelState.AddModelError("Error_RegisterApplicant", Resource.Error_RegisterApplicant);
                 }
             }
 

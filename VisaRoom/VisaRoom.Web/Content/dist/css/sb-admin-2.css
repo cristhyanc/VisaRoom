@@ -10,11 +10,10 @@ bwBody {
     min-height: 568px;
 }
 
-#bodyPhoto {
-    background-image:url(/Images/page_background.jpg);
-    background-color: #f8f8f8;
+#bodyBackGround {
+    
+    background-color: #E7E7E4;
     background-size: 100% 100%;
-    background-repeat:no-repeat;
     min-height: 568px;
     
 }

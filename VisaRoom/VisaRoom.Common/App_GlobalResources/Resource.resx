@@ -228,4 +228,7 @@
   <data name="lbl_PhotoProfile" xml:space="preserve">
     <value>Profile Photo</value>
   </data>
+  <data name="Error_RegisterApplicant" xml:space="preserve">
+    <value>We could not save your details, try again please.</value>
+  </data>
 </root>
