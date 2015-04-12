@@ -9,10 +9,9 @@
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Scripts.Render("~/bundles/jquery")
-        @Styles.Render("~/content/bootstrapcss")
+        @Styles.Render("~/content/bundle")
         @Scripts.Render("~/bootstrapjs")
-        @Scripts.Render("~/bundles/modernizr")
-        @Styles.Render("~/publicPagesCss")
+        @Scripts.Render("~/bundles/modernizr")      
         @Scripts.Render("~/publicPagesJs")
         @RenderSection("styles", required: false)
 
@@ -26,7 +25,7 @@
 				    <a href="" ><img src="../images/logo241x162.png" style="max-height:80px; max-width:100%" alt=""/></a>
 			    </div>
 			    <div class="top-nav" >
-				    <span class="menu"><img src="images/menu-icon.png" alt=""/></span>
+				    <span class="menu"><img src="../images/menu-icon.png" alt=""/></span>
 				    <ul class="nav1">
 					    <li>@Html.ActionLink("HOME", "Index", "Home")</li>					   
 					    <li><a href="">BLOG</a></li>

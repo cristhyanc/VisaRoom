@@ -8,6 +8,8 @@ namespace VisaRoom.Web
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
+
+            System.Web.Optimization.BundleTable.EnableOptimizations = false;
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -31,14 +33,14 @@ namespace VisaRoom.Web
                          "~/Scripts/chosen.jquery.js"));
 
             bundles.Add(new ScriptBundle("~/bootstrapjs").Include(
-                         "~/Content/bower_components/bootstrap/dist/js/bootstrap.js",
-                        "~/Content/bower_components/metisMenu/dist/metisMenu.js",
+                         "~/Scripts/bootstrap.js",
+                        "~/Scripts/metisMenu.js",
                         "~/Scripts/bootstrap-datepicker.js",
-                        "~/Content/dist/js/sb-admin-2.js"));
+                        "~/Scripts/sb-admin-2.js"));
 
             bundles.Add(new ScriptBundle("~/bootstrapWizarJS").Include(
-                          "~/Content/bower_components/wizard/jquery.bootstrap.wizard.js",
-                          "~/Content/bower_components/wizard/prettify.js"));
+                          "~/Scripts/jquery.bootstrap.wizard.js",
+                          "~/Scripts/prettify.js"));
 
             bundles.Add(new ScriptBundle("~/bootstrapFile").Include(
                           "~/Scripts/bootstrap-filestyle.js"));
@@ -49,25 +51,31 @@ namespace VisaRoom.Web
 
 
 
-            bundles.Add(new StyleBundle("~/publicPagesCss").Include(
-                       "~/Content/bower_components/bootstrap/dist/css/bootstrap.css",
-                       "~/Content/publicPages/style.css"));
+            bundles.Add(new StyleBundle("~/content/bundle").Include(
+                       "~/content/bootstrap.css",
+                       "~/content/publicPages.css",
+                       "~/content/bootstrap.css",
+                       "~/content/metisMenu.css",
+                       "~/content/sb-admin-2.css",
+                       "~/content/bootstrap-datepicker.css",
+                       "~/content/font-awesome.css",
+                       "~/content/chosen.css",
+                       "~/content/prettify.css"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
-            //   "~/Content/themes/bootstrap/css/bootstrap.css",
+          
             bundles.Add(new StyleBundle("~/Content/bootstrapcss").Include(
-                       "~/Content/bower_components/bootstrap/dist/css/bootstrap.css",
-                       "~/Content/bower_components/metisMenu/dist/metisMenu.css",
-                       "~/Content/dist/css/sb-admin-2.css",
-                       "~/Content/bower_components/bootstrap-datepicker.css",
-                       "~/Content/bower_components/font-awesome/css/font-awesome.css"
+                       "~/css/bootstrap.css",
+                       "~/css/metisMenu.css",
+                       "~/css/sb-admin-2.css",
+                       "~/css/bootstrap-datepicker.css",
+                       "~/css/font-awesome.css"
                        ));
 
             bundles.Add(new StyleBundle("~/multipleSelectCSS").Include(
-                      "~/Content/chosen.css"));
+                      "~/css/chosen.css"));
 
             bundles.Add(new StyleBundle("~/bootstrapWizarCSS").Include(
-                      "~/Content/bower_components/wizard/prettify.css"));
+                      "~/css/prettify.css"));
         }
     }
 }
