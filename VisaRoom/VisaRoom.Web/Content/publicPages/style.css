@@ -176,6 +176,16 @@ span.menu {
 .method{
 	padding: 8em 0;
 }
+
+.method img{
+	margin: 0 auto;
+}
+
+.method p {
+    margin: 0 auto;
+    text-align: center;
+}
+
 .method-grids{
 	text-align: center;
 }
@@ -213,19 +223,19 @@ span.menu {
 	letter-spacing: 0.5px;
 }
 .method-text p:before{
-	content:url(../../images/icon1.png)no-repeat 0px 0px;
+	
 	position:absolute;
 	top: 29%;
 	left: 20%;
 }
 .method-text p:after{
-	content:url(../../images/icon2.png)no-repeat 0px 0px;
+	
 	position:absolute;
 	bottom: 34%;
 	right: 21%;
 }
 .method-text h3 {
-	text-align: center;
+	
 	margin: 3em 0 1.5em 0;
 	color: #72787c;
 	font-size: 24px;
@@ -239,16 +249,11 @@ span.menu {
 	letter-spacing: 1px;
 	margin-left: 8px;
 }
-.method-text h3:before{
-	position: absolute;
-	bottom: 27%;
-	left: 44%;
-	width: 12%;
-	height: 5px;
-	background: #c1c1c1;
-	content: '';
-	opacity: 1;
+
+.method-text img{
+	margin: 0 auto;
 }
+
 /*--cases--*/
 .cases{
 	padding: 8em 0;
@@ -2040,4 +2045,7 @@ span.like {
 .contact h4 {
 	margin: 0 0 1em 0;
 }
+
+.imgCenter {
+    margin: 0 auto;
 }

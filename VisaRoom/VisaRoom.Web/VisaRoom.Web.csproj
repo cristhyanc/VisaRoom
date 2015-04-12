@@ -268,7 +268,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\UserPhotos\find_user.png" />
-    <Content Include="assets\UserPhotos\women.jpg" />
     <Content Include="Content\bower_components\bootstrap-datepicker.css" />
     <Content Include="Content\bower_components\bootstrap\dist\css\bootstrap-theme.css" />
     <Content Include="Content\bower_components\bootstrap\dist\css\bootstrap-theme.min.css" />
@@ -298,7 +297,32 @@
     <Content Include="Content\publicPages\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Images\Logo.PNG" />
+    <Content Include="Images\banner.jpg" />
+    <Content Include="Images\hitwa1.PNG" />
+    <Content Include="Images\hitwa10.PNG" />
+    <Content Include="Images\hitwa2.PNG" />
+    <Content Include="Images\hitwa3.PNG" />
+    <Content Include="Images\hitwa4.PNG" />
+    <Content Include="Images\hitwa5.PNG" />
+    <Content Include="Images\hitwa6.PNG" />
+    <Content Include="Images\hitwa7.PNG" />
+    <Content Include="Images\hitwa8.PNG" />
+    <Content Include="Images\hitwa9.PNG" />
+    <Content Include="Images\hitwm1.PNG" />
+    <Content Include="Images\hitwm10.PNG" />
+    <Content Include="Images\hitwm2.PNG" />
+    <Content Include="Images\hitwm3.PNG" />
+    <Content Include="Images\hitwm4.PNG" />
+    <Content Include="Images\hitwm5.PNG" />
+    <Content Include="Images\hitwm6.PNG" />
+    <Content Include="Images\hitwm7.PNG" />
+    <Content Include="Images\hitwm8.PNG" />
+    <Content Include="Images\hitwm9.PNG" />
+    <Content Include="Images\icons-sprite.png" />
+    <Content Include="Images\logo241x162.png" />
+    <Content Include="Images\Logo725x487.png" />
+    <Content Include="Images\menu-icon.png" />
+    <Content Include="Images\move-up.png" />
     <Content Include="Images\NavBarBackGroud.png" />
     <Content Include="Images\page_background.jpg" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
