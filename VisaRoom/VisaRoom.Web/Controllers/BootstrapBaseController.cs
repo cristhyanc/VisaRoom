@@ -15,7 +15,7 @@ namespace BootstrapMvcSample.Controllers
             {
                 if (_log == null)
                 {
-                    _log = new VisaRoomLogError(Server.MapPath("") + ConfigurationManager.AppSettings["logFolder"]);
+                    _log = new VisaRoomLogError(Server.MapPath("~") + ConfigurationManager.AppSettings["logFolder"]);
                 }
                 return _log;
             }
