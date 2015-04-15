@@ -234,4 +234,19 @@
   <data name="msn_ApplicantRegistration" xml:space="preserve">
     <value>Applicant Registration</value>
   </data>
+  <data name="val_UserExists" xml:space="preserve">
+    <value>Th user name is already taken. Try another one.</value>
+  </data>
+  <data name="Error_GetCustomizedList" xml:space="preserve">
+    <value>There is a problem getting some details, try later please.</value>
+  </data>
+  <data name="Error_GetTypeOfVisasList" xml:space="preserve">
+    <value>There is a problem getting a list of visas, try later please.</value>
+  </data>
+  <data name="Error_SaveUserPreferredLanguages" xml:space="preserve">
+    <value>There is a problem saving yours Preferred Languages.</value>
+  </data>
+  <data name="Error_SaveUserPreferredVisas" xml:space="preserve">
+    <value>There is a problem saving yours Preferred visas</value>
+  </data>
 </root>

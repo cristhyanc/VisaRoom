@@ -87,33 +87,44 @@ namespace VisaRoom.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RegisterApplicant(RegisterApplicantViewModel model)
         {
+            
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.Register.UserName, model.Register.Password);
-                   
-                    model.Register.UserId = WebSecurity.GetUserId(model.Register.UserName);
-                    if (model.archivo != null)
+
+                    
+                    if (WebSecurity.UserExists(model.Register.UserName))
                     {
-                        string serverpath = Server.MapPath("") + ConfigurationManager.AppSettings["urlImages"].ToString();
-                        model.Register.PhotoProfile = DateTime.Now.ToString("yyyyMMdd") + "_" + model.Register.UserId +"."+ model.archivo.ContentType.Split('/')[1].ToString();
-                        model.archivo.SaveAs(serverpath + model.Register.PhotoProfile);
+                        this.Information(Resource.val_UserExists);
                     }
+                    else
+                    {
+
+                        WebSecurity.CreateUserAndAccount(model.Register.UserName, model.Register.Password);
+
+                        model.Register.UserId = WebSecurity.GetUserId(model.Register.UserName);
+                        if (model.archivo != null)
+                        {
+                            string serverpath = Server.MapPath("") + ConfigurationManager.AppSettings["urlImages"].ToString();
+                            model.Register.PhotoProfile = DateTime.Now.ToString("yyyyMMdd") + "_" + model.Register.UserId + "." + model.archivo.ContentType.Split('/')[1].ToString();
+                            model.archivo.SaveAs(serverpath + model.Register.PhotoProfile);
+                        }
 
 
-                    BLUser bUser = new BLUser(LogError.SLogPath);
-                    bUser.SaveUser(model.Register);
+                        BLUser bUser = new BLUser(LogError.SLogPath);
+                        bUser.SaveUser(model.Register);
 
 
-                    WebSecurity.Login(model.Register.UserName, model.Register.Password);
-                    return RedirectToAction("Index", "Home");
+                        WebSecurity.Login(model.Register.UserName, model.Register.Password);
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
                 catch (Exception ex)
                 {
-                    LogError.ErrorLog("Web.AccountController.RegisterApplicant", ex);                 
-                    ModelState.AddModelError("Error_RegisterApplicant", Resource.Error_RegisterApplicant);
+                   
+                    ProcessExection("Web.AccountController.RegisterApplicant", ex, Resource.Error_RegisterApplicant);
                 }
             }
 

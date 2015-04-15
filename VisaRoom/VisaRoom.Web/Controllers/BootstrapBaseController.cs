@@ -2,6 +2,7 @@
 using BootstrapSupport;
 using VisaRoom.Common.Helper;
 using System.Configuration;
+using System;
 
 namespace BootstrapMvcSample.Controllers
 {
@@ -19,6 +20,17 @@ namespace BootstrapMvcSample.Controllers
                 }
                 return _log;
             }
+        }
+
+        protected void ProcessExection(string module, Exception ex, string errorMessage)
+        {
+
+            LogError.ErrorLog(module, ex);
+            if (ex.InnerException != null && ex.InnerException.Source.Equals(Helper.APPLICATION_NAME))
+            {
+                errorMessage = ex.Message;
+            }
+            this.Error(errorMessage);
         }
 
         public void Attention(string message)
