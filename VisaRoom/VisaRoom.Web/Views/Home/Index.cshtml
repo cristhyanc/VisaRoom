@@ -1,4 +1,5 @@
-﻿@{
+﻿@using VisaRoom.Web.App_GlobalResources;
+@{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
@@ -6,9 +7,8 @@
 <div class="banner">
     <div class="container">
         <div class="banner-title">
-            <h4>Right Migration Agent</h4>
-            <p>Save time and costly mistakes. We'll fine and matchmake you to the Right Migration Agent.</p>
-            <p>Get multiple reliable and personalized visa advice from Australia's best registered migration agents.</p>
+            <h4>@Html.Raw(@Resource.txt_BannerTittle)</h4>
+             @Html.Raw(@Resource.txt_BannerContent)
         </div>
     </div>
 </div>
@@ -19,31 +19,41 @@
     </div>
 </div>
 <!--//banner-bottom-->
-<!--method-grids-->
-<div class="method" id="method">
-    <div class="container">
-        <h2>HOW IT WORKS FOR APPLICANTS</h2>
+<!--seccionHowItWorks-->
+<div class="method" id="seccionHowItWorks">
+    <h2 style="text-align:center">@Html.Raw(@Resource.txt_HowItWorks)</h2>
+    <div >           
+            <h3 style="text-align:center">
+                <a style="color: #b0b6bb" href="#method" onclick="Javascript:HidePanelHowItWorks(true);">@Html.Raw(@Resource.txt_applicantsLowCase)</a> |
+                <a style="color: #b0b6bb" href="#method" onclick="Javascript:HidePanelHowItWorks(false);">@Html.Raw(@Resource.txt_MigrationAgentLowCase)</a>
+
+            </h3>
+       
+    </div>
+    <br />
+    <div id="howItApplicant"  class="container">
+        <h4 style="text-align:center">@Html.Raw(@Resource.txt_applicantsUpperCase)</h4>
         <div class="row">
             <div class="col-md-3 col-xs-12">
                 <img src="~/Images/hitwa1.PNG" class="img-responsive" />
-                <p>You have got Australian visa question.</p>
+                <p>@Html.Raw(@Resource.txt_hiwStep1Description)</p>
 
             </div>
 
             <div class="col-md-3 col-xs-12">
                 <img src="~/Images/hitwa2.PNG" class="img-responsive" />
-                <p>You want accurate advice only from the best.</p>
+                <p>@Html.Raw(@Resource.txt_hiwStep2Description)</p>
 
             </div>
 
             <div class="col-md-3 col-xs-12">
 
                 <img src="~/Images/hitwa3.PNG" class="img-responsive" />
-                <p>You enter VisaRoom.</p>
+                <p>@Html.Raw(@Resource.txt_hiwStep3Description)</p>
             </div>
             <div class="col-md-3 col-xs-12">
                 <img src="~/Images/hitwa5.PNG" class="img-responsive" />
-                <p>Tell us about yourself. Really simple stuff!</p>
+                <p>@Html.Raw(@Resource.txt_hiwStep4Description)</p>
             </div>
         </div>
 
@@ -51,53 +61,84 @@
 
             <div class="col-md-3 col-xs-12 col-md-push-9">
                 <img src="~/Images/hitwa6.PNG" class="img-responsive" />
-                <p>Go ahead! Ask you first question!</p>
+                <p>@Html.Raw(@Resource.txt_hiwStep5Description)</p>
             </div>
 
              <div class="col-md-3 col-xs-12 col-md-push-3">
                 <img src="~/Images/hitwa7.PNG" class="img-responsive" />
-                <p>VisaRoom matches you with suitable migration agents.</p>
+                <p>@Html.Raw(@Resource.txt_hiwStep6Description)</p>
             </div>
 
             <div class="col-md-3 col-xs-12 col-md-pull-3">
                 <img src="~/Images/hitwa9.PNG" class="img-responsive" />
 
-                <p>You receive multiple visa advice. Chat with them. Check out ther profile.</p>
+                <p>@Html.Raw(@Resource.txt_hiwStep7Description)</p>
 
             </div>
 
             <div class="col-md-3 col-xs-12 col-md-pull-9">
                 <img src="~/Images/hitwa10.PNG" class="img-responsive" />
 
-                <p>Pick one migration agent. Receive proposal. Hire through VisaRoom</p>
+                <p>@Html.Raw(@Resource.txt_hiwStep8Description)</p>
 
             </div>
         </div>
+        <br />
+         <div class="row">
 
+            <div  class="col-md-4 col-md-offset-3">
+                
+                <h4><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>@Html.Raw(@Resource.txt_hiwWhatYouWin)</h4>
+                <div>
+                    <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                    @Html.Raw(@Resource.txt_hiwWhatYouWin1)
+                </div>
+                <div>
+                    <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                    @Html.Raw(@Resource.txt_hiwWhatYouWin2)
+                </div>
+                <div>
+                    <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                    @Html.Raw(@Resource.txt_hiwWhatYouWin3)
+                </div>
+                <div>
+                    <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                    @Html.Raw(@Resource.txt_hiwWhatYouWin4)
+                </div>
+                <div>
+                    <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                    @Html.Raw(@Resource.txt_hiwWhatYouWin5)
+                </div>
+            </div>
+             <div style="text-align:center" class="col-md-4">
+               @Html.Raw(@Resource.txt_ReadyGetAnswers)
+               <a  href="#seccionRegister" class="btn btn-info">
+                <h4> @Html.Raw(@Resource.txt_joinUsNow)</h4>
+               </a>
+            </div>
+            
+        </div>
     </div>
-</div>
-<!--//method-grids-->
-<!--method-text-->
-<div class="method-text">
-    <div class="container">
-        <h2>HOW IT WORKS FOR AGENTS</h2>
+
+    <div  id="howItAgent"  class="container">
+        <h4 style="text-align:center">@Html.Raw(@Resource.txt_MigrationAgentUpperCase)</h4>
         <div class="col-md-12">
             <div class="col-md-4">
                 <div class="col-md-12">
                     <div class="col-md-6">
                         <img src="~/Images/hitwm1.PNG" class="img-responsive" />
-                        <p>You spend money on marketing. Low return of paying customers.</p>
+                        <p>@Html.Raw(@Resource.txt_hiwmaStep1Description)</p>
 
                     </div>
                     <div class="col-md-6">
                         <img src="~/Images/hitwm5.PNG" class="img-responsive" />
-                        <p>You waste time talking and chasing wrong customers.</p>
+                        <p>@Html.Raw(@Resource.txt_hiwmaStep2Description)</p>
 
                     </div>
                 </div>
                 <div class="col-md-12">
                     <img src="~/Images/hitwm4.PNG" class="img-responsive" />
-                    <p>Competition. You want customers to choose you!</p>
+                    <p>@Html.Raw(@Resource.txt_hiwmaStep3Description)</p>
                 </div>
 
             </div>
@@ -107,17 +148,17 @@
                 <div class="col-md-12">
                     <div class="col-md-4">
                         <img src="~/Images/hitwm7.PNG" class="img-responsive" />
-                        <p>You enter visaRoom.</p>
+                        <p>@Html.Raw(@Resource.txt_hiwmaStep4Description)</p>
 
                     </div>
                     <div class="col-md-4">
                         <img src="~/Images/hitwm8.PNG" class="img-responsive" />
-                        <p>Easy sign up!</p>
+                        <p>@Html.Raw(@Resource.txt_hiwmaStep5Description)</p>
 
                     </div>
                     <div class="col-md-4">
                         <img src="~/Images/hitwm9.PNG" class="img-responsive" />
-                        <p>Tell us about yourself. Really simple stuff!</p>
+                        <p>@Html.Raw(@Resource.txt_hiwmaStep6Description)</p>
                         <span style="font-size: 30px; align-content: center; margin: 0 auto" class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
                     </div>
                 </div>
@@ -125,61 +166,124 @@
                 <div class="col-md-12">
                     <div class="col-md-4">
                         <img src="~/Images/hitwm6.PNG" class="img-responsive" />
-                        <p>Check out their profile and CV for eligibility answer. Chat.</p>
+                        <p>@Html.Raw(@Resource.txt_hiwmaStep7Description)</p>
 
                     </div>
                     <div class="col-md-4">
                         <img src="~/Images/hitwm2.PNG" class="img-responsive" />
-                        <p>VisaRoom ONLY matches you with the right leads.</p>
+                        <p>@Html.Raw(@Resource.txt_hiwmaStep8Description)</p>
 
                     </div>
                     <div class="col-md-4">
                         <img src="~/Images/hitwm10.PNG" class="img-responsive" />
-                        <p>Visa applicants will ask questions.</p>
+                        <p>@Html.Raw(@Resource.txt_hiwmaStep9Description)</p>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <img src="~/Images/hitwm3.PNG" class="img-responsive" />
-                    <p>Get client appointments.</p>
+                    <p>@Html.Raw(@Resource.txt_hiwmaStep10Description)</p>
 
                 </div>
             </div>
         </div>
 
     </div>
+    <script type='text/javascript'>
+        HidePanelHowItWorks(true);
+    </script> 
 </div>
-<!--//method-text-->
-<!--cases-->
-<div class="cases" id="cases">
+<!--seccionHowItWorks-->
+<!--seccionWhy-->
+<div class="method-text" id="seccionWhy">
     <div class="container">
-        <h3>WHY VISAROOM</h3>
+        <h3 style="text-align:center">@Html.Raw(@Resource.txt_whyVisaRoomTitle1)</h3>
+        <h4 style="text-align:center">@Html.Raw(@Resource.txt_whyVisaRoomTitle2)</h4>
+        <h4 style="text-align:center">@Html.Raw(@Resource.txt_whyVisaRoomTitle3)</h4>
         <div class="cases-grids">
-            <div>
+            <div id=""  class="container">             
+                <div class="row">
+                    <div class="col-md-4">                      
+                        <img src="~/Images/whyApp1.PNG" class="img-responsive pull-left" />
+                        <div class="col-md-6 ">
+                            @Html.Raw(@Resource.txt_whyVisaRoomStep1)
+                        </div>    
+                    </div>
+
+                    <div class="col-md-4">
+                       
+                        <img src="~/Images/whyApp2.PNG" class="img-responsive pull-left" />
+                        <div class="col-md-7">
+                            @Html.Raw(@Resource.txt_whyVisaRoomStep2)
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                       
+                        <img src="~/Images/whyApp3.PNG" class="img-responsive pull-left" />
+                        <div class="col-md-5">
+                            @Html.Raw(@Resource.txt_whyVisaRoomStep3)
+                        </div>
+                    </div>
+                     
+                    
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="col-md-7 col-md-offset-4">
+                            <img src="~/Images/whyApp4.PNG" class="img-responsive pull-left" />
+                            <div>
+                               @Html.Raw(@Resource.txt_whyVisaRoomStep4)
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                     <div class="col-md-6">
+                        <div class="col-md-6">
+                            <img  src="~/Images/whyApp5.PNG" class="img-responsive pull-left" />
+                            <div >
+                               @Html.Raw(@Resource.txt_whyVisaRoomStep5)
+                            </div>
+                        </div>
+                        
+                    </div>                    
+                </div>
+                <br />
+                <div class="row">                    
+                    <div class="col-md-4 col-md-offset-4">
+                        <img src="~/Images/whyApp6.PNG" class="img-responsive pull-left" />
+                        @Html.Raw(@Resource.txt_whyVisaRoomStep6)
+                    </div>
+                                 
+                </div>
             </div>
         </div>
         <div class="clearfix"></div>
     </div>
 </div>
-<!--//cases-->
-<!--services-->
-<div class="method-text" id="services">
+<!--seccionWhy-->
+<!--seccionRegister-->
+<div class="cases" id="seccionRegister">
     <div class="container">
-        <h2>Register</h2>
+        <h2>@Html.Raw(@Resource.txt_RegisterLowerCase)</h2>
         <h3>You can register now and start using this amazing site.</h3>
         <div class="col-md-6" style="margin: 0 auto;">
             <a href="Account/RegisterApplicant" class="btn btn-info">
-                <h4>As Applicant</h4>
+                <h4>@Html.Raw(@Resource.txt_AsApplicant)</h4>
             </a>
 
         </div>
 
         <div class="col-md-6">
             <a href="" class="btn btn-info">
-                <h4>As Agent</h4>
+                <h4>@Html.Raw(@Resource.txt_AsAgent)</h4>
             </a>
         </div>
 
         <div class="clearfix"></div>
     </div>
 </div>
-<!--//services-->
+<!--//cases-->
+

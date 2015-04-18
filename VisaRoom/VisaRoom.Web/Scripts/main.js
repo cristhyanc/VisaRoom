@@ -1,4 +1,5 @@
 ﻿
+
 window.imagenVacia = '/assets/UserPhotos/find_user.png';
 window.mostrarVistaPrevia = function mostrarVistaPrevia() {
 
@@ -55,6 +56,16 @@ window.obtenerTipoMIME = function obtenerTipoMIME(cabecera) {
 }
 
 
+function HidePanelHowItWorks(isApplicant) {
+
+    jQuery('#howItApplicant').hide(500);
+    jQuery('#howItAgent').show();
+    if (isApplicant) {
+        jQuery('#howItApplicant').show(500);
+        jQuery('#howItAgent').hide(500);
+    }
+}
+
 
 
 $(document).ready(function () {
@@ -62,8 +73,7 @@ $(document).ready(function () {
     $('.datepicker').datepicker(); //Initialise any date pickers
     $(".chosen-select").chosen();
     $(":file").filestyle({ input: false });
-
-
+ 
     //Cargamos la imagen "vacía" que actuará como Placeholder
     jQuery('#vistaPrevia').attr('src', window.imagenVacia);
 
@@ -80,16 +90,6 @@ $(document).ready(function () {
         jQuery('#vistaPrevia').attr('src', window.imagenVacia);
        
     });
-
-
-
-
-
-
-
-
-
-
 
 
 

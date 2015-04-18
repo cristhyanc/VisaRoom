@@ -249,4 +249,188 @@
   <data name="Error_SaveUserPreferredVisas" xml:space="preserve">
     <value>There is a problem saving yours Preferred visas</value>
   </data>
+  <data name="txt_applicantsLowCase" xml:space="preserve">
+    <value>Applicants</value>
+  </data>
+  <data name="txt_applicantsUpperCase" xml:space="preserve">
+    <value>APPLICANTS</value>
+  </data>
+  <data name="txt_BannerContent" xml:space="preserve">
+    <value>&lt;p&gt;Save time and costly mistakes. We'll fine and matchmake you to the Right Migration Agent.&lt;/p&gt;
+            &lt;p&gt;Get multiple reliable and personalized visa advice from Australia's best registered migration agents.&lt;/p&gt;</value>
+  </data>
+  <data name="txt_BannerTittle" xml:space="preserve">
+    <value>Right Migration Agent</value>
+  </data>
+  <data name="txt_hiwStep1Description" xml:space="preserve">
+    <value>You have got Australian visa question.</value>
+  </data>
+  <data name="txt_hiwStep2Description" xml:space="preserve">
+    <value>You want accurate advice only from the best.</value>
+  </data>
+  <data name="txt_hiwStep3Description" xml:space="preserve">
+    <value>You enter VisaRoom.</value>
+  </data>
+  <data name="txt_hiwStep4Description" xml:space="preserve">
+    <value>Tell us about yourself. Really simple stuff!</value>
+  </data>
+  <data name="txt_hiwStep5Description" xml:space="preserve">
+    <value>Go ahead! Ask you first question!</value>
+  </data>
+  <data name="txt_hiwStep6Description" xml:space="preserve">
+    <value>VisaRoom matches you with suitable migration agents.</value>
+  </data>
+  <data name="txt_hiwStep7Description" xml:space="preserve">
+    <value>You receive multiple visa advice. Chat with them. Check out ther profile.</value>
+  </data>
+  <data name="txt_hiwStep8Description" xml:space="preserve">
+    <value>Pick one migration agent. Receive proposal. Hire through VisaRoom</value>
+  </data>
+  <data name="txt_hiwWhatYouWin" xml:space="preserve">
+    <value>What You'll get by joing us?</value>
+  </data>
+  <data name="txt_hiwWhatYouWin1" xml:space="preserve">
+    <value>Free Membership</value>
+  </data>
+  <data name="txt_hiwWhatYouWin2" xml:space="preserve">
+    <value>Get Australian visa advice anytime-free!</value>
+  </data>
+  <data name="txt_hiwWhatYouWin3" xml:space="preserve">
+    <value>Professional Customer Support</value>
+  </data>
+  <data name="txt_hiwWhatYouWin4" xml:space="preserve">
+    <value>Talk to Australian's Best Migration Agents</value>
+  </data>
+  <data name="txt_hiwWhatYouWin5" xml:space="preserve">
+    <value>Upto $1.000 Refund Policy</value>
+  </data>
+  <data name="txt_HowItWorks" xml:space="preserve">
+    <value>HOW IT WORKS</value>
+  </data>
+  <data name="txt_MigrationAgentLowCase" xml:space="preserve">
+    <value>Migration Agents</value>
+  </data>
+  <data name="txt_AsAgent" xml:space="preserve">
+    <value>As Agent</value>
+  </data>
+  <data name="txt_AsApplicant" xml:space="preserve">
+    <value>As Applicant</value>
+  </data>
+  <data name="txt_BlogUpperCase" xml:space="preserve">
+    <value>BLOG</value>
+  </data>
+  <data name="txt_ContactUpperCase" xml:space="preserve">
+    <value>CONTACT</value>
+  </data>
+  <data name="txt_ContactUs" xml:space="preserve">
+    <value>Contact us</value>
+  </data>
+  <data name="txt_ContactUsDetails" xml:space="preserve">
+    <value>&lt;li&gt;Brisbane&lt;/li&gt;						&lt;li&gt;&lt;a href=""&gt;Send us an e-mail&lt;/a&gt;&lt;/li&gt;</value>
+  </data>
+  <data name="txt_hiwmaStep10Description" xml:space="preserve">
+    <value>Get client appointments.</value>
+  </data>
+  <data name="txt_hiwmaStep1Description" xml:space="preserve">
+    <value>You spend money on marketing. Low return of paying customers.</value>
+  </data>
+  <data name="txt_hiwmaStep2Description" xml:space="preserve">
+    <value>You waste time talking and chasing wrong customers.</value>
+  </data>
+  <data name="txt_hiwmaStep3Description" xml:space="preserve">
+    <value>Competition. You want customers to choose you!</value>
+  </data>
+  <data name="txt_hiwmaStep4Description" xml:space="preserve">
+    <value>You enter visaRoom.</value>
+  </data>
+  <data name="txt_hiwmaStep5Description" xml:space="preserve">
+    <value>Easy sign up!</value>
+  </data>
+  <data name="txt_hiwmaStep6Description" xml:space="preserve">
+    <value>Tell us about yourself. Really simple stuff!</value>
+  </data>
+  <data name="txt_hiwmaStep7Description" xml:space="preserve">
+    <value>Check out their profile and CV for eligibility answer. Chat.</value>
+  </data>
+  <data name="txt_hiwmaStep8Description" xml:space="preserve">
+    <value>VisaRoom ONLY matches you with the right leads.</value>
+  </data>
+  <data name="txt_hiwmaStep9Description" xml:space="preserve">
+    <value>Visa applicants will ask questions.</value>
+  </data>
+  <data name="txt_homeUpperCase" xml:space="preserve">
+    <value>HOME</value>
+  </data>
+  <data name="txt_joinUsNow" xml:space="preserve">
+    <value>Join us now!</value>
+  </data>
+  <data name="txt_LoginUpperCase" xml:space="preserve">
+    <value>LOGIN</value>
+  </data>
+  <data name="txt_MigrationAgentUpperCase" xml:space="preserve">
+    <value>MIGRATION AGENTS</value>
+  </data>
+  <data name="txt_Navigation" xml:space="preserve">
+    <value>Navigation</value>
+  </data>
+  <data name="txt_ReadyGetAnswers" xml:space="preserve">
+    <value>&lt;p&gt;Ready to get Australian visa answers?&lt;/p&gt;
+               &lt;p&gt;&lt;b&gt;It is Free!&lt;/b&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="txt_RegisterLowerCase" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="txt_RegisterUpperCase" xml:space="preserve">
+    <value>REGISTER</value>
+  </data>
+  <data name="txt_SubmitNewLetterDescription" xml:space="preserve">
+    <value>&lt;h5&gt;Submit to our news letter&lt;/h5&gt;
+					&lt;p&gt;Submit and get all the info about our 
+						work and new blog inputs.&lt;/p&gt;</value>
+  </data>
+  <data name="txt_whyVisaRoomStep1" xml:space="preserve">
+    <value>&lt;b&gt; Greater Information&lt;/b&gt; 
+                            &lt;br /&gt;
+                            Access, view and learn  migration agents profile.
+                            Make informed decision.</value>
+  </data>
+  <data name="txt_whyVisaRoomStep2" xml:space="preserve">
+    <value>&lt;b&gt;Easy Matchmaking&lt;/b&gt; 
+                            &lt;br /&gt;
+                            Connecting migration agents that matches your profile means you save time.</value>
+  </data>
+  <data name="txt_whyVisaRoomStep3" xml:space="preserve">
+    <value>&lt;b&gt;Personlized Advice&lt;/b&gt; 
+                            &lt;br /&gt;
+                            1-2-1 chat and profile view allows  you to get exclusive services.</value>
+  </data>
+  <data name="txt_whyVisaRoomStep4" xml:space="preserve">
+    <value>&lt;b&gt;Wider Advice&lt;/b&gt; 
+                                &lt;br /&gt;
+                                Collection of Australia's best migration agents across various visa expertise under one spot.</value>
+  </data>
+  <data name="txt_whyVisaRoomStep5" xml:space="preserve">
+    <value>&lt;b&gt;Avoid Costly Mistakes&lt;/b&gt; 
+                                &lt;br /&gt;
+                                Get advice from registered and carefully selected migration agents not forums or unqualified source.</value>
+  </data>
+  <data name="txt_whyVisaRoomStep6" xml:space="preserve">
+    <value>&lt;b&gt;Our Guarantee&lt;/b&gt; 
+                        &lt;br /&gt;
+                        If you are not 100% satisfed with the service provided by migration agent you find on VisaRoom, you'll receive up to $1.000 of your money back!
+                        &lt;br /&gt;
+                        &lt;p style="text-align:center "&gt;&lt;b&gt;Less Risk!&lt;/b&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="txt_whyVisaRoomTitle1" xml:space="preserve">
+    <value>You will love VisaRoom</value>
+  </data>
+  <data name="txt_whyVisaRoomTitle2" xml:space="preserve">
+    <value>A safer, simpler and easier way</value>
+  </data>
+  <data name="txt_whyVisaRoomTitle3" xml:space="preserve">
+    <value>to choose migration agents</value>
+  </data>
+  <data name="txt_whyVisaRoomUpperCase" xml:space="preserve">
+    <value>WHY VISAROOM</value>
+  </data>
 </root>

@@ -228,8 +228,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\VisaRoom.Common\App_GlobalResources\Resource.designer.cs">
-      <Link>App_GlobalResources\Resource.designer.cs</Link>
+    <Compile Include="..\VisaRoom.Common\App_GlobalResources\Resource2.Designer.cs">
+      <Link>App_GlobalResources\Resource2.Designer.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
@@ -315,6 +315,9 @@
     <Content Include="Images\move-up.png" />
     <Content Include="Images\NavBarBackGroud.png" />
     <Content Include="Images\page_background.jpg" />
+    <Content Include="Images\whyApp1.png" />
+    <Content Include="Images\whyApp2.png" />
+    <Content Include="Images\whyApp3.png" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-filestyle.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -432,7 +435,7 @@
     <EmbeddedResource Include="..\VisaRoom.Common\App_GlobalResources\Resource.resx">
       <Link>App_GlobalResources\Resource.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.designer.cs</LastGenOutput>
+      <LastGenOutput>Resource2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -454,8 +457,6 @@
           <DevelopmentServerPort>10495</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:20579/</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:20579/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

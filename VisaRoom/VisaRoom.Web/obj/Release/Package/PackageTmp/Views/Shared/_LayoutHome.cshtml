@@ -1,4 +1,4 @@
-﻿@using VisaRoom.Web.App_GlobalResources;
+﻿
 <!doctype html>
 <html>
 <head>
@@ -13,11 +13,10 @@
 	<meta name="keywords" content="Free style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-	@Scripts.Render("~/mainScript")
+	
     @Scripts.Render("~/bundles/jquery")
     @Styles.Render("~/content/bundle")
     @Scripts.Render("~/publicPagesJs")
-    
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", required: false)
 
@@ -41,13 +40,13 @@
 			<div class="top-nav">
 				<span class="menu"><img src="../images/menu-icon.png" alt=""/></span>
 				<ul class="nav1">
-					<li><a href="" class="active">@Html.Raw(@Resource.txt_homeUpperCase)</a></li>
-					<li><a href="#seccionHowItWorks" class="scroll">@Html.Raw(@Resource.txt_HowItWorks)</a></li>
-					<li><a href="#seccionWhy" class="scroll">@Html.Raw(@Resource.txt_whyVisaRoomUpperCase)</a></li>
-					<li><a href="#seccionRegister" class="scroll">@Html.Raw(@Resource.txt_RegisterUpperCase)</a></li>
-					<li><a href="">@Html.Raw(@Resource.txt_BlogUpperCase)</a></li>
-					<li>@Html.ActionLink(@Resource.txt_ContactUpperCase, "Contact", "Home")</li>
-                    <li>@Html.ActionLink(@Resource.txt_LoginUpperCase, "Login", "Account")</li>
+					<li><a href="" class="active">HOME</a></li>
+					<li><a href="#method" class="scroll">HOW IT WORKS</a></li>
+					<li><a href="#cases" class="scroll">WHY VISAROOM</a></li>
+					<li><a href="#services" class="scroll">REGISTER</a></li>
+					<li><a href="">BLOG</a></li>
+					<li>@Html.ActionLink("CONTACT", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("LOGIN", "Login", "Account")</li>
 				</ul>
 				<!-- script-for-menu -->
 				 <script>
@@ -81,25 +80,30 @@
 		<div class="container">
 			<div class="footer-grids">
 				<div class="col-md-4 footer-grids-info">
-					<h5>@Html.Raw(@Resource.txt_ContactUs)</h5>
+					<h5>Contact us</h5>
 					<ul>
-						@Html.Raw(@Resource.txt_ContactUsDetails)
+						<li>Brisbane</li>
+						@*<li>8000 Aarhus</li>
+						<li>Denmark</li>
+						<li>+ 45 - So Call me Maybe</li>*@
+						<li><a href="">Send us an e-mail</a></li>
 					</ul>
 				</div>
 				<div class="col-md-4 footer-grids-info">
-					<h5>@Html.Raw(@Resource.txt_Navigation)</h5>
+					<h5>Navigation</h5>
 					<ul>
-						<li><a href="" class="active">@Html.Raw(@Resource.txt_homeUpperCase)</a></li>
-					    <li><a href="#seccionHowItWorks" class="scroll">@Html.Raw(@Resource.txt_HowItWorks)</a></li>
-					    <li><a href="#seccionWhy" class="scroll">@Html.Raw(@Resource.txt_whyVisaRoomUpperCase)</a></li>
-					    <li><a href="#seccionRegister" class="scroll">@Html.Raw(@Resource.txt_RegisterUpperCase)</a></li>
-					    <li><a href="">@Html.Raw(@Resource.txt_BlogUpperCase)</a></li>
-					    <li>@Html.ActionLink(@Resource.txt_ContactUpperCase, "Contact", "Home")</li>
-                        <li>@Html.ActionLink(@Resource.txt_LoginUpperCase, "Login", "Account")</li>
+						<li><a href="" class="active">HOME</a></li>
+					    <li><a href="#method" class="scroll">HOW IT WORKS</a></li>
+					    <li><a href="#cases" class="scroll">WHY VISAROOM</a></li>
+					    <li><a href="#services" class="scroll">REGISTER</a></li>
+					    <li><a href="">BLOG</a></li>
+					    <li>@Html.ActionLink("CONTACT", "Contact", "Home")</li>
 					</ul>
 				</div>
 				<div class="col-md-4 footer-grids-info">
-					@Html.Raw(@Resource.txt_SubmitNewLetterDescription)
+					<h5>Submit to our news letter</h5>
+					<p>Submit and get all the info about our 
+						work and new blog inputs.</p>
 					<form>
 						<input type="text" value="Your Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Name';}" required="">
 						<input type="email" value="Your E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your E-mail';}" required="">
