@@ -25,10 +25,17 @@ namespace VisaRoom.Common.Models
         [StringLength(50, MinimumLength = 3)]
         public string LastName { get; set; }
 
+        [Display(Name = "lbl_Email", ResourceType = typeof(Resource))]
+        [Required(ErrorMessageResourceType = typeof(Resource),
+                  ErrorMessageResourceName = "rqd_Email")]
+        [DataType(DataType.EmailAddress, ErrorMessageResourceType = typeof(Resource),
+                                        ErrorMessageResourceName = "typ_Email")]
+        public string Email { get; set; }
+
         [Display(Name = "lbl_Age", ResourceType = typeof(Resource))]
         public int Age { get; set; }
 
-        [Display(Name = "lbl_Country", ResourceType = typeof(Resource))]
+        [Display(Name = "lbl_CountryResidence", ResourceType = typeof(Resource))]
         public ValueTo Country { get; set; }
 
         [Display(Name = "lbl_State", ResourceType = typeof(Resource))]

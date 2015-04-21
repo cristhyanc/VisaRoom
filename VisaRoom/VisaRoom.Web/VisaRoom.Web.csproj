@@ -318,6 +318,9 @@
     <Content Include="Images\whyApp1.png" />
     <Content Include="Images\whyApp2.png" />
     <Content Include="Images\whyApp3.png" />
+    <Content Include="Images\whyApp4.png" />
+    <Content Include="Images\whyApp5.png" />
+    <Content Include="Images\whyApp6.png" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-filestyle.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -336,6 +339,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\Visaroom.pubxml" />
+    <None Include="Properties\PublishProfiles\VisaRoom_Server.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />

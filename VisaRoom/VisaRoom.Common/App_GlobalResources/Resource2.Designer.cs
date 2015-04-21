@@ -61,6 +61,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There is a problem trying to check the E-mail..
+        /// </summary>
+        public static string Error_ExistEmail {
+            get {
+                return ResourceManager.GetString("Error_ExistEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There is a problem getting some details, try later please..
         /// </summary>
         public static string Error_GetCustomizedList {
@@ -183,6 +192,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         public static string lbl_Education {
             get {
                 return ResourceManager.GetString("lbl_Education", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string lbl_Email {
+            get {
+                return ResourceManager.GetString("lbl_Email", resourceCulture);
             }
         }
         
@@ -412,6 +430,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Email is requered.
+        /// </summary>
+        public static string rqd_Email {
+            get {
+                return ResourceManager.GetString("rqd_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The First name field is required..
         /// </summary>
         public static string rqd_FirstName {
@@ -530,11 +557,7 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;li&gt;Brisbane&lt;/li&gt;
-        ///						@*&lt;li&gt;8000 Aarhus&lt;/li&gt;
-        ///						&lt;li&gt;Denmark&lt;/li&gt;
-        ///						&lt;li&gt;+ 45 - So Call me Maybe&lt;/li&gt;*@
-        ///						&lt;li&gt;&lt;a href=&quot;&quot;&gt;Send us an e-mail&lt;/a&gt;&lt;/li&gt;.
+        ///   Looks up a localized string similar to &lt;li&gt;Brisbane&lt;/li&gt;						&lt;li&gt;&lt;a href=&quot;&quot;&gt;Send us an e-mail&lt;/a&gt;&lt;/li&gt;.
         /// </summary>
         public static string txt_ContactUsDetails {
             get {
@@ -850,7 +873,9 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;h5&gt;Submit to our news letter&lt;/h5&gt;
+        ///					&lt;p&gt;Submit and get all the info about our 
+        ///						work and new blog inputs.&lt;/p&gt;.
         /// </summary>
         public static string txt_SubmitNewLetterDescription {
             get {
@@ -960,6 +985,24 @@ namespace VisaRoom.Web.App_GlobalResources {
         public static string txt_whyVisaRoomUpperCase {
             get {
                 return ResourceManager.GetString("txt_whyVisaRoomUpperCase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-mail is not valid.
+        /// </summary>
+        public static string typ_Email {
+            get {
+                return ResourceManager.GetString("typ_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Email {0} already Exist!.
+        /// </summary>
+        public static string val_UserEmailExists {
+            get {
+                return ResourceManager.GetString("val_UserEmailExists", resourceCulture);
             }
         }
         

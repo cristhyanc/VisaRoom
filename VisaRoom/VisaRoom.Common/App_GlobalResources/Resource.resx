@@ -326,7 +326,7 @@
     <value>Contact us</value>
   </data>
   <data name="txt_ContactUsDetails" xml:space="preserve">
-    <value>&lt;li&gt;Brisbane&lt;/li&gt;						&lt;li&gt;&lt;a href=""&gt;Send us an e-mail&lt;/a&gt;&lt;/li&gt;</value>
+    <value>&lt;li&gt;Brisbane&lt;/li&gt;						&lt;li&gt;&lt;a href="mailto:itsupport@visaroom.com.au"&gt;Send us an e-mail&lt;/a&gt;&lt;/li&gt;</value>
   </data>
   <data name="txt_hiwmaStep10Description" xml:space="preserve">
     <value>Get client appointments.</value>
@@ -432,5 +432,23 @@
   </data>
   <data name="txt_whyVisaRoomUpperCase" xml:space="preserve">
     <value>WHY VISAROOM</value>
+  </data>
+  <data name="Error_ExistEmail" xml:space="preserve">
+    <value>There is a problem trying to check the E-mail.</value>
+  </data>
+  <data name="lbl_CountryResidence" xml:space="preserve">
+    <value>Country of Residence</value>
+  </data>
+  <data name="lbl_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="rqd_Email" xml:space="preserve">
+    <value>The Email is requered</value>
+  </data>
+  <data name="typ_Email" xml:space="preserve">
+    <value>E-mail is not valid</value>
+  </data>
+  <data name="val_UserEmailExists" xml:space="preserve">
+    <value>The Email {0} already Exist!</value>
   </data>
 </root>
