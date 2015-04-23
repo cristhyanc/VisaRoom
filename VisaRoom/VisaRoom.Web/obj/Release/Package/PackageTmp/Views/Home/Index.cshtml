@@ -111,10 +111,10 @@
                 </div>
             </div>
              <div style="text-align:center" class="col-md-4">
-               @Html.Raw(@Resource.txt_ReadyGetAnswers)
+              @* @Html.Raw(@Resource.txt_ReadyGetAnswers)
                <a  href="#seccionRegister" class="btn btn-info">
                 <h4> @Html.Raw(@Resource.txt_joinUsNow)</h4>
-               </a>
+               </a>*@
             </div>
             
         </div>
@@ -159,7 +159,6 @@
                     <div class="col-md-4">
                         <img src="~/Images/hitwm9.PNG" class="img-responsive" />
                         <p>@Html.Raw(@Resource.txt_hiwmaStep6Description)</p>
-                        <span style="font-size: 30px; align-content: center; margin: 0 auto" class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
                     </div>
                 </div>
 
@@ -265,7 +264,7 @@
 </div>
 <!--seccionWhy-->
 <!--seccionRegister-->
-<div class="cases" id="seccionRegister">
+@*<div class="cases" id="seccionRegister">
     <div class="container">
         <h2>@Html.Raw(@Resource.txt_RegisterLowerCase)</h2>
         <h3>You can register now and start using this amazing site.</h3>
@@ -275,15 +274,15 @@
             </a>
 
         </div>
-
+        RegisterAgent
         <div class="col-md-6">
-            <a href="" class="btn btn-info">
+            <a href="Account/RegisterAgent" class="btn btn-info">
                 <h4>@Html.Raw(@Resource.txt_AsAgent)</h4>
             </a>
         </div>
 
         <div class="clearfix"></div>
     </div>
-</div>
+</div>*@
 <!--//cases-->
 

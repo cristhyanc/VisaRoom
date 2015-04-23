@@ -1,0 +1,238 @@
+﻿@model VisaRoom.Web.ViewModel.RegisterAgentViewModel
+@using VisaRoom.Web.App_GlobalResources;
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<script>
+    
+    
+    
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bootstrapWizarJS")
+    @Scripts.Render("~/mainScript")
+    @Scripts.Render("~/multipleSelectJS")
+    @Scripts.Render("~/bootstrapFile")
+   
+}
+
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <hgroup class="title">
+            <h1>@Resource.msn_AgentRegistration</h1>
+        </hgroup>
+    </div>
+</div>
+
+@using (Html.BeginForm("RegisterAgent", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+            @Html.AntiForgeryToken()
+           
+        if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
+        {
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                @Html.ValidationSummary()
+            </div>
+        }
+       
+   
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div id="rootwizard" style="background-color: #f7f7f7" class="roundBords">
+                    <div class="navbar" style="background-color:#333F50; margin-bottom: 0;">
+                        <div class="navbar-inner">
+                            <div class="container">
+                                <ul>
+                                    <li><a href="#tab1" data-toggle="tab">Basic Details</a></li>
+                                    <li><a href="#tab2" data-toggle="tab">Extra information</a></li>
+                                    <li><a href="#tab3" data-toggle="tab">Visas</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane" id="tab1">
+
+                            <div  class="col-md-4">
+                                <div class="form-group">
+                                   @Html.LabelFor(m => m.Register.PhotoProfile)
+                                    
+                                </div>
+                                <div id="marcoVistaPrevia" class="form-group">
+                                    <img src="/assets/UserPhotos/find_user.png" style="max-height:200px;" id="vistaPrevia" class="img-responsive img-thumbnail" >
+                                       
+                                </div>
+                                <div id='botonera' class="form-group">                                                                        
+                                        <input type="file" id="archivo" name="archivo" accept="image/*" class="filestyle" data-input="false" >                                        
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="panel-body">
+                                   
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.UserName)
+                                            @Html.TextBoxFor(m => m.Register.UserName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Register.UserName, null, new { @class = "label label-danger" })
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.Password)
+                                            @Html.PasswordFor(m => m.Register.Password, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Register.Password, null, new { @class = "label label-danger" })
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.ConfirmPassword)
+                                            @Html.PasswordFor(m => m.Register.ConfirmPassword, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Register.ConfirmPassword, null, new { @class = "label label-danger" })
+                                        </div>
+
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel-body">
+                                   
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.FirstName)
+                                            @Html.TextBoxFor(m => m.Register.FirstName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Register.FirstName, null, new { @class = "label label-danger" })
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.LastName)
+                                            @Html.TextBoxFor(m => m.Register.LastName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Register.LastName, null, new { @class = "label label-danger" })
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.Email)
+                                            @Html.TextBoxFor(m => m.Register.Email, new { @class = "form-control" })
+                                             @Html.ValidationMessageFor(m => m.Register.Email, null, new { @class = "label label-danger" })
+                                        </div>
+
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                             
+                        <div class="tab-pane" id="tab2">
+                            
+                             <div class="col-md-4">
+                                 <div class="panel-body">
+                                   
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.Country)
+                                            @Html.DropDownListFor(model => model.Register.Country.Value,  (SelectList)Model.ListCountries,"Please select a Country", new { @class = "chosen-select"})
+                                         
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.State)
+                                            @Html.DropDownListFor(model => model.Register.State.Value,  new SelectList(string.Empty, "Value", "Text"), "Please select a State", new { @class = "form-control", @name="State" })
+
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.City)
+                                            @Html.DropDownListFor(model => model.Register.City.Value,  new SelectList(string.Empty, "Value", "Text"), "Please select a State", new { @class = "form-control", @name="city" })
+
+                                        </div>
+
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="panel-body">
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.MarnNumber)
+                                            @Html.TextBoxFor(m => m.Register.MarnNumber, new { @class = "form-control", @type = "number" })
+                                            @Html.ValidationMessageFor(m => m.Register.MarnNumber, null, new { @class = "label label-danger" })
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.BussinesName)
+                                            @Html.TextBoxFor(m => m.Register.BussinesName, new { @class = "form-control" })
+                                          
+                                         </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.Languages)
+                                            @Html.ListBoxFor(m => m.Register.LanguagesIds, new MultiSelectList(Model.ListLanguage, "Value", "Text"), new { @class = "chosen-select"})
+                           
+                                        </div>
+
+                                </div>
+                                
+                            </div>
+                               
+                            <div class="col-md-4">
+                                 <div class="panel-body">                                   
+                                        
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.YearsExperience)
+                                            @Html.TextBoxFor(m => m.Register.YearsExperience, new { @class = "form-control", @type = "number" })
+                                                                                 
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Register.Qualification)
+                                            @Html.TextAreaFor(m => m.Register.Qualification, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Register.Qualification, null, new { @class = "label label-danger" })
+                                        
+                                        </div>
+
+                                </div>       
+                                
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab3">
+                            <div class="col-md-4">
+
+                                <div class="panel-body">                                   
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Register.PassportHolders)
+                                        @Html.ListBoxFor(m => m.Register.PassportHoldersIds, new MultiSelectList(Model.ListCountries, "Value", "Text"), new { @class = "chosen-select"})
+                                             
+                                     </div>                                                              
+                                </div>
+                            </div>       
+                            <div class="col-md-4">
+
+                                <div class="panel-body">                                   
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Register.VisasInterested)
+                                        @Html.ListBoxFor(m => m.Register.VisasInterestedIds, new MultiSelectList(Model.ListVisaApplicant, "Value", "Text"), new { @class = "chosen-select"})
+                                         
+                                        
+                                    </div>                                  
+                                </div>
+                            </div>                            
+                            <div class="col-md-4">
+
+                                <div class="panel-body">
+                                   
+                                        <div class="form-group">
+                                           <img style="max-height:200px; max-width:200px" src="~/Images/Logo725x487.PNG">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-lg btn-success btn-block" style="width:100%; height:90%" value="@Resource.lbl_LogIn" />
+                                    </div>                                     
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <ul class="pager wizard">
+                            <li class="previous first"><a href="javascript:;">First</a></li>
+                            <li class="previous"><a href="javascript:;">Previous</a></li>
+                            <li class="next last"><a href="javascript:;">Last</a></li>
+                            <li class="next"><a href="javascript:;">Next</a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+       
+}
+

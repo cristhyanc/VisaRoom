@@ -76,8 +76,65 @@ namespace VisaRoom.Web.Controllers
             return View(registerModel);
         }
 
-        
+        [AllowAnonymous]
+        public ActionResult RegisterAgent()
+        {
+            RegisterAgentViewModel registerModel = new RegisterAgentViewModel();
+            return View(registerModel);
+        }
 
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult RegisterAgent(RegisterAgentViewModel model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                // Attempt to register the user
+                try
+                {
+
+
+                    if (WebSecurity.UserExists(model.Register.UserName))
+                    {
+                        this.Error(Resource.val_UserExists);
+                    }
+                    else
+                    {
+                        IBLUser bUser = new BLUser(LogError.SLogPath);
+                        if (bUser.ExistEmail(model.Register.Email))
+                        {
+                            this.Error(string.Format(Resource.val_UserEmailExists, model.Register.Email));
+                        }
+                        else
+                        {
+                            WebSecurity.CreateUserAndAccount(model.Register.UserName, model.Register.Password);
+                            model.Register.UserId = WebSecurity.GetUserId(model.Register.UserName);
+                            if (model.archivo != null)
+                            {
+                                string serverpath = Server.MapPath("~") + ConfigurationManager.AppSettings["urlImages"].ToString();
+                                model.Register.PhotoProfile = DateTime.Now.ToString("yyyyMMdd") + "_" + model.Register.UserId + "." + model.archivo.ContentType.Split('/')[1].ToString();
+                                model.archivo.SaveAs(serverpath + model.Register.PhotoProfile);
+                            }
+
+                            bUser.SaveUser(model.Register);
+                            WebSecurity.Login(model.Register.UserName, model.Register.Password);
+                            return RedirectToAction("Index", "Home");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    ProcessExection("Web.AccountController.RegisterApplicant", ex, Resource.Error_RegisterApplicant);
+                }
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
        
         //
         // POST: /Account/Register

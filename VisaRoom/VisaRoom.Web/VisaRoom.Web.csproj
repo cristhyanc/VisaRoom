@@ -264,6 +264,7 @@
     <Compile Include="NavigationRoutes\NavigationRouteConfigurationExtensions.cs" />
     <Compile Include="NavigationRoutes\NavigationRouteFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\RegisterAgentViewModel.cs" />
     <Compile Include="ViewModel\RegisterApplicantViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -417,6 +418,7 @@
     <Content Include="Views\Shared\_ProcessingModal.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
+    <Content Include="Views\Account\RegisterAgent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

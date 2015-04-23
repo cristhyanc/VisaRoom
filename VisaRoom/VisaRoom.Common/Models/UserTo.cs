@@ -143,6 +143,42 @@ namespace VisaRoom.Common.Models
 
         #endregion
 
+        #region PassportHolders
+
+        private List<ValueTo> _passportHolders { get; set; }
+        [Display(Name = "lbl_PassportHolders", ResourceType = typeof(Resource))]
+        public List<ValueTo> PassportHolders
+        {
+            get
+            {
+                if (_passportHolders == null || _passportHolders.Count == 0)
+                {
+                    if (PassportHoldersIds != null && PassportHoldersIds.Count > 0)
+                    {
+                        _passportHolders = new List<ValueTo>();
+                        foreach (var item in PassportHoldersIds)
+                        {
+                            _passportHolders.Add(new ValueTo { Value = item });
+                        }
+                        PassportHoldersIds = null;
+                        return _passportHolders;
+                    }
+                    _passportHolders = new List<ValueTo>();
+                    return _passportHolders;
+                }
+                return _passportHolders;
+            }
+            set
+            {
+                PassportHoldersIds = null;
+                _passportHolders = value;
+            }
+        }
+
+        public List<string> PassportHoldersIds { get; set; }
+
+        #endregion
+
         [Display(Name = "lbl_PhotoProfile", ResourceType = typeof(Resource))]
         [StringLength(50)]
         public string PhotoProfile { get; set; }
@@ -151,5 +187,22 @@ namespace VisaRoom.Common.Models
         public VisasTo CurrentVisa { get; set; }
 
         public enumTypeOfUsers TypeOfUser { get; set; }
+
+        [Display(Name = "lbl_Qualification", ResourceType = typeof(Resource))]
+        [StringLength(200)]
+        public string Qualification { get; set; }
+
+        [Display(Name = "lbl_Marn", ResourceType = typeof(Resource))]
+        [Required(ErrorMessageResourceType = typeof(Resource),
+                  ErrorMessageResourceName = "rqd_Marn")]
+        [StringLength(50, MinimumLength = 3)]
+        public string MarnNumber { get; set; }
+
+        [Display(Name = "lbl_BussinesName", ResourceType = typeof(Resource))]
+        [StringLength(50)]
+        public string BussinesName { get; set; }
+
+        [Display(Name = "lbl_YearsExperience", ResourceType = typeof(Resource))]
+        public int YearsExperience { get; set; }
     }
 }

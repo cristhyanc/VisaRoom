@@ -451,4 +451,25 @@
   <data name="val_UserEmailExists" xml:space="preserve">
     <value>The Email {0} already Exist!</value>
   </data>
+  <data name="msn_AgentRegistration" xml:space="preserve">
+    <value>Agent Registration</value>
+  </data>
+  <data name="lbl_BussinesName" xml:space="preserve">
+    <value>Bussines Name</value>
+  </data>
+  <data name="lbl_Marn" xml:space="preserve">
+    <value>Marn Number</value>
+  </data>
+  <data name="lbl_PassportHolders" xml:space="preserve">
+    <value>Passport holders you want as customers</value>
+  </data>
+  <data name="lbl_Qualification" xml:space="preserve">
+    <value>Qualification</value>
+  </data>
+  <data name="lbl_YearsExperience" xml:space="preserve">
+    <value>Years Experience</value>
+  </data>
+  <data name="rqd_Marn" xml:space="preserve">
+    <value>Marn Number is required</value>
+  </data>
 </root>

@@ -169,6 +169,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Country of Residence.
+        /// </summary>
+        public static string lbl_CountryResidence {
+            get {
+                return ResourceManager.GetString("lbl_CountryResidence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Current Visa.
         /// </summary>
         public static string lbl_CurrentVisa {
@@ -286,6 +295,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Marn Number.
+        /// </summary>
+        public static string lbl_Marn {
+            get {
+                return ResourceManager.GetString("lbl_Marn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My Chat!.
         /// </summary>
         public static string lbl_MyChat {
@@ -336,6 +354,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         public static string lbl_PreferredLanguages {
             get {
                 return ResourceManager.GetString("lbl_PreferredLanguages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qualification.
+        /// </summary>
+        public static string lbl_Qualification {
+            get {
+                return ResourceManager.GetString("lbl_Qualification", resourceCulture);
             }
         }
         
@@ -399,6 +426,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         public static string lbl_VisasInterested {
             get {
                 return ResourceManager.GetString("lbl_VisasInterested", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Agent Registration.
+        /// </summary>
+        public static string msn_AgentRegistration {
+            get {
+                return ResourceManager.GetString("msn_AgentRegistration", resourceCulture);
             }
         }
         
@@ -557,7 +593,7 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;li&gt;Brisbane&lt;/li&gt;						&lt;li&gt;&lt;a href=&quot;&quot;&gt;Send us an e-mail&lt;/a&gt;&lt;/li&gt;.
+        ///   Looks up a localized string similar to &lt;li&gt;Brisbane&lt;/li&gt;						&lt;li&gt;&lt;a href=&quot;mailto:itsupport@visaroom.com.au&quot;&gt;Send us an e-mail&lt;/a&gt;&lt;/li&gt;.
         /// </summary>
         public static string txt_ContactUsDetails {
             get {

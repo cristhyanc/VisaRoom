@@ -54,7 +54,7 @@ namespace VisaRoom.Web.Helper
             {
                 _listTypeOfVisasList = _bsCommon.GetTypeOfVisasList();
             }
-            return _listTypeOfVisasList.Where(x => x.ShowToUser.Equals((int)enumTypeOfUsers.Agent)).ToList();
+            return _listTypeOfVisasList.Where(x => x.ShowToUser == enumTypeOfUsers.Agent).ToList();
         }
 
         public List<ValueTo> GetLanguages()

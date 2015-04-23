@@ -32,6 +32,35 @@
 	<!--//end-smoth-scrolling-->
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>     
+
+        !function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s); js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }
+        (document, 'script', 'twitter-wjs');
+
+
+        $("span.menu").click(function () {
+            $("ul.nav1").slideToggle(300, function () {
+                // Animation complete.
+            });
+        });
+
+        (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    </script>
 	<!--header-->
 	<div class="header" id="header">
 		<div class="container">
@@ -44,25 +73,24 @@
 					<li><a href="" class="active">@Html.Raw(@Resource.txt_homeUpperCase)</a></li>
 					<li><a href="#seccionHowItWorks" class="scroll">@Html.Raw(@Resource.txt_HowItWorks)</a></li>
 					<li><a href="#seccionWhy" class="scroll">@Html.Raw(@Resource.txt_whyVisaRoomUpperCase)</a></li>
-					<li><a href="#seccionRegister" class="scroll">@Html.Raw(@Resource.txt_RegisterUpperCase)</a></li>
-					<li><a href="">@Html.Raw(@Resource.txt_BlogUpperCase)</a></li>
-					<li>@Html.ActionLink(@Resource.txt_ContactUpperCase, "Contact", "Home")</li>
-                    <li>@Html.ActionLink(@Resource.txt_LoginUpperCase, "Login", "Account")</li>
+					<li>@*<a href="#seccionRegister" class="scroll">@Html.Raw(@Resource.txt_RegisterUpperCase)</a>*@</li>
+					<li><a href="http://visaroom.com.au/VisaBlog/">@Html.Raw(@Resource.txt_BlogUpperCase)</a></li>
+					@*<li>@Html.ActionLink(@Resource.txt_ContactUpperCase, "Contact", "Home")</li>*@
+                    <li>@*@Html.ActionLink(@Resource.txt_LoginUpperCase, "Login", "Account")*@</li>
 				</ul>
-				<!-- script-for-menu -->
-				 <script>
-				     $("span.menu").click(function () {
-				         $("ul.nav1").slideToggle(300, function () {
-				             // Animation complete.
-				         });
-				     });
-				</script>
-				<!-- /script-for-menu -->
+				
 			</div>
+
+
+
+
+
 			<div class="social-icons">
-				<ul>
-					<li><a href="#"></a></li>
-					<li><a href="#" class="twit"></a></li>							
+				<ul>                    
+					<li>                        
+                        <a href="https://www.facebook.com/visaroom.com.au"></a>                        
+					</li>
+					<li><a href="https://twitter.com/VisaRoom" class="twit"></a></li>							
 				</ul>
                 
 			</div>
@@ -85,6 +113,7 @@
 					<ul>
 						@Html.Raw(@Resource.txt_ContactUsDetails)
 					</ul>
+                    
 				</div>
 				<div class="col-md-4 footer-grids-info">
 					<h5>@Html.Raw(@Resource.txt_Navigation)</h5>
@@ -92,10 +121,10 @@
 						<li><a href="" class="active">@Html.Raw(@Resource.txt_homeUpperCase)</a></li>
 					    <li><a href="#seccionHowItWorks" class="scroll">@Html.Raw(@Resource.txt_HowItWorks)</a></li>
 					    <li><a href="#seccionWhy" class="scroll">@Html.Raw(@Resource.txt_whyVisaRoomUpperCase)</a></li>
-					    <li><a href="#seccionRegister" class="scroll">@Html.Raw(@Resource.txt_RegisterUpperCase)</a></li>
-					    <li><a href="">@Html.Raw(@Resource.txt_BlogUpperCase)</a></li>
-					    <li>@Html.ActionLink(@Resource.txt_ContactUpperCase, "Contact", "Home")</li>
-                        <li>@Html.ActionLink(@Resource.txt_LoginUpperCase, "Login", "Account")</li>
+					    <li>@*<a href="#seccionRegister" class="scroll">@Html.Raw(@Resource.txt_RegisterUpperCase)</a>*@</li>
+					    <li><a href="http://visaroom.com.au/VisaBlog/">@Html.Raw(@Resource.txt_BlogUpperCase)</a></li>
+					   @* <li>@Html.ActionLink(@Resource.txt_ContactUpperCase, "Contact", "Home")</li>*@
+                        @*<li>@Html.ActionLink(@Resource.txt_LoginUpperCase, "Login", "Account")</li>*@
 					</ul>
 				</div>
 				<div class="col-md-4 footer-grids-info">
@@ -106,6 +135,16 @@
 						<input type="submit" value="Submit" >
 					</form>		
 				</div>
+                <div class="col-md-12 footer-grids-info">
+                    <ul>
+                        <a class="fb-like" data-href="http://www.visaroom.com.au" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></a> 
+                        <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+                        <script type="IN/Share" data-url="http://www.visaroom.com.au" data-counter="right"></script>
+                        <a href="https://twitter.com/VisaRoom" class="twitter-follow-button" data-show-count="false">Follow @Html.Raw("@VisaRoom")</a>
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.visaroom.com.au" data-via="Visaroom" data-related="Visaroom">Tweet</a>                  
+                        
+                    </ul>
+                </div>
 				<div class="clearfix"></div>
 			</div>	
 			<div class="copy-right">
