@@ -472,4 +472,7 @@
   <data name="rqd_Marn" xml:space="preserve">
     <value>Marn Number is required</value>
   </data>
+  <data name="Error_SaveAgentPassportsPreferred" xml:space="preserve">
+    <value>There were a problem trying to save the passport holders preferred</value>
+  </data>
 </root>

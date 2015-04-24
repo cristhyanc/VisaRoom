@@ -28,39 +28,30 @@
 	            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
 	        });
 	    });
+
+	    !function (d, s, id) {
+	        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+	        if (!d.getElementById(id)) {
+	            js = d.createElement(s); js.id = id;
+	            js.src = p + '://platform.twitter.com/widgets.js';
+	            fjs.parentNode.insertBefore(js, fjs);
+	        }
+	    }
+       (document, 'script', 'twitter-wjs');
+	  
+	    (function (d, s, id) {
+	        var js, fjs = d.getElementsByTagName(s)[0];
+	        if (d.getElementById(id)) return;
+	        js = d.createElement(s); js.id = id;
+	        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+	        fjs.parentNode.insertBefore(js, fjs);
+	    }(document, 'script', 'facebook-jssdk'));
 	</script>
 	<!--//end-smoth-scrolling-->
 </head>
 <body>
     <div id="fb-root"></div>
-    <script>     
 
-        !function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-            if (!d.getElementById(id)) {
-                js = d.createElement(s); js.id = id;
-                js.src = p + '://platform.twitter.com/widgets.js';
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }
-        (document, 'script', 'twitter-wjs');
-
-
-        $("span.menu").click(function () {
-            $("ul.nav1").slideToggle(300, function () {
-                // Animation complete.
-            });
-        });
-
-        (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-
-    </script>
 	<!--header-->
 	<div class="header" id="header">
 		<div class="container">
@@ -73,12 +64,18 @@
 					<li><a href="" class="active">@Html.Raw(@Resource.txt_homeUpperCase)</a></li>
 					<li><a href="#seccionHowItWorks" class="scroll">@Html.Raw(@Resource.txt_HowItWorks)</a></li>
 					<li><a href="#seccionWhy" class="scroll">@Html.Raw(@Resource.txt_whyVisaRoomUpperCase)</a></li>
-					<li>@*<a href="#seccionRegister" class="scroll">@Html.Raw(@Resource.txt_RegisterUpperCase)</a>*@</li>
+					@*<li><a href="#seccionRegister" class="scroll">@Html.Raw(@Resource.txt_RegisterUpperCase)</a></li>*@
 					<li><a href="http://visaroom.com.au/VisaBlog/">@Html.Raw(@Resource.txt_BlogUpperCase)</a></li>
 					@*<li>@Html.ActionLink(@Resource.txt_ContactUpperCase, "Contact", "Home")</li>*@
-                    <li>@*@Html.ActionLink(@Resource.txt_LoginUpperCase, "Login", "Account")*@</li>
+                    @*<li>@Html.ActionLink(@Resource.txt_LoginUpperCase, "Login", "Account")</li>*@
 				</ul>
-				
+				<script>
+				    $("span.menu").click(function () {
+				        $("ul.nav1").slideToggle(300, function () {
+				            // Animation complete.
+				        });
+				    });
+				    </script>
 			</div>
 
 
@@ -121,9 +118,9 @@
 						<li><a href="" class="active">@Html.Raw(@Resource.txt_homeUpperCase)</a></li>
 					    <li><a href="#seccionHowItWorks" class="scroll">@Html.Raw(@Resource.txt_HowItWorks)</a></li>
 					    <li><a href="#seccionWhy" class="scroll">@Html.Raw(@Resource.txt_whyVisaRoomUpperCase)</a></li>
-					    <li>@*<a href="#seccionRegister" class="scroll">@Html.Raw(@Resource.txt_RegisterUpperCase)</a>*@</li>
+					    @*<li><a href="#seccionRegister" class="scroll">@Html.Raw(@Resource.txt_RegisterUpperCase)</a></li>*@
 					    <li><a href="http://visaroom.com.au/VisaBlog/">@Html.Raw(@Resource.txt_BlogUpperCase)</a></li>
-					   @* <li>@Html.ActionLink(@Resource.txt_ContactUpperCase, "Contact", "Home")</li>*@
+					    @*<li>@Html.ActionLink(@Resource.txt_ContactUpperCase, "Contact", "Home")</li>*@
                         @*<li>@Html.ActionLink(@Resource.txt_LoginUpperCase, "Login", "Account")</li>*@
 					</ul>
 				</div>

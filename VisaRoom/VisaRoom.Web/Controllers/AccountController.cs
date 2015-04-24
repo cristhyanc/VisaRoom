@@ -99,6 +99,7 @@ namespace VisaRoom.Web.Controllers
 
                     if (WebSecurity.UserExists(model.Register.UserName))
                     {
+                      
                         this.Error(Resource.val_UserExists);
                     }
                     else
@@ -118,7 +119,7 @@ namespace VisaRoom.Web.Controllers
                                 model.Register.PhotoProfile = DateTime.Now.ToString("yyyyMMdd") + "_" + model.Register.UserId + "." + model.archivo.ContentType.Split('/')[1].ToString();
                                 model.archivo.SaveAs(serverpath + model.Register.PhotoProfile);
                             }
-
+                            model.Register.TypeOfUser = enumTypeOfUsers.Agent;
                             bUser.SaveUser(model.Register);
                             WebSecurity.Login(model.Register.UserName, model.Register.Password);
                             return RedirectToAction("Index", "Home");
@@ -173,7 +174,7 @@ namespace VisaRoom.Web.Controllers
                                 model.Register.PhotoProfile = DateTime.Now.ToString("yyyyMMdd") + "_" + model.Register.UserId + "." + model.archivo.ContentType.Split('/')[1].ToString();
                                 model.archivo.SaveAs(serverpath + model.Register.PhotoProfile);
                             }
-
+                            model.Register.TypeOfUser = enumTypeOfUsers.Applicant;
                             bUser.SaveUser(model.Register);
                             WebSecurity.Login(model.Register.UserName, model.Register.Password);
                             return RedirectToAction("Index", "Home");

@@ -203,6 +203,6 @@ namespace VisaRoom.Common.Models
         public string BussinesName { get; set; }
 
         [Display(Name = "lbl_YearsExperience", ResourceType = typeof(Resource))]
-        public int YearsExperience { get; set; }
+        public string YearsExperience { get; set; }
     }
 }
