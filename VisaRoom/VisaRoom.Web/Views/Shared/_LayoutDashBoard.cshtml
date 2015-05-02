@@ -1,4 +1,5 @@
-﻿@using System.Web.Optimization
+﻿@model VisaRoom.Common.Models.UserTo
+@using System.Web.Optimization
 @using BootstrapSupport
 @using NavigationRoutes
 <!DOCTYPE html>
@@ -45,40 +46,51 @@
             <div  class="row">
                 <div  class="col-md-2  hidden-xs" style="color:white; background-color:#44546A; min-height: 540px; font-size:16px; text-align:left">
                     <div>
-                        <p class="text-center">                        
-                        <img src="~/assets/UserPhotos/women.jpg" width="60%" class="user-image img-responsive logo-center"/>    
+                        <p class="text-center">   
+                          @{   if (ViewData.Model.PhotoProfile!=null && !ViewData.Model.PhotoProfile.Equals(string.Empty)) 
+                               {
+                                   <img src="~/assets/UserPhotos/@Html.Raw(ViewData.Model.PhotoProfile)" width="60%" class="user-image img-responsive logo-center"/>    
+                       
+                               }
+                               else
+                               {
+                                   <img src="~/assets/UserPhotos/find_user.png" width="60%" class="user-image img-responsive logo-center"/>   
+                       
+                               }
+                          }                  
+                        
                         </p>        
                     </div>
                     
                     <div class="PersonalDetailDiv">
                         <p class="text-center">
-                            <strong>Mario Alvarez</strong>
+                            <strong>@Html.Raw(ViewData.Model.FirstName)</strong>
                             <br />
-                            <strong style="font-size:14px">34 Single</strong>
+                            <strong style="font-size:14px">@Html.Raw(ViewData.Model.Age) years, @Html.Raw(ViewData.Model.MaritalStatus.Text)</strong>
                             <br />
                                 
-                            <strong style="font-size:14px">6.5 IELTS</strong>
+                            <strong style="font-size:14px">@Html.Raw(ViewData.Model.EnglishTestScore) @Html.Raw(ViewData.Model.EnglishTest)</strong>
                             <br />
-                            <strong style="font-size:14px">(Valid until 12/12/15)</strong>
+                            @*<strong style="font-size:14px">(Valid until 12/12/15)</strong>*@
                         </p>
                      </div>
                     <div class="PersonalDetailDiv">
                         <i class="fa fa-book fa-fw"></i>  About Me 
                     </div>
                     <div class="PersonalDetailDiv">
-                        <i class="fa fa-building fa-fw"></i> City
+                        <i class="fa fa-building fa-fw"></i> @Html.Raw(ViewData.Model.City.Text)
                     </div>
                     <div class="PersonalDetailDiv">
-                        <i class="fa fa-book fa-fw"></i> Visa Hold
+                        <i class="fa fa-book fa-fw"></i> @Html.Raw(ViewData.Model.CurrentVisa.Name)
                     </div>
                     <div class="PersonalDetailDiv">
-                        <i class="fa fa-graduation-cap fa-fw"></i> Bachelor of System Engineree
+                        <i class="fa fa-graduation-cap fa-fw"></i> @Html.Raw(ViewData.Model.Education)
                     </div>
                     <div class="PersonalDetailDiv">
                         <i  class="fa fa-language fa-fw"></i> English, Spanish
                     </div>                   
                     <div class="PersonalDetailDiv">
-                        <i class="fa fa-home fa-fw"></i> Spain
+                        <i class="fa fa-home fa-fw"></i> @Html.Raw(ViewData.Model.CountryPassport.Text)
                     </div>
                         
                    

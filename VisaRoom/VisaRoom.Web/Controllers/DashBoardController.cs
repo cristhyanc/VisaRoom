@@ -14,7 +14,7 @@ namespace VisaRoom.Web.Controllers
         
         public ActionResult Index()
         {
-            return View();
+            return View(Helper.Helper.CurrentUser);
         }
 
     }

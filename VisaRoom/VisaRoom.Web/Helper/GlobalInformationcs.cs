@@ -95,25 +95,42 @@ namespace VisaRoom.Web.Helper
                 }
                 _listCountries = (from ct in result
                                         select new ValueTo { Text = ct.CountryName, Value = ct.GeoNameId.ToString() }).ToList();
-               
+                geoNamesClient.Close();
             }
-
+            
             return _listCountries;
         }
 
         public ValueTo GetCountry(string countryId)
         {
-            return null;
+            ValueTo country=null;
+            var lists=GetCountries();
+            if (lists != null || lists.Count > 0)
+            {
+                country = lists.Where(x => x.Value.Equals(countryId)).FirstOrDefault();
+            }
+            return country;
         }
 
-        public List<ValueTo> GetCitiesByState(string cityId)
+        public ValueTo GetPlaceDetails(string placeId)
+        {
+            ValueTo result = new ValueTo();
+            var geoNamesClient = new GeoNamesClient();
+            var data = geoNamesClient.Get(int.Parse(placeId), "cristhyan17");
+            result.Value = placeId;
+            result.Text = data.Name;
+            geoNamesClient.Close();
+            return result;
+        }
+
+        public List<ValueTo> GetCitiesByState(string stateId)
         {
             List<ValueTo> result = new List<ValueTo>();
-            if (_listCities != null && cityId != null)
+            if (_listCities != null && stateId != null)
             {
-                if (_listCities.Contains(cityId))
+                if (_listCities.Contains(stateId))
                 {
-                    result = (List<ValueTo>)_listCities[cityId];
+                    result = (List<ValueTo>)_listCities[stateId];
                     return result;
                 }
             }
@@ -122,8 +139,8 @@ namespace VisaRoom.Web.Helper
                 _listCities = new Hashtable();
             }
 
-            result = getChildren(int.Parse(cityId));
-            _listCities.Add(cityId, result);
+            result = getChildren(int.Parse(stateId));
+            _listCities.Add(stateId, result);
             return result;
 
 

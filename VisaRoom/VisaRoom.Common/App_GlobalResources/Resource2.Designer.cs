@@ -147,11 +147,74 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There is a problem getting Marital status details..
+        /// </summary>
+        public static string Error_GetMaritalStatus {
+            get {
+                return ResourceManager.GetString("Error_GetMaritalStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There is a problem getting a list of visas, try later please..
         /// </summary>
         public static string Error_GetTypeOfVisasList {
             get {
                 return ResourceManager.GetString("Error_GetTypeOfVisasList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is a problem getting the user details..
+        /// </summary>
+        public static string Error_GetUserDetails {
+            get {
+                return ResourceManager.GetString("Error_GetUserDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is a problem getting user&apos;s languages..
+        /// </summary>
+        public static string Error_GetUserLanguages {
+            get {
+                return ResourceManager.GetString("Error_GetUserLanguages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is a problem getting user&apos;s visas.
+        /// </summary>
+        public static string Error_GetUserVisas {
+            get {
+                return ResourceManager.GetString("Error_GetUserVisas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is a problem getting the visa details..
+        /// </summary>
+        public static string Error_GetVisaDetail {
+            get {
+                return ResourceManager.GetString("Error_GetVisaDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is a problem trying to log in..
+        /// </summary>
+        public static string Error_Login {
+            get {
+                return ResourceManager.GetString("Error_Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is a problem mapping user details..
+        /// </summary>
+        public static string Error_ORMUser {
+            get {
+                return ResourceManager.GetString("Error_ORMUser", resourceCulture);
             }
         }
         

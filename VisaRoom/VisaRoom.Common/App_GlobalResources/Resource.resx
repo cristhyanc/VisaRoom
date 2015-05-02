@@ -543,4 +543,7 @@
   <data name="Error_ORMUser" xml:space="preserve">
     <value>There is a problem mapping user details.</value>
   </data>
+  <data name="Error_Login" xml:space="preserve">
+    <value>There is a problem trying to log in.</value>
+  </data>
 </root>

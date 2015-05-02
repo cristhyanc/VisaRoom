@@ -44,16 +44,24 @@ namespace VisaRoom.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            try
             {
-                IBLUser bl = new BLUser(this.LogError.SLogPath);
-                var usr = bl.GetUserDetails(WebSecurity.GetUserId(model.UserName));
-                Helper.Helper.CurrentUser = usr;
-                return RedirectToLocal(returnUrl);
-            }
+                if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+                {
+                    IBLUser bl = new BLUser(this.LogError.SLogPath);
+                    var usr = bl.GetUserDetails(WebSecurity.GetUserId(model.UserName));
+                    Helper.Helper.CurrentUser = usr;
+                    return RedirectToLocal(returnUrl);
+                }
 
-            // If we got this far, something failed, redisplay form
-            ModelState.AddModelError("", Resource.msn_WrongUser_Pass);
+                // If we got this far, something failed, redisplay form
+                ModelState.AddModelError("", Resource.msn_WrongUser_Pass);
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                ProcessExection("Web.AccountController.Login", ex, Resource.Error_Login);
+            }
             return View(model);
         }
 
@@ -190,7 +198,44 @@ namespace VisaRoom.Web.Controllers
                                 model.archivo.SaveAs(serverpath + model.Register.PhotoProfile);
                             }
                             model.Register.TypeOfUser = enumTypeOfUsers.Applicant;
-                            bUser.SaveUser(model.Register);
+                            if (model.Register.Country.Value != null)
+                            {
+                                var place=Helper.Helper.getGlobalInformation().GetCountry(model.Register.Country.Value);
+                                if(place!=null)
+                                {
+                                    model.Register.Country.Text = place.Text;
+                                }
+
+                                if (model.Register.State.Value != null)
+                                {
+                                    place = Helper.Helper.getGlobalInformation().GetPlaceDetails(model.Register.State.Value);
+                                    if (place != null)
+                                    {
+                                        model.Register.State.Text = place.Text;
+                                    }
+
+                                    if (model.Register.City.Value != null)
+                                    {
+                                        place = Helper.Helper.getGlobalInformation().GetPlaceDetails(model.Register.City.Value);
+                                        if (place != null)
+                                        {
+                                            model.Register.City.Text = place.Text;
+                                        }
+                                    }
+                                }
+                            }
+
+                            if (model.Register.CountryPassport.Value != null)
+                            {
+                                var place = Helper.Helper.getGlobalInformation().GetCountry(model.Register.CountryPassport.Value);
+                                if (place != null)
+                                {
+                                    model.Register.CountryPassport.Text = place.Text;
+                                }
+                            }
+
+                            
+                             bUser.SaveUser(model.Register);
                             WebSecurity.Login(model.Register.UserName, model.Register.Password);
                             return RedirectToAction("Index", "Home");
                         }

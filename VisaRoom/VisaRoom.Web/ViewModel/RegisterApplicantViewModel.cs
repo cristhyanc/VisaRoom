@@ -24,7 +24,7 @@ namespace VisaRoom.Web.ViewModel
             List<VisasTo> listVisaApplicant = Helper.Helper.getGlobalInformation().GetApplicantVisasList();
 
             ListCountries = new SelectList(listCountries, "Value", "Text");
-            ListMaritalStatus = new SelectList(listMaritalStatus, "Value", "Text");
+            ListMaritalStatus = new SelectList(listMaritalStatus, "CodeId", "Text");
             ListLanguage = new MultiSelectList(listLanguage, "Value", "Text");
             ListVisaApplicant = new SelectList(listVisaApplicant, "VisaId", "Name");
             Register = new RegisterModel();
