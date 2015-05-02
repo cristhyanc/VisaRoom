@@ -6,11 +6,12 @@ using System.Web.Mvc;
 
 namespace VisaRoom.Web.Controllers
 {
-    public class DashBoardController : Controller
+    public class DashBoardController : PrivateUserController
     {
         //
         // GET: /DashBoard/
 
+        
         public ActionResult Index()
         {
             return View();

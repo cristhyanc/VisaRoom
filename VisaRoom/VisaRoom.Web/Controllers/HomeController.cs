@@ -9,7 +9,7 @@ using VisaRoom.Web.Models;
 
 namespace VisaRoom.Web.Controllers
 {
-    public class HomeController : BootstrapBaseController
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {

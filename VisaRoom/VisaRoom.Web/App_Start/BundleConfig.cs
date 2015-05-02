@@ -9,7 +9,7 @@ namespace VisaRoom.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             
-            System.Web.Optimization.BundleTable.EnableOptimizations = false;
+            //System.Web.Optimization.BundleTable.EnableOptimizations = false;
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -33,7 +33,7 @@ namespace VisaRoom.Web
                          "~/Scripts/chosen.jquery.js"));
 
             bundles.Add(new ScriptBundle("~/bootstrapjs").Include(
-                         "~/Scripts/bootstrap.js",
+                        "~/Scripts/bootstrap.js",
                         "~/Scripts/metisMenu.js",
                         "~/Scripts/bootstrap-datepicker.js",
                         "~/Scripts/sb-admin-2.js"));
@@ -42,19 +42,19 @@ namespace VisaRoom.Web
                           "~/Scripts/jquery.bootstrap.wizard.js",
                           "~/Scripts/prettify.js"));
 
-            bundles.Add(new ScriptBundle("~/bootstrapFile").Include(
+            bundles.Add(new ScriptBundle("~/bootstrapFileStyle").Include(
                           "~/Scripts/bootstrap-filestyle.js"));
 
             bundles.Add(new ScriptBundle("~/publicPagesJs").Include(
                          "~/Scripts/easing.js",
+                         "~/Scripts/bootstrap-filestyle.js",
                         "~/Scripts/move-top.js"));
 
 
 
             bundles.Add(new StyleBundle("~/content/bundle").Include(
                        "~/content/bootstrap.css",
-                       "~/content/publicPages.css",
-                       "~/content/bootstrap.css",
+                       "~/content/publicPages.css",                     
                        "~/content/metisMenu.css",
                        "~/content/sb-admin-2.css",
                        "~/content/bootstrap-datepicker.css",
@@ -62,13 +62,18 @@ namespace VisaRoom.Web
                        "~/content/chosen.css",
                        "~/content/prettify.css"));
 
+
+            bundles.Add(new StyleBundle("~/content/publicPagesCss").Include(
+                       "~/content/bootstrap.css",
+                       "~/content/publicPages.css",                      
+                       "~/content/prettify.css"));
           
-            bundles.Add(new StyleBundle("~/Content/bootstrapcss").Include(
-                       "~/css/bootstrap.css",
-                       "~/css/metisMenu.css",
-                       "~/css/sb-admin-2.css",
-                       "~/css/bootstrap-datepicker.css",
-                       "~/css/font-awesome.css"
+            
+            bundles.Add(new StyleBundle("~/Content/DashBoard").Include(
+                       "~/Content/bootstrap.css",
+                       "~/Content/metisMenu.css",
+                       "~/Content/sb-admin-2.css",
+                       "~/Content/font-awesome.css"
                        ));
 
             bundles.Add(new StyleBundle("~/multipleSelectCSS").Include(

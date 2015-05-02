@@ -246,9 +246,10 @@
     <Compile Include="BootstrapSupport\HtmlHelpers\Paging.cs" />
     <Compile Include="BootstrapSupport\ViewHelperExtensions.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BootstrapBaseController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PrivateUserController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -257,6 +258,7 @@
     <Compile Include="Helper\GlobalInformationcs.cs" />
     <Compile Include="Helper\Helper.cs" />
     <Compile Include="Helper\IGlobalInformation.cs" />
+    <Compile Include="Helper\SessionExpireFilterAttribute.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="NavigationRoutes\INavigationRouteFilter.cs" />
     <Compile Include="NavigationRoutes\NamedRoute.cs" />
@@ -281,6 +283,7 @@
     <Content Include="Content\metisMenu.min.css" />
     <Content Include="Content\prettify.css" />
     <Content Include="Content\publicPages.css" />
+    <Content Include="Content\sb-admin-2.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\chosen-sprite%402x.png" />
     <Content Include="fonts\chosen-sprite.png" />

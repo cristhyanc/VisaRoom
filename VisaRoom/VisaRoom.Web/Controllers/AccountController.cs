@@ -24,7 +24,7 @@ namespace VisaRoom.Web.Controllers
 {
     [Authorize]
     [InitializeSimpleMembership]
-    public class AccountController : BootstrapBaseController
+    public class AccountController : BaseController
     {
         //
         // GET: /Account/Login
@@ -46,6 +46,9 @@ namespace VisaRoom.Web.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
+                IBLUser bl = new BLUser(this.LogError.SLogPath);
+                var usr = bl.GetUserDetails(WebSecurity.GetUserId(model.UserName));
+                Helper.Helper.CurrentUser = usr;
                 return RedirectToLocal(returnUrl);
             }
 
@@ -72,8 +75,16 @@ namespace VisaRoom.Web.Controllers
         [AllowAnonymous]
         public ActionResult RegisterApplicant()
         {
-            RegisterApplicantViewModel registerModel = new RegisterApplicantViewModel();
-            return View(registerModel);
+            try
+            {
+                RegisterApplicantViewModel registerModel = new RegisterApplicantViewModel();
+                return View(registerModel);
+            }
+            catch (Exception ex)
+            {
+                ProcessExection("Web.AccountController.RegisterApplicant", ex, Resource.Error_RegisterApplicant);
+            }
+            return View();
         }
 
         [AllowAnonymous]
@@ -145,6 +156,10 @@ namespace VisaRoom.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RegisterApplicant(RegisterApplicantViewModel model)
         {
+            if (ModelState.ContainsKey("Register.MarnNumber"))
+            {
+                ModelState["Register.MarnNumber"].Errors.Clear();
+            }
             
             if (ModelState.IsValid)
             {
@@ -438,7 +453,7 @@ namespace VisaRoom.Web.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("index", "DashBoard");
             }
         }
 

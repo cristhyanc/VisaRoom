@@ -139,13 +139,13 @@
     <value>Password</value>
   </data>
   <data name="lbl_Payment" xml:space="preserve">
-    <value>Payment!</value>
+    <value>My Payment</value>
   </data>
   <data name="lbl_Register" xml:space="preserve">
     <value>Register</value>
   </data>
   <data name="lbl_SearchVisas" xml:space="preserve">
-    <value>Search Visas!</value>
+    <value>My Search</value>
   </data>
   <data name="lbl_userName" xml:space="preserve">
     <value>User Name</value>
@@ -474,5 +474,73 @@
   </data>
   <data name="Error_SaveAgentPassportsPreferred" xml:space="preserve">
     <value>There were a problem trying to save the passport holders preferred</value>
+  </data>
+  <data name="Detail_Question" xml:space="preserve">
+    <value>Do you have Australian visa questions?
+                             &lt;br /&gt;
+                             Get advice from trusted migration agents.</value>
+  </data>
+  <data name="lbl_MyDocs" xml:space="preserve">
+    <value>My Docs</value>
+  </data>
+  <data name="Detail_Agent" xml:space="preserve">
+    <value>Make a meeting wih a migration agents
+                             &lt;br /&gt;
+                             Get  your answers</value>
+  </data>
+  <data name="Detail_Chat" xml:space="preserve">
+    <value> Reviewed migration agents profile?
+                             &lt;br /&gt;
+                             Have 1-2-1 chat!
+                         &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;br /&gt;
+                            &lt;button type="button"  class="btn btn-warning"&gt;Chat&lt;/button&gt;</value>
+  </data>
+  <data name="Detail_Doc" xml:space="preserve">
+    <value>Upload your documents</value>
+  </data>
+  <data name="Detail_Payment" xml:space="preserve">
+    <value>Pay for advice.
+                             &lt;br /&gt;
+                             Safe, easy and secure.</value>
+  </data>
+  <data name="Detail_Search" xml:space="preserve">
+    <value>Want simple Australian visa info?
+                             &lt;br /&gt;
+                             You can look it up here.</value>
+  </data>
+  <data name="lbl_AskNow" xml:space="preserve">
+    <value>Ask Now</value>
+  </data>
+  <data name="lbl_MakeAppointment" xml:space="preserve">
+    <value>Make appointment</value>
+  </data>
+  <data name="lbl_Pay" xml:space="preserve">
+    <value>Pay</value>
+  </data>
+  <data name="lbl_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="lbl_Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="Error_GetMaritalStatus" xml:space="preserve">
+    <value>There is a problem getting Marital status details.</value>
+  </data>
+  <data name="Error_GetUserDetails" xml:space="preserve">
+    <value>There is a problem getting the user details.</value>
+  </data>
+  <data name="Error_GetUserLanguages" xml:space="preserve">
+    <value>There is a problem getting user's languages.</value>
+  </data>
+  <data name="Error_GetUserVisas" xml:space="preserve">
+    <value>There is a problem getting user's visas</value>
+  </data>
+  <data name="Error_GetVisaDetail" xml:space="preserve">
+    <value>There is a problem getting the visa details.</value>
+  </data>
+  <data name="Error_ORMUser" xml:space="preserve">
+    <value>There is a problem mapping user details.</value>
   </data>
 </root>

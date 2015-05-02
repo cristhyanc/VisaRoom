@@ -6,7 +6,7 @@ using System;
 
 namespace BootstrapMvcSample.Controllers
 {
-    public class BootstrapBaseController: Controller
+    public class BaseController: Controller
     {
 
         VisaRoomLogError _log;
@@ -16,7 +16,7 @@ namespace BootstrapMvcSample.Controllers
             {
                 if (_log == null)
                 {
-                    _log = new VisaRoomLogError(Server.MapPath("~") + ConfigurationManager.AppSettings["logFolder"]);
+                    _log = new VisaRoomLogError(VisaRoom.Web.Helper.Helper.getGlobalInformation().LogUrl);
                 }
                 return _log;
             }

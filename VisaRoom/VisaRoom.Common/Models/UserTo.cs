@@ -13,6 +13,10 @@ namespace VisaRoom.Common.Models
 
         public int UserId { get; set; }
 
+        public String UserNickName { get; set; }
+
+        public enumStatus Status { get; set; }
+
         [Display(Name = "lbl_FirstName", ResourceType = typeof(Resource))]
         [Required(ErrorMessageResourceType = typeof(Resource),
                   ErrorMessageResourceName = "rqd_FirstName")]
@@ -33,7 +37,7 @@ namespace VisaRoom.Common.Models
         public string Email { get; set; }
 
         [Display(Name = "lbl_Age", ResourceType = typeof(Resource))]
-        public int Age { get; set; }
+        public int? Age { get; set; }
 
         [Display(Name = "lbl_CountryResidence", ResourceType = typeof(Resource))]
         public ValueTo Country { get; set; }
@@ -50,7 +54,7 @@ namespace VisaRoom.Common.Models
 
         [Display(Name = "lbl_DateofGraduation", ResourceType = typeof(Resource))]
         [DataType(DataType.Date)]
-        public DateTime DateOfGraduation { get; set; }
+        public DateTime? DateOfGraduation { get; set; }
 
         [Display(Name = "lbl_MaritalStatus", ResourceType = typeof(Resource))]
         public ValueTo MaritalStatus { get; set; }

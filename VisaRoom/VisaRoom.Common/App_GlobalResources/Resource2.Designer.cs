@@ -61,6 +61,74 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Make a meeting wih a migration agents
+        ///                             &lt;br /&gt;
+        ///                             Get  your answers.
+        /// </summary>
+        public static string Detail_Agent {
+            get {
+                return ResourceManager.GetString("Detail_Agent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  Reviewed migration agents profile?
+        ///                             &lt;br /&gt;
+        ///                             Have 1-2-1 chat!
+        ///                         &lt;/div&gt;
+        ///                        &lt;div&gt;
+        ///                            &lt;br /&gt;
+        ///                            &lt;button type=&quot;button&quot;  class=&quot;btn btn-warning&quot;&gt;Chat&lt;/button&gt;.
+        /// </summary>
+        public static string Detail_Chat {
+            get {
+                return ResourceManager.GetString("Detail_Chat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload your documents.
+        /// </summary>
+        public static string Detail_Doc {
+            get {
+                return ResourceManager.GetString("Detail_Doc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pay for advice.
+        ///                             &lt;br /&gt;
+        ///                             Safe, easy and secure..
+        /// </summary>
+        public static string Detail_Payment {
+            get {
+                return ResourceManager.GetString("Detail_Payment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you have Australian visa questions?
+        ///                             &lt;br /&gt;
+        ///                             Get advice from trusted migration agents..
+        /// </summary>
+        public static string Detail_Question {
+            get {
+                return ResourceManager.GetString("Detail_Question", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Want simple Australian visa info?
+        ///                             &lt;br /&gt;
+        ///                             You can look it up here..
+        /// </summary>
+        public static string Detail_Search {
+            get {
+                return ResourceManager.GetString("Detail_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There is a problem trying to check the E-mail..
         /// </summary>
         public static string Error_ExistEmail {
@@ -93,6 +161,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         public static string Error_RegisterApplicant {
             get {
                 return ResourceManager.GetString("Error_RegisterApplicant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There were a problem trying to save the passport holders preferred.
+        /// </summary>
+        public static string Error_SaveAgentPassportsPreferred {
+            get {
+                return ResourceManager.GetString("Error_SaveAgentPassportsPreferred", resourceCulture);
             }
         }
         
@@ -138,6 +215,24 @@ namespace VisaRoom.Web.App_GlobalResources {
         public static string lbl_AgentsMeetings {
             get {
                 return ResourceManager.GetString("lbl_AgentsMeetings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ask Now.
+        /// </summary>
+        public static string lbl_AskNow {
+            get {
+                return ResourceManager.GetString("lbl_AskNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bussines Name.
+        /// </summary>
+        public static string lbl_BussinesName {
+            get {
+                return ResourceManager.GetString("lbl_BussinesName", resourceCulture);
             }
         }
         
@@ -286,6 +381,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Make appointment.
+        /// </summary>
+        public static string lbl_MakeAppointment {
+            get {
+                return ResourceManager.GetString("lbl_MakeAppointment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Marital Status.
         /// </summary>
         public static string lbl_MaritalStatus {
@@ -313,11 +417,29 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Docs.
+        /// </summary>
+        public static string lbl_MyDocs {
+            get {
+                return ResourceManager.GetString("lbl_MyDocs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My Questions!.
         /// </summary>
         public static string lbl_MyQuestions {
             get {
                 return ResourceManager.GetString("lbl_MyQuestions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Passport holders you want as customers.
+        /// </summary>
+        public static string lbl_PassportHolders {
+            get {
+                return ResourceManager.GetString("lbl_PassportHolders", resourceCulture);
             }
         }
         
@@ -331,7 +453,16 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Payment!.
+        ///   Looks up a localized string similar to Pay.
+        /// </summary>
+        public static string lbl_Pay {
+            get {
+                return ResourceManager.GetString("lbl_Pay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Payment.
         /// </summary>
         public static string lbl_Payment {
             get {
@@ -376,7 +507,16 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search Visas!.
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string lbl_Search {
+            get {
+                return ResourceManager.GetString("lbl_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Search.
         /// </summary>
         public static string lbl_SearchVisas {
             get {
@@ -390,6 +530,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         public static string lbl_State {
             get {
                 return ResourceManager.GetString("lbl_State", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload.
+        /// </summary>
+        public static string lbl_Upload {
+            get {
+                return ResourceManager.GetString("lbl_Upload", resourceCulture);
             }
         }
         
@@ -426,6 +575,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         public static string lbl_VisasInterested {
             get {
                 return ResourceManager.GetString("lbl_VisasInterested", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Years Experience.
+        /// </summary>
+        public static string lbl_YearsExperience {
+            get {
+                return ResourceManager.GetString("lbl_YearsExperience", resourceCulture);
             }
         }
         
@@ -489,6 +647,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         public static string rqd_LastName {
             get {
                 return ResourceManager.GetString("rqd_LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Marn Number is required.
+        /// </summary>
+        public static string rqd_Marn {
+            get {
+                return ResourceManager.GetString("rqd_Marn", resourceCulture);
             }
         }
         

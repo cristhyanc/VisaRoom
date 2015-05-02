@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -33,7 +34,7 @@ namespace VisaRoom.Web
             BootstrapSupport.BootstrapBundleConfig.RegisterBundles(System.Web.Optimization.BundleTable.Bundles);
             //BootstrapMvcSample.ExampleLayoutsRouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            globaInformation = new GlobalInformation();
+            globaInformation = new GlobalInformation(Server.MapPath("~") + ConfigurationManager.AppSettings["logFolder"]);            
             System.Web.HttpContext.Current.Application["GlobalInformation"] = globaInformation;
         }
 

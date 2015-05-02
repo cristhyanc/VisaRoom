@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using VisaRoom.Common.Helper;
 using VisaRoom.Common.Models;
 
@@ -21,14 +22,29 @@ namespace VisaRoom.Web.Helper
         private List<ValueTo> _listMaritalStates;
         private List<ValueTo> _listLanguages;
         private List<VisasTo> _listTypeOfVisasList;
+        private string logUrl;
         private BusinessLogic.Common.Common _bsCommon;
         #endregion
 
-        public GlobalInformation()
+
+        public GlobalInformation(string logUrl)
         {
+            this.logUrl = logUrl;
+            _bsCommon = new BusinessLogic.Common.Common(logUrl);
+        }
+
+        public GlobalInformation()
+        {            
             _bsCommon = new BusinessLogic.Common.Common();
         }
 
+        public String LogUrl
+        {
+            get
+            {
+                return logUrl;
+            }
+        }
 
         public List<VisasTo> GetTypeOfVisasList()
         {

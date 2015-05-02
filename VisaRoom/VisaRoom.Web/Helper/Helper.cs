@@ -10,9 +10,31 @@ namespace VisaRoom.Web.Helper
     public class Helper
     {
         
-        public static IGlobalInformation getGlobalInformation()
+        public static GlobalInformation getGlobalInformation()
         {
-            return (IGlobalInformation)System.Web.HttpContext.Current.Application["GlobalInformation"];
+            return (GlobalInformation)System.Web.HttpContext.Current.Application["GlobalInformation"];
+        }
+
+        
+
+        public static UserTo CurrentUser
+        {
+            get
+            {
+                var us = new UserTo();
+                if (HttpContext.Current.Session["userDetails"] != null)
+                {
+                    us =(UserTo)HttpContext.Current.Session["userDetails"];
+                    return us;
+                }
+
+                return null;
+
+            }
+            set
+            {
+                HttpContext.Current.Session["userDetails"] = value;
+            }
         }
     }
 }
