@@ -73,6 +73,7 @@ namespace VisaRoom.Web.Controllers
         public ActionResult LogOff()
         {
             WebSecurity.Logout();
+            Helper.Helper.CurrentUser = null;
 
             return RedirectToAction("Index", "Home");
         }
@@ -498,7 +499,7 @@ namespace VisaRoom.Web.Controllers
             }
             else
             {
-                return RedirectToAction("index", "DashBoard");
+                return RedirectToAction("index", "Home");
             }
         }
 

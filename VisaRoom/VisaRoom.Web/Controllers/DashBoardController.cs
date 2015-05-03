@@ -11,11 +11,25 @@ namespace VisaRoom.Web.Controllers
         //
         // GET: /DashBoard/
 
-        
-        public ActionResult Index()
+        public ActionResult Applicant()
         {
+            if (RedirectDashBoard(true))
+            {
+                return RedirectToAction("Agent", "DashBoard");
+            }
             return View(Helper.Helper.CurrentUser);
         }
+
+        public ActionResult Agent()
+        {
+            if (RedirectDashBoard(false))
+            {
+                return RedirectToAction("Applicant", "DashBoard");
+            }
+            return View(Helper.Helper.CurrentUser);
+        }
+
+       
 
     }
 }

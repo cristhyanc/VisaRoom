@@ -24,7 +24,7 @@
     <body id="bodyBackGround" >
         @Html.Partial("_ProcessingModal")
         <!-- Navigation -->
-        <div class="header" id="header">
+        <div class="header" id="header" style="max-height:120px">
 		    <div class="container" >
 			    <div class="header-logo">
 				    <a href="" ><img src="../images/logo241x162.png" style="max-height:80px; max-width:100%" alt=""/></a>
@@ -87,7 +87,25 @@
                         <i class="fa fa-graduation-cap fa-fw"></i> @Html.Raw(ViewData.Model.Education)
                     </div>
                     <div class="PersonalDetailDiv">
-                        <i  class="fa fa-language fa-fw"></i> English, Spanish
+                        <i  class="fa fa-language fa-fw"></i>
+                         @{
+                             bool first=true;
+                             foreach (var item in ViewData.Model.Languages)
+                             {
+                                 if(first)
+                                 {
+                                     first = false;
+                                     @Html.Raw(item.Text);
+                                 }
+                                 else
+                                 {
+                                  <strong>, </strong>@Html.Raw(item.Text);
+                                 }
+                                
+                             }    
+                         
+                         }
+                        
                     </div>                   
                     <div class="PersonalDetailDiv">
                         <i class="fa fa-home fa-fw"></i> @Html.Raw(ViewData.Model.CountryPassport.Text)

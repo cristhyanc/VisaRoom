@@ -415,13 +415,15 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_validationSummary.cshtml" />
     <Content Include="Views\Shared\_alerts.cshtml" />
-    <Content Include="Views\Shared\_LayoutDashBoard.cshtml" />
+    <Content Include="Views\Shared\_LayoutDBApplicant.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
-    <Content Include="Views\DashBoard\Index.cshtml" />
+    <Content Include="Views\DashBoard\Applicant.cshtml" />
     <Content Include="Views\Shared\_ProcessingModal.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Account\RegisterAgent.cshtml" />
+    <Content Include="Views\Shared\_LayoutDBAgent.cshtml" />
+    <Content Include="Views\DashBoard\Agent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
