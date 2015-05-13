@@ -36,8 +36,13 @@ namespace VisaRoom.Web
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/metisMenu.js",
                         "~/Scripts/bootstrap-datepicker.js",
-                        "~/Scripts/sb-admin-2.js"));
-
+                        "~/Scripts/jquery.dataTables.js",
+                        "~/Scripts/dataTables.bootstrap.js",
+                        "~/Scripts/wysihtml5-0.3.0.js",
+                        "~/Scripts/bootstrap-wysihtml5-0.0.2.js",                       
+                        "~/Scripts/sb-admin-2.js",
+                        "~/Scripts/prettify.js"));
+            
             bundles.Add(new ScriptBundle("~/bootstrapWizarJS").Include(
                           "~/Scripts/jquery.bootstrap.wizard.js",
                           "~/Scripts/prettify.js"));
@@ -51,7 +56,8 @@ namespace VisaRoom.Web
                          "~/Scripts/bootstrap-filestyle.js",
                          "~/Scripts/easing.js"));
 
-
+            bundles.Add(new StyleBundle("~/content/external/google-code-prettify").Include(
+                       "~/content/external/google-code-prettify/prettify.css"));
 
             bundles.Add(new StyleBundle("~/content/bundle").Include(
                        "~/content/bootstrap.css",
@@ -61,7 +67,10 @@ namespace VisaRoom.Web
                        "~/content/bootstrap-datepicker.css",
                        "~/content/font-awesome.css",
                        "~/content/chosen.css",
-                       "~/content/prettify.css"));
+                       "~/content/prettify.css",
+                       "~/content/bootstrap-wysihtml5-0.0.2.css",                       
+                       "~/content/dataTables.responsive.css",
+                       "~/content/dataTables.bootstrap.css"));
 
 
             bundles.Add(new StyleBundle("~/content/publicPagesCss").Include(

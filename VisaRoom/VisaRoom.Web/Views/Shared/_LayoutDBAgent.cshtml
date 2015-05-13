@@ -1,4 +1,4 @@
-﻿@model VisaRoom.Common.Models.UserTo
+﻿@model VisaRoom.Web.ViewModel.DashBoardViewModel
 @using System.Web.Optimization
 @using BootstrapSupport
 @using NavigationRoutes
@@ -47,9 +47,9 @@
                 <div  class="col-md-2  hidden-xs" style="color:white; background-color:#44546A; min-height: 540px; font-size:16px; text-align:left">
                     <div>
                         <p class="text-center">   
-                          @{   if (ViewData.Model.PhotoProfile!=null && !ViewData.Model.PhotoProfile.Equals(string.Empty)) 
+                          @{   if (ViewData.Model.CurrentUser.PhotoProfile!=null && !ViewData.Model.CurrentUser.PhotoProfile.Equals(string.Empty)) 
                                {
-                                   <img src="~/assets/UserPhotos/@Html.Raw(ViewData.Model.PhotoProfile)" width="60%" class="user-image"/>    
+                                   <img src="~/assets/UserPhotos/@Html.Raw(ViewData.Model.CurrentUser.PhotoProfile)" width="60%" class="user-image"/>    
                        
                                }
                                else
@@ -64,27 +64,27 @@
                     
                     <div class="PersonalDetailDiv">
                         <p class="text-center">
-                            <strong>@Html.Raw(ViewData.Model.FirstName)</strong>
+                            <strong>@Html.Raw(ViewData.Model.CurrentUser.FirstName)</strong>
                             <br />
-                            <strong style="font-size:14px">@Html.Raw(ViewData.Model.YearsExperience) years Experience</strong>
+                            <strong style="font-size:14px">@Html.Raw(ViewData.Model.CurrentUser.YearsExperience) years Experience</strong>
                             <br />
                                 
-                            <strong style="font-size:14px">MARN: @Html.Raw(ViewData.Model.MarnNumber)</strong>
+                            <strong style="font-size:14px">MARN: @Html.Raw(ViewData.Model.CurrentUser.MarnNumber)</strong>
                             <br />
                           
                         </p>
                      </div>
                     <div class="PersonalDetailDiv">
-                        <i class="fa fa-building fa-fw"></i> @Html.Raw(ViewData.Model.City.Text)
+                        <i class="fa fa-building fa-fw"></i> @Html.Raw(ViewData.Model.CurrentUser.City.Text)
                     </div>                   
                     <div class="PersonalDetailDiv">
-                        <i class="fa fa-graduation-cap fa-fw"></i> @Html.Raw(ViewData.Model.Education)
+                        <i class="fa fa-graduation-cap fa-fw"></i> @Html.Raw(ViewData.Model.CurrentUser.Education)
                     </div>
                     <div class="PersonalDetailDiv">
                         <i  class="fa fa-language fa-fw"></i>
                           @{
                                 bool two = false;
-                                foreach (var item in ViewData.Model.Languages)
+                                foreach (var item in ViewData.Model.CurrentUser.Languages)
                                 {
                                     if (!two)
                                     {
@@ -108,7 +108,7 @@
                         <i class="fa fa-home fa-fw"></i> 
                         @{
                                 two = false;
-                                foreach (var item in ViewData.Model.PassportHolders)
+                                foreach (var item in ViewData.Model.CurrentUser.PassportHolders)
                                 {
                                     if (!two)
                                     {

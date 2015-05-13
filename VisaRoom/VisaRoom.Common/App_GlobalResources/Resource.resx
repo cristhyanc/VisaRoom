@@ -576,4 +576,22 @@
   <data name="lbl_MyProfile" xml:space="preserve">
     <value>My Profile</value>
   </data>
+  <data name="Error_GetUserQuestions" xml:space="preserve">
+    <value>There was an error trying to get the user's questions</value>
+  </data>
+  <data name="lbl_QuestionDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="lbl_QuestionStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="lbl_QuestionText" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="rqd_QuestionText" xml:space="preserve">
+    <value>The question is required</value>
+  </data>
+  <data name="typ_Date" xml:space="preserve">
+    <value>The date is not valid</value>
+  </data>
 </root>

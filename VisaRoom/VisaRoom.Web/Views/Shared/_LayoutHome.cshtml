@@ -16,12 +16,13 @@
     @Scripts.Render("~/bundles/jquery")   
     @Styles.Render("~/content/publicPagesCss")
     
-    @Scripts.Render("~/multipleSelectJS")
+    
     @Scripts.Render("~/bootstrapjs")
     @Scripts.Render("~/bootstrapWizarJS")
 
      @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/publicPagesJs")    
+    @Scripts.Render("~/publicPagesJs") 
+    @Scripts.Render("~/multipleSelectJS")   
    @Scripts.Render("~/mainScript")
     
     @RenderSection("styles", required: false)
@@ -72,7 +73,7 @@
 					<li><a href="#seccionRegister" class="scroll">@Html.Raw(@Resource.txt_RegisterUpperCase)</a></li>
 					<li><a href="http://visaroom.com.au/VisaBlog/">@Html.Raw(@Resource.txt_BlogUpperCase)</a></li>
 					@*<li>@Html.ActionLink(@Resource.txt_ContactUpperCase, "Contact", "Home")</li>*@
-                    <li>@Html.ActionLink("DashBoard", "Applicant", "DASHBOARD")</li>
+                    <li>@Html.ActionLink("DASHBOARD", "Applicant", "DashBoard")</li>
                     <li>@Html.ActionLink(@Resource.txt_LoginUpperCase, "Login", "Account")</li>
 				</ul>
 				<script>

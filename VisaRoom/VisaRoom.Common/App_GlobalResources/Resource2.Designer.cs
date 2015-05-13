@@ -651,6 +651,24 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string lbl_QuestionDate {
+            get {
+                return ResourceManager.GetString("lbl_QuestionDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        public static string lbl_QuestionText {
+            get {
+                return ResourceManager.GetString("lbl_QuestionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string lbl_Register {
@@ -818,6 +836,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         public static string rqd_Password {
             get {
                 return ResourceManager.GetString("rqd_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The question is required.
+        /// </summary>
+        public static string rqd_QuestionText {
+            get {
+                return ResourceManager.GetString("rqd_QuestionText", resourceCulture);
             }
         }
         
@@ -1341,6 +1368,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         public static string txt_whyVisaRoomUpperCase {
             get {
                 return ResourceManager.GetString("txt_whyVisaRoomUpperCase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The date is not valid.
+        /// </summary>
+        public static string typ_Date {
+            get {
+                return ResourceManager.GetString("typ_Date", resourceCulture);
             }
         }
         

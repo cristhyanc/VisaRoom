@@ -208,5 +208,7 @@ namespace VisaRoom.Common.Models
 
         [Display(Name = "lbl_YearsExperience", ResourceType = typeof(Resource))]
         public string YearsExperience { get; set; }
+
+        public List<QuestionTo> Questions { get; set; }
     }
 }

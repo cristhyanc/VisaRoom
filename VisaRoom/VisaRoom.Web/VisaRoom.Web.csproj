@@ -266,6 +266,7 @@
     <Compile Include="NavigationRoutes\NavigationRouteConfigurationExtensions.cs" />
     <Compile Include="NavigationRoutes\NavigationRouteFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\DashBoardViewModel.cs" />
     <Compile Include="ViewModel\RegisterAgentViewModel.cs" />
     <Compile Include="ViewModel\RegisterApplicantViewModel.cs" />
   </ItemGroup>
@@ -274,9 +275,12 @@
     <Content Include="Content\bootstrap-datepicker.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-wysihtml5-0.0.2.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\chosen.css" />
+    <Content Include="Content\dataTables.bootstrap.css" />
+    <Content Include="Content\dataTables.responsive.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\metisMenu.css" />
@@ -327,9 +331,11 @@
     <Content Include="Images\whyApp6.png" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-filestyle.js" />
+    <Content Include="Scripts\bootstrap-wysihtml5-0.0.2.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\chosen.jquery.js" />
+    <Content Include="Scripts\dataTables.bootstrap.js" />
     <Content Include="Scripts\easing.js" />
     <Content Include="Scripts\html5shiv.js" />
     <Content Include="Content\bootstrap-theme.css.map" />
@@ -354,6 +360,7 @@
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.bootstrap.wizard.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -373,6 +380,7 @@
     <Content Include="Scripts\move-top.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\prettify.js" />
+    <Content Include="Scripts\wysihtml5-0.3.0.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -424,6 +432,7 @@
     <Content Include="Views\Account\RegisterAgent.cshtml" />
     <Content Include="Views\Shared\_LayoutDBAgent.cshtml" />
     <Content Include="Views\DashBoard\Agent.cshtml" />
+    <Content Include="Views\DashBoard\Questions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
