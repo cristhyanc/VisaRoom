@@ -1,6 +1,4 @@
-﻿$(function () {
-    $('form').validate().settings.ignore = ':hidden';
-});
+﻿
 
 window.imagenVacia = '/assets/UserPhotos/find_user.png';
 window.mostrarVistaPrevia = function mostrarVistaPrevia() {

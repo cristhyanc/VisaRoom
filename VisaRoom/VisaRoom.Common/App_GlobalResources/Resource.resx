@@ -546,4 +546,34 @@
   <data name="Error_Login" xml:space="preserve">
     <value>There is a problem trying to log in.</value>
   </data>
+  <data name="Detail_ChatAgent" xml:space="preserve">
+    <value>Want to find out if and how I can help you? Let's chat!</value>
+  </data>
+  <data name="Detail_MyAnswers" xml:space="preserve">
+    <value>How I've helped previous clients.</value>
+  </data>
+  <data name="Detail_MyAppointments" xml:space="preserve">
+    <value>Ready to apply? &lt;br/&gt; Setup meeting with me.</value>
+  </data>
+  <data name="Detail_MyPractice" xml:space="preserve">
+    <value>Australian visas that I specialise &lt;br/&gt; Education courses that I'm the expert</value>
+  </data>
+  <data name="Detail_MyProfile" xml:space="preserve">
+    <value>Learn about me and how I can help you.</value>
+  </data>
+  <data name="Detail_MyQuestionsAgent" xml:space="preserve">
+    <value>Let me answer your visa questions.</value>
+  </data>
+  <data name="lbl_MyAnswers" xml:space="preserve">
+    <value>My Answers!</value>
+  </data>
+  <data name="lbl_MyAppointments" xml:space="preserve">
+    <value>My Appointments</value>
+  </data>
+  <data name="lbl_MyPractice" xml:space="preserve">
+    <value>My Practice!</value>
+  </data>
+  <data name="lbl_MyProfile" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
 </root>

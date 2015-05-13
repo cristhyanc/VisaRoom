@@ -1,7 +1,7 @@
 ﻿@using VisaRoom.Web.App_GlobalResources;
 @{
     Layout = null;
-    Layout = "~/Views/Shared/_LayoutDBApplicant.cshtml";
+    Layout = "~/Views/Shared/_LayoutDBAgent.cshtml";
 }
 
 <div class="row">
@@ -11,12 +11,12 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <i class="fa fa-question fa-5x"></i>
-                        <span class="badge badge-warning" >5</span>
+                       
                     </div>
                     <div class="col-xs-12" >                       
-                        <div><p>@Resource.lbl_MyQuestions</p></div>
+                        <div><p>@Resource.lbl_MyProfile</p></div>
                          <div>
-                             @Html.Raw(@Resource.Detail_Question)
+                             @Html.Raw(@Resource.Detail_MyProfile)
                          </div>
                         <div>
                             <br />
@@ -37,9 +37,9 @@
                         <span class="badge badge-warning" >5</span>
                     </div>
                     <div class="col-xs-12">                       
-                        <div><p>@Resource.lbl_MyDocs</p></div>
+                        <div><p>@Resource.lbl_MyQuestions</p></div>
                         <div>
-                            @Html.Raw(@Resource.Detail_Doc)                            
+                            @Html.Raw(@Resource.Detail_MyQuestionsAgent)                            
                          </div>
                         <div>
                             <br />
@@ -65,7 +65,7 @@
                             <p>@Resource.lbl_MyChat</p>
                         </div>
                         <div>
-                             @Html.Raw(@Resource.Detail_Chat)   
+                             @Html.Raw(@Resource.Detail_ChatAgent)   
                         </div>                     
                     </div>
                 </div>
@@ -79,13 +79,13 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <i class="fa fa-search-plus fa-5x"></i>
-                         <span class="badge badge-warning" >5</span>
+                        
                     </div>
                     <div class="col-xs-12">
                        
-                        <div><p>@Resource.lbl_SearchVisas</p></div>
+                        <div><p>@Resource.lbl_MyAnswers</p></div>
                         <div>
-                            @Html.Raw(@Resource.Detail_Search)                             
+                            @Html.Raw(@Resource.Detail_MyAnswers)                             
                          </div>
                         <div>
                             <br />
@@ -107,9 +107,9 @@
                     </div>
                     <div class="col-xs-12">
                         
-                        <div><p>@Resource.lbl_AgentsMeetings</p></div>
+                        <div><p>@Resource.lbl_MyPractice</p></div>
                         <div>
-                            @Html.Raw(@Resource.Detail_Agent)
+                            @Html.Raw(@Resource.Detail_MyPractice)
                              
                          </div>
                         <div>
@@ -131,9 +131,9 @@
                         <span class="badge badge-warning" >5</span>
                     </div>
                     <div class="col-xs-12">                       
-                        <div><p>@Resource.lbl_Payment</p></div>
+                        <div><p>@Resource.lbl_MyAppointments</p></div>
                         <div>
-                            @Html.Raw(@Resource.Detail_Payment)
+                            @Html.Raw(@Resource.Detail_MyAppointments)
                              
                          </div>
                         <div>

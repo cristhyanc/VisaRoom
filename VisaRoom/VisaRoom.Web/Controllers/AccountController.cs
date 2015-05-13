@@ -140,9 +140,22 @@ namespace VisaRoom.Web.Controllers
                                 model.archivo.SaveAs(serverpath + model.Register.PhotoProfile);
                             }
                             model.Register.TypeOfUser = enumTypeOfUsers.Agent;
+                            setLocationNames(model.Register);
+                            foreach (var item in model.Register.PassportHolders)
+                            {
+                                var place=Helper.Helper.getGlobalInformation().GetCountry(item.Value);
+                                if (place != null)
+                                {
+                                    item.Text = place.Text;
+                                }
+                            }
+
                             bUser.SaveUser(model.Register);
                             WebSecurity.Login(model.Register.UserName, model.Register.Password);
-                            return RedirectToAction("Index", "Home");
+                            IBLUser bl = new BLUser(this.LogError.SLogPath);
+                            var usr = bl.GetUserDetails(WebSecurity.GetUserId(model.Register.UserName));
+                            Helper.Helper.CurrentUser = usr;
+                            return RedirectToAction("Agent", "DashBoard");
                         }
                     }
                 }
@@ -156,7 +169,38 @@ namespace VisaRoom.Web.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-       
+
+        private void setLocationNames(RegisterModel register)
+        {
+            if (register.Country.Value != null)
+            {
+                var place = Helper.Helper.getGlobalInformation().GetCountry(register.Country.Value);
+                if (place != null)
+                {
+                    register.Country.Text = place.Text;
+                }
+
+                if (register.State.Value != null)
+                {
+                    place = Helper.Helper.getGlobalInformation().GetPlaceDetails(register.State.Value);
+                    if (place != null)
+                    {
+                        register.State.Text = place.Text;
+                    }
+
+                    if (register.City.Value != null)
+                    {
+                        place = Helper.Helper.getGlobalInformation().GetPlaceDetails(register.City.Value);
+                        if (place != null)
+                        {
+                            register.City.Text = place.Text;
+                        }
+                    }
+                }
+            }
+        }
+
+
         //
         // POST: /Account/Register
 
@@ -199,33 +243,8 @@ namespace VisaRoom.Web.Controllers
                                 model.archivo.SaveAs(serverpath + model.Register.PhotoProfile);
                             }
                             model.Register.TypeOfUser = enumTypeOfUsers.Applicant;
-                            if (model.Register.Country.Value != null)
-                            {
-                                var place=Helper.Helper.getGlobalInformation().GetCountry(model.Register.Country.Value);
-                                if(place!=null)
-                                {
-                                    model.Register.Country.Text = place.Text;
-                                }
-
-                                if (model.Register.State.Value != null)
-                                {
-                                    place = Helper.Helper.getGlobalInformation().GetPlaceDetails(model.Register.State.Value);
-                                    if (place != null)
-                                    {
-                                        model.Register.State.Text = place.Text;
-                                    }
-
-                                    if (model.Register.City.Value != null)
-                                    {
-                                        place = Helper.Helper.getGlobalInformation().GetPlaceDetails(model.Register.City.Value);
-                                        if (place != null)
-                                        {
-                                            model.Register.City.Text = place.Text;
-                                        }
-                                    }
-                                }
-                            }
-
+                            setLocationNames(model.Register);
+                            
                             if (model.Register.CountryPassport.Value != null)
                             {
                                 var place = Helper.Helper.getGlobalInformation().GetCountry(model.Register.CountryPassport.Value);
@@ -238,7 +257,10 @@ namespace VisaRoom.Web.Controllers
                             
                              bUser.SaveUser(model.Register);
                             WebSecurity.Login(model.Register.UserName, model.Register.Password);
-                            return RedirectToAction("Index", "Home");
+                            IBLUser bl = new BLUser(this.LogError.SLogPath);
+                            var usr = bl.GetUserDetails(WebSecurity.GetUserId(model.Register.UserName));
+                            Helper.Helper.CurrentUser = usr;
+                            return RedirectToAction("Applicant", "DashBoard");
                         }
                     }
                 }

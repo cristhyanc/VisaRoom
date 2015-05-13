@@ -42,13 +42,14 @@ namespace VisaRoom.Web
                           "~/Scripts/jquery.bootstrap.wizard.js",
                           "~/Scripts/prettify.js"));
 
-            bundles.Add(new ScriptBundle("~/bootstrapFileStyle").Include(
+            bundles.Add(new ScriptBundle("~/bootstrapFile").Include(
                           "~/Scripts/bootstrap-filestyle.js"));
 
             bundles.Add(new ScriptBundle("~/publicPagesJs").Include(
-                         "~/Scripts/easing.js",
+                         "~/Scripts/move-top.js",
+                         "~/Scripts/bootstrap.js",
                          "~/Scripts/bootstrap-filestyle.js",
-                        "~/Scripts/move-top.js"));
+                         "~/Scripts/easing.js"));
 
 
 

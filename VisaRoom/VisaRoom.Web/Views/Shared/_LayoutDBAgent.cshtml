@@ -9,13 +9,13 @@
         <title>@ViewBag.Title - VisaRoom</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        @Scripts.Render("~/bundles/jquery")
+        
         @Styles.Render("~/Content/DashBoard")
+        @Styles.Render("~/content/publicPagesCss")
+        @Scripts.Render("~/bundles/jquery")        
         @Scripts.Render("~/bootstrapjs")
         @Scripts.Render("~/bundles/modernizr")
-        @Scripts.Render("~/mainScript")
-       
-        @Styles.Render("~/content/publicPagesCss")
+        @Scripts.Render("~/mainScript") 
         @Scripts.Render("~/publicPagesJs")    
        
         @RenderSection("styles", required: false)
@@ -49,7 +49,7 @@
                         <p class="text-center">   
                           @{   if (ViewData.Model.PhotoProfile!=null && !ViewData.Model.PhotoProfile.Equals(string.Empty)) 
                                {
-                                   <img src="~/assets/UserPhotos/@Html.Raw(ViewData.Model.PhotoProfile)" width="60%" class="user-image img-responsive logo-center"/>    
+                                   <img src="~/assets/UserPhotos/@Html.Raw(ViewData.Model.PhotoProfile)" width="60%" class="user-image"/>    
                        
                                }
                                else
@@ -66,49 +66,66 @@
                         <p class="text-center">
                             <strong>@Html.Raw(ViewData.Model.FirstName)</strong>
                             <br />
-                            <strong style="font-size:14px">@Html.Raw(ViewData.Model.Age) years, @Html.Raw(ViewData.Model.MaritalStatus.Text)</strong>
+                            <strong style="font-size:14px">@Html.Raw(ViewData.Model.YearsExperience) years Experience</strong>
                             <br />
                                 
-                            <strong style="font-size:14px">@Html.Raw(ViewData.Model.EnglishTestScore) @Html.Raw(ViewData.Model.EnglishTest)</strong>
+                            <strong style="font-size:14px">MARN: @Html.Raw(ViewData.Model.MarnNumber)</strong>
                             <br />
-                            @*<strong style="font-size:14px">(Valid until 12/12/15)</strong>*@
+                          
                         </p>
                      </div>
                     <div class="PersonalDetailDiv">
-                        <i class="fa fa-book fa-fw"></i>  About Me 
-                    </div>
-                    <div class="PersonalDetailDiv">
                         <i class="fa fa-building fa-fw"></i> @Html.Raw(ViewData.Model.City.Text)
-                    </div>
-                    <div class="PersonalDetailDiv">
-                        <i class="fa fa-book fa-fw"></i> @Html.Raw(ViewData.Model.CurrentVisa.Name)
-                    </div>
+                    </div>                   
                     <div class="PersonalDetailDiv">
                         <i class="fa fa-graduation-cap fa-fw"></i> @Html.Raw(ViewData.Model.Education)
                     </div>
                     <div class="PersonalDetailDiv">
                         <i  class="fa fa-language fa-fw"></i>
-                         @{
-                             bool first=true;
-                             foreach (var item in ViewData.Model.Languages)
-                             {
-                                 if(first)
-                                 {
-                                     first = false;
-                                     @Html.Raw(item.Text);
-                                 }
-                                 else
-                                 {
-                                  <strong>, </strong>@Html.Raw(item.Text);
-                                 }
-                                
-                             }    
+                          @{
+                                bool two = false;
+                                foreach (var item in ViewData.Model.Languages)
+                                {
+                                    if (!two)
+                                    {
+                                        two = true;    
+                                        @Html.Raw("<ul>");               
+                                        @Html.Raw(item.Text);
+                                        @Html.Raw(", ");
+                                    }
+                                      else
+                                     {
+                                            two = false; 
+                                            @Html.Raw(item.Text)
+                                            @Html.Raw("</ul>");                                        
+                                    }
+                                }    
                          
-                         }
+                            }
                         
                     </div>                   
                     <div class="PersonalDetailDiv">
-                        <i class="fa fa-home fa-fw"></i> @Html.Raw(ViewData.Model.CountryPassport.Text)
+                        <i class="fa fa-home fa-fw"></i> 
+                        @{
+                                two = false;
+                                foreach (var item in ViewData.Model.PassportHolders)
+                                {
+                                    if (!two)
+                                    {
+                                        two = true;    
+                                        @Html.Raw("<ul>");               
+                                        @Html.Raw(item.Text);
+                                        @Html.Raw(", ");
+                                    }
+                                      else
+                                     {
+                                            two = false; 
+                                            @Html.Raw(item.Text)
+                                            @Html.Raw("</ul>");                                        
+                                    }
+                                }    
+                         
+                            }
                     </div>
                         
                    

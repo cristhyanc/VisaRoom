@@ -25,7 +25,7 @@ namespace VisaRoom.Web.ViewModel
 
             ListCountries = new SelectList(listCountries, "Value", "Text");
             ListMaritalStatus = new SelectList(listMaritalStatus, "CodeId", "Text");
-            ListLanguage = new MultiSelectList(listLanguage, "Value", "Text");
+            ListLanguage = new MultiSelectList(listLanguage, "CodeId", "Text");
             ListVisaApplicant = new SelectList(listVisaApplicant, "VisaId", "Name");
             Register = new RegisterModel();
         }

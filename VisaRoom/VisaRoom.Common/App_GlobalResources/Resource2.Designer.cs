@@ -87,11 +87,65 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Want to find out if and how I can help you? Let&apos;s chat!.
+        /// </summary>
+        public static string Detail_ChatAgent {
+            get {
+                return ResourceManager.GetString("Detail_ChatAgent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload your documents.
         /// </summary>
         public static string Detail_Doc {
             get {
                 return ResourceManager.GetString("Detail_Doc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How I&apos;ve helped previous clients..
+        /// </summary>
+        public static string Detail_MyAnswers {
+            get {
+                return ResourceManager.GetString("Detail_MyAnswers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ready to apply? &lt;br/&gt; Setup meeting with me..
+        /// </summary>
+        public static string Detail_MyAppointments {
+            get {
+                return ResourceManager.GetString("Detail_MyAppointments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Australian visas that I specialise &lt;br/&gt; Education courses that I&apos;m the expert.
+        /// </summary>
+        public static string Detail_MyPractice {
+            get {
+                return ResourceManager.GetString("Detail_MyPractice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn about me and how I can help you..
+        /// </summary>
+        public static string Detail_MyProfile {
+            get {
+                return ResourceManager.GetString("Detail_MyProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Let me answer your visa questions..
+        /// </summary>
+        public static string Detail_MyQuestionsAgent {
+            get {
+                return ResourceManager.GetString("Detail_MyQuestionsAgent", resourceCulture);
             }
         }
         
@@ -471,6 +525,24 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Answers!.
+        /// </summary>
+        public static string lbl_MyAnswers {
+            get {
+                return ResourceManager.GetString("lbl_MyAnswers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Appointments.
+        /// </summary>
+        public static string lbl_MyAppointments {
+            get {
+                return ResourceManager.GetString("lbl_MyAppointments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My Chat!.
         /// </summary>
         public static string lbl_MyChat {
@@ -485,6 +557,24 @@ namespace VisaRoom.Web.App_GlobalResources {
         public static string lbl_MyDocs {
             get {
                 return ResourceManager.GetString("lbl_MyDocs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Practice!.
+        /// </summary>
+        public static string lbl_MyPractice {
+            get {
+                return ResourceManager.GetString("lbl_MyPractice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Profile.
+        /// </summary>
+        public static string lbl_MyProfile {
+            get {
+                return ResourceManager.GetString("lbl_MyProfile", resourceCulture);
             }
         }
         
