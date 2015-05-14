@@ -594,4 +594,10 @@
   <data name="typ_Date" xml:space="preserve">
     <value>The date is not valid</value>
   </data>
+  <data name="lbl_QuestionTitle" xml:space="preserve">
+    <value>Short Description</value>
+  </data>
+  <data name="Error_SaveQuestion" xml:space="preserve">
+    <value>There is a problem trying to save the new question</value>
+  </data>
 </root>

@@ -237,6 +237,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There was an error trying to get the user&apos;s questions.
+        /// </summary>
+        public static string Error_GetUserQuestions {
+            get {
+                return ResourceManager.GetString("Error_GetUserQuestions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There is a problem getting user&apos;s visas.
         /// </summary>
         public static string Error_GetUserVisas {
@@ -287,6 +296,15 @@ namespace VisaRoom.Web.App_GlobalResources {
         public static string Error_SaveAgentPassportsPreferred {
             get {
                 return ResourceManager.GetString("Error_SaveAgentPassportsPreferred", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is a problem trying to save the new question.
+        /// </summary>
+        public static string Error_SaveQuestion {
+            get {
+                return ResourceManager.GetString("Error_SaveQuestion", resourceCulture);
             }
         }
         
@@ -660,11 +678,29 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string lbl_QuestionStatus {
+            get {
+                return ResourceManager.GetString("lbl_QuestionStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Question.
         /// </summary>
         public static string lbl_QuestionText {
             get {
                 return ResourceManager.GetString("lbl_QuestionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Short Description.
+        /// </summary>
+        public static string lbl_QuestionTitle {
+            get {
+                return ResourceManager.GetString("lbl_QuestionTitle", resourceCulture);
             }
         }
         

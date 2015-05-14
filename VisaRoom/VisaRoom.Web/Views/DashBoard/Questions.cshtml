@@ -7,27 +7,64 @@
 
 <h2>Questions</h2>
 <br />
+<script type="text/javascript">
 
+    function OpenNewPanel() {
 
-<textarea class="textarea" placeholder="Enter text ..." style="width: 810px; height: 200px"></textarea>
+        $('#newQuestionPanel').modal();
+    }
 
-
-
-
+</script>
 <div class="modal fade" id="newQuestionPanel" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4>New Question</h4>
-            </div>
-            <div class="modal-body">
-            </div>
-            <div class="modal-footer">
+    @using (Html.BeginForm("Questions", "DashBoard", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+           
+        
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>New Question</h4>
+                        @if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
+                        {
+                           <script type="text/javascript">
+                               
+                               OpenNewPanel()
+                            </script>
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                @Html.ValidationSummary()
+                            </div>
+                        }
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.NewQuestion.QuestionTitle)
+                            @Html.TextBoxFor(m => m.NewQuestion.QuestionTitle, new { @class = "form-control" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.NewQuestion.QuestionText)
+                            @Html.TextAreaFor(m => m.NewQuestion.QuestionText, new { @rows = "5", @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.NewQuestion.QuestionText, null, new { @class = "label label-danger" })
+
+                            @Html.HiddenFor(m => m.CurrentUser.UserId)
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Save" />
+                            <input type="reset" class="btn btn-danger" onclick="javascript: $('#newQuestionPanel').modal('hide');" value="Cancel" />
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    }
 </div>
-<button onclick="javascript:$('#newQuestionPanel').modal();">New</button>
+
+<button class="btn btn-success" onclick="javascript:OpenNewPanel();">New</button>
 <div class="panel-body">
     <div class="dataTable_wrapper">
 
@@ -35,6 +72,7 @@
             <thead>
                 <tr>
                     <th>Date</th>
+                    <th>Short Description</th>
                     <th>Question</th>
                     <th>Status</th>
 
@@ -45,7 +83,18 @@
                 {
                     <tr class="gradeA">
                         <td>@item.QuestionDate</td>
-                        <td>@item.QuestionText</td>
+                        <td>@item.QuestionTitle</td>
+                        <td>
+                            @if (@item.QuestionText.Length > 100)
+                            {  
+                                @item.QuestionText.Substring(0, 100);
+                            }
+                            else
+                            {
+                                @item.QuestionText
+                            }
+
+                        </td>
                         <td>@item.Status.ToString()</td>
                     </tr>
                 }
@@ -55,3 +104,7 @@
     </div>
 </div>
 
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

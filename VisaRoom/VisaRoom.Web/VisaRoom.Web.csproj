@@ -275,7 +275,6 @@
     <Content Include="Content\bootstrap-datepicker.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap-wysihtml5-0.0.2.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\chosen.css" />
@@ -287,6 +286,7 @@
     <Content Include="Content\metisMenu.min.css" />
     <Content Include="Content\prettify.css" />
     <Content Include="Content\publicPages.css" />
+    <Content Include="Content\sample.css" />
     <Content Include="Content\sb-admin-2.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\chosen-sprite%402x.png" />
@@ -331,10 +331,10 @@
     <Content Include="Images\whyApp6.png" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-filestyle.js" />
-    <Content Include="Scripts\bootstrap-wysihtml5-0.0.2.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\chosen.jquery.js" />
+    <Content Include="Scripts\ckeditor.js" />
     <Content Include="Scripts\dataTables.bootstrap.js" />
     <Content Include="Scripts\easing.js" />
     <Content Include="Scripts\html5shiv.js" />
@@ -380,7 +380,6 @@
     <Content Include="Scripts\move-top.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\prettify.js" />
-    <Content Include="Scripts\wysihtml5-0.3.0.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

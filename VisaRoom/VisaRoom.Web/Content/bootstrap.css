@@ -4966,17 +4966,21 @@ a.thumbnail.active {
 .alert-warning .alert-link {
   color: #66512c;
 }
-.alert-danger {
+.alert-danger,
+.alert-error {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
 }
-.alert-danger hr {
+.alert-danger hr,
+.alert-error hr {
   border-top-color: #e4b9c0;
 }
-.alert-danger .alert-link {
+.alert-danger .alert-link,
+.alert-error .alert-link {
   color: #843534;
 }
+ 
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 40px 0;
@@ -5288,9 +5292,10 @@ a.list-group-item-danger.active:focus {
 }
 .panel {
   margin-bottom: 20px;
+ 
   background-color: #fff;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 0px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
           box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
@@ -5300,8 +5305,8 @@ a.list-group-item-danger.active:focus {
 .panel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
@@ -5754,7 +5759,8 @@ button.close {
   top: 0;
   right: 0;
   left: 0;
-  background-color: #000;
+  z-index: 1030;
+  background-color: #333333;
 }
 .modal-backdrop.fade {
   filter: alpha(opacity=0);

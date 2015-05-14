@@ -22,6 +22,9 @@ namespace VisaRoom.Web.Helper
                 return _log;
             }
         }
+        public HelperVisaRoomLogError()
+        {
+        }
     }
 
     public class Helper

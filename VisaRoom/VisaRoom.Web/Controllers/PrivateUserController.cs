@@ -10,6 +10,11 @@ namespace VisaRoom.Web.Controllers
     [SessionExpireFilter]
     public class PrivateUserController : BaseController
     {
+
+        public PrivateUserController()
+        {
+        }
+
         protected bool RedirectDashBoard(bool fromApplicant)
         {
             if (Helper.Helper.CurrentUser != null)

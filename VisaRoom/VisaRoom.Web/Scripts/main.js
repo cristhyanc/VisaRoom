@@ -69,13 +69,7 @@ function HidePanelHowItWorks(isApplicant) {
 
 
 $(document).ready(function () {
-
-   
-    $('.textarea').wysihtml5();
-    $(prettyPrint);
-
-
-
+    
     $('.dataTablesCss').DataTable({
         responsive: true
     });

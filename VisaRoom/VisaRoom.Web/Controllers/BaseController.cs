@@ -8,6 +8,9 @@ namespace BootstrapMvcSample.Controllers
 {
     public class BaseController: Controller
     {
+        public BaseController()
+        {
+        }
 
         VisaRoomLogError _log;
         public VisaRoomLogError LogError
