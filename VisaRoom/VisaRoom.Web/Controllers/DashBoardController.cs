@@ -44,6 +44,7 @@ namespace VisaRoom.Web.Controllers
         public ActionResult Questions()
         {
             DashBoardViewModel model = new DashBoardViewModel(Helper.Helper.CurrentUser);
+            model.RefreshQuestions();
             return View(model);
         }
 
@@ -73,10 +74,19 @@ namespace VisaRoom.Web.Controllers
                 IBLUser bl = new BLUser(this.LogError.SLogPath);
                 if (ModelState.IsValid)
                 {
-                    bl.SaveQuestion(model.NewQuestion, model.CurrentUser.UserId);
+                    if (bl.SaveQuestion(model.NewQuestion, model.CurrentUser.UserId))
+                    {
+                        this.Success(Resource.txt_SuccesfulSave);
+                        model = new DashBoardViewModel(Helper.Helper.CurrentUser);
+                        model.RefreshQuestions();
+                    }
+                    else
+                    {
+                        this.Attention(Resource.txt_UnSuccesfulSave);
+                    }
                 }
 
-                model = new DashBoardViewModel(Helper.Helper.CurrentUser);
+            
 
             }
             catch (Exception ex)

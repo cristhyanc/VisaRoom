@@ -600,4 +600,10 @@
   <data name="Error_SaveQuestion" xml:space="preserve">
     <value>There is a problem trying to save the new question</value>
   </data>
+  <data name="txt_SuccesfulSave" xml:space="preserve">
+    <value>The information was saved successfully</value>
+  </data>
+  <data name="txt_UnSuccesfulSave" xml:space="preserve">
+    <value>The information was not saved unsuccessfully</value>
+  </data>
 </root>

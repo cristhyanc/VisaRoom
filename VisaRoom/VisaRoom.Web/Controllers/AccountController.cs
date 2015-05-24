@@ -51,7 +51,7 @@ namespace VisaRoom.Web.Controllers
                     IBLUser bl = new BLUser(this.LogError.SLogPath);
                     var usr = bl.GetUserDetails(WebSecurity.GetUserId(model.UserName));
                     Helper.Helper.CurrentUser = usr;
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Applicant", "DashBoard");
                 }
 
                 // If we got this far, something failed, redisplay form

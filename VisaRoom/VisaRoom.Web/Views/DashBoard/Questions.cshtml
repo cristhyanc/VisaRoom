@@ -1,4 +1,5 @@
 ﻿@model VisaRoom.Web.ViewModel.DashBoardViewModel
+@using VisaRoom.Common.Models
 @{
     ViewBag.Title = "Questions";
     Layout = "~/Views/Shared/_LayoutDBApplicant.cshtml";
@@ -10,8 +11,21 @@
 <script type="text/javascript">
 
     function OpenNewPanel() {
-
+        document.getElementById("NewQuestion_QuestionTitle").value = "";
+        document.getElementById("NewQuestion_QuestionText").value = "";
+        document.getElementById("NewQuestion_QuestionId").value = "0";
         $('#newQuestionPanel').modal();
+        
+    }
+
+    function prepareEdit(btn)
+    {
+        
+        document.getElementById("NewQuestion_QuestionTitle").value = btn.getAttribute("data-QuestionTitle");
+        document.getElementById("NewQuestion_QuestionText").value = btn.getAttribute("data-QuestionText");
+        document.getElementById("NewQuestion_QuestionId").value = btn.getAttribute("data-QuestionId");
+        $('#newQuestionPanel').modal();
+        
     }
 
 </script>
@@ -42,7 +56,7 @@
                     <div class="panel-body">
                         <div class="form-group">
                             @Html.LabelFor(m => m.NewQuestion.QuestionTitle)
-                            @Html.TextBoxFor(m => m.NewQuestion.QuestionTitle, new { @class = "form-control" })
+                            @Html.TextBoxFor(m => m.NewQuestion.QuestionTitle, new { @class = "form-control", @name="txtTitle" })
 
                         </div>
                         <div class="form-group">
@@ -51,6 +65,7 @@
                             @Html.ValidationMessageFor(m => m.NewQuestion.QuestionText, null, new { @class = "label label-danger" })
 
                             @Html.HiddenFor(m => m.CurrentUser.UserId)
+                            @Html.HiddenFor(m => m.NewQuestion.QuestionId)
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Save" />
@@ -75,6 +90,7 @@
                     <th>Short Description</th>
                     <th>Question</th>
                     <th>Status</th>
+                    <th>Edit</th>
 
                 </tr>
             </thead>
@@ -95,7 +111,27 @@
                             }
 
                         </td>
-                        <td>@item.Status.ToString()</td>
+                        @if (item.Status == VisaRoom.Common.Helper.enumStatus.Answered)
+                        {
+                            <td class="alert-success">@item.Status.ToString()</td>
+                        }
+                        else
+                        {
+                            if (item.Status == VisaRoom.Common.Helper.enumStatus.Assigned_Not_Read)
+                            {
+                                <td class="alert-info">@item.Status.ToString()</td>
+                            }
+                            else
+                            {
+                                <td class="alert-warning">@item.Status.ToString()</td>                                
+                            }
+                        }
+                        
+                        <td><button data-QuestionTitle="@Html.Raw(@item.QuestionTitle)" data-QuestionText="@Html.Raw(@item.QuestionText)" data-QuestionId="@Html.Raw(@item.QuestionId)" type="button" class="btn btn-default" 
+                            onclick="javascript: prepareEdit(this);" >
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                            </button>
+                        </td>
                     </tr>
                 }
 

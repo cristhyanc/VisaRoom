@@ -1303,6 +1303,24 @@ namespace VisaRoom.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The information was saved successfully.
+        /// </summary>
+        public static string txt_SuccesfulSave {
+            get {
+                return ResourceManager.GetString("txt_SuccesfulSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The information was not saved unsuccessfully.
+        /// </summary>
+        public static string txt_UnSuccesfulSave {
+            get {
+                return ResourceManager.GetString("txt_UnSuccesfulSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;b&gt; Greater Information&lt;/b&gt; 
         ///                            &lt;br /&gt;
         ///                            Access, view and learn  migration agents profile.
